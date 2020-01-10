@@ -56,8 +56,12 @@ tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on 
 FLAGS = tf.flags.FLAGS
 
 print("loading data...")
-x = pickle.load(open("./mainbalancedpickle.p","rb"))
+x = pickle.load(open("./test.p","rb"))
+# print("X is:")
+# print(x)
 revs, W, W2, word_idx_map, vocab, max_l = x[0], x[1], x[2], x[3], x[4], x[5]
+# print("revs is:")
+# print(revs)
 print("data loaded!")# Load data
 
 # print('loading wgcca embeddings...')
@@ -107,7 +111,9 @@ test_y = []
 
 for i in range(len(revs)):
     if revs[i]['split']==1:
-        x_text.append(revs[i]['text'])
+        x_text.append(revs[i]['tweet'])
+        print("revs " + i + " tweet is:")
+        print(revs[i]['tweet'])
         # try:
         #     author_text_id.append(wgcca_dict['"'+revs[i]['author']+'"'])
         # except KeyError:
@@ -119,7 +125,7 @@ for i in range(len(revs)):
         temp_y = revs[i]['label']
         y.append(temp_y)
     else:
-        test_x.append(revs[i]['text'])
+        test_x.append(revs[i]['tweet'])
         # try:
         #     test_author.append(wgcca_dict['"'+revs[i]['author']+'"'])
         # except:
