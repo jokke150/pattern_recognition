@@ -46,7 +46,7 @@ def build_data_cv(data_folder, cv=10, clean_string=True):
     with open(TWEETS_FILE, encoding='UTF-8') as f:
         for line in f:
             rev = []
-            label = 1
+            label = label = [1, 0]
             line = json.loads(line)
             '''
             label_str = line[2]

@@ -110,10 +110,8 @@ test_x = []
 test_y = []
 
 for i in range(len(revs)):
-    if revs[i]['split']==1:
+    if revs[i]['split']==0:
         x_text.append(revs[i]['tweet'])
-        print("revs " + i + " tweet is:")
-        print(revs[i]['tweet'])
         # try:
         #     author_text_id.append(wgcca_dict['"'+revs[i]['author']+'"'])
         # except KeyError:
@@ -137,6 +135,8 @@ for i in range(len(revs)):
         test_y.append(revs[i]['label'])  
 
 y = np.asarray(y)
+print("y is:")
+print(y)
 test_y = np.asarray(test_y)
 
 # get word indices
@@ -198,6 +198,9 @@ rev_dict = {v: k for k, v in word_idx_map.items()}
 
 # Training
 # ==================================================
+
+print("y_train:")
+print(y_train)
 
 with tf.Graph().as_default():
 
