@@ -11,70 +11,60 @@ import json
 # noinspection PyCompatibility
 from builtins import range
 
-COMMENTS_FILE = "../data/comments.json"
-TRAIN_MAP_FILE = "../data/my_train_balanced.csv"
-TEST_MAP_FILE = "../data/my_test_balanced.csv"
-TWEETS_FILE = "../data/twint_sarsarcastisch_tweets.json"
+NUM_SARCASTIC = 25
+NUM_NORMAL = 75
 
-def build_data_cv(data_folder, cv=10, clean_string=True):
+FASTTEXT_FILE = "../data/cc.nl.300.vec" 
+SARCASTIC_TWEETS_FILE = "../data/sarcastic.json" 
+NORMAL_TWEETS_FILE = "../data/non-sarcastic.json" 
+
+# TODO: CROSS VALIDATION
+
+def build_data():
     """
     Loads data
     """
     revs = []
-
-    # Vocab is necessary for...
     vocab = defaultdict(float)
+    revs, vocab = get_revs('sarcastic', revs, vocab)
+    revs, vocab = get_revs('normal', revs, vocab)
 
-
-    #sarc_train_file = data_folder[0]
-    #sarc_test_file = data_folder[1]
-    
-    #train_data = np.asarray(pd.read_csv(sarc_train_file, header=None))
-    #test_data = np.asarray(pd.read_csv(sarc_test_file, header=None))
-
-    #comments = json.loads(open(COMMENTS_FILE).read())
-    #tweets = open(TWEETS_FILE, encoding='UTF-8').read()
-    #print(tweets[0])
-    '''
-    with open(TWEETS_FILE, encoding='UTF-8') as f:
-        for line in f:
-            datum = {"tweet":json.loads(line)['tweet'],
-                     "label":int(1)}
-            revs.append(datum)
-    print(revs)
-    '''
-    with open(TWEETS_FILE, encoding='UTF-8') as f:
-        for line in f:
-            rev = []
-            label = label = [1, 0]
-            line = json.loads(line)
-            '''
-            label_str = line[2]
-            if (label_str == 0):
-                label = [1, 0]
-            else:
-                label = [0, 1]
-            '''
-            rev.append(line['tweet'].strip())
-            if clean_string:
-                orig_rev = clean_str(" ".join(rev))
-            else:
-                orig_rev = " ".join(rev).lower()
-            words = set(orig_rev.split())
-            for word in words:
-                vocab[word] += 1
-            orig_rev = (orig_rev.split())[0:100]
-            orig_rev = " ".join(orig_rev)
-            datum = {"id": line['id'],
-                     "tweet": orig_rev,
-                     "author": line['username'],
-                     "label": label,
-                     "num_words": len(orig_rev.split()),
-                     "split": int(0)}
-            revs.append(datum)
     return revs, vocab
 
+def get_revs(type, revs, vocab):
+    if type == 'sarcastic':
+        tweets_file = SARCASTIC_TWEETS_FILE
+        lines = NUM_SARCASTIC
+        label = [1, 0]
+    else:
+        tweets_file = NORMAL_TWEETS_FILE
+        lines = NUM_NORMAL
+        label = [0, 1]
 
+    with open(tweets_file, encoding='UTF-8') as f:
+        revs = []
+        json_object = json.load(f)
+        for i, line in enumerate(json_object):
+            if i < 2 * lines:
+                rev = []
+                rev.append(line['tweet'].strip())
+                orig_rev = clean_str(" ".join(rev))
+                words = set(orig_rev.split())
+                for word in words:
+                    vocab[word] += 1
+                orig_rev = (orig_rev.split())[0:100]
+                orig_rev = " ".join(orig_rev)
+                split = int(1) if i < lines else int (0)
+                datum = {"id": line['id'],
+                         "text": orig_rev,
+                         "author": line['username'],
+                         "label": label,
+                         "num_words": len(orig_rev.split()),
+                         "split": split}
+                revs.append(datum)
+            else:
+                break
+    return revs, vocab
 
 
 def get_W(word_vecs, k=300):
@@ -157,40 +147,27 @@ def add_unknown_words(word_vecs, vocab, min_df=1, k=300):
         if word not in word_vecs and vocab[word] >= min_df:
             word_vecs[word] = np.random.uniform(-0.25,0.25,k)  
 
-def clean_str(string, TREC=False):
+def clean_str(string):
     """
-    Tokenization/string cleaning for all datasets except for SST.
-    Every dataset is lower cased except for TREC
+    Tokenization/string cleaning
     """
-    string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string)     
-    string = re.sub(r"\'s", " \'s", string) 
-    string = re.sub(r"\'ve", " \'ve", string) 
-    string = re.sub(r"n\'t", " n\'t", string) 
-    string = re.sub(r"\'re", " \'re", string) 
-    string = re.sub(r"\'d", " \'d", string) 
-    string = re.sub(r"\'ll", " \'ll", string) 
-    string = re.sub(r",", " , ", string) 
-    string = re.sub(r"!", " ! ", string) 
-    string = re.sub(r"\(", " \( ", string) 
-    string = re.sub(r"\)", " \) ", string) 
-    string = re.sub(r"\?", " \? ", string) 
-    string = re.sub(r"\s{2,}", " ", string)    
-    return string.strip() if TREC else string.strip().lower()
-
-def clean_str_sst(string):
-    """
-    Tokenization/string cleaning for the SST dataset
-    """
-    string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string)   
-    string = re.sub(r"\s{2,}", " ", string)    
-    return string.strip().lower()
+    string = re.sub(r"#\w*", "", string) # remove hashtags
+    string = re.sub(r"#\@*", "", string) # remove mentions
+    string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string) # clean characters
+    string = re.sub(r"(\`\w+)", " \1 ", string) # spaces around `word
+    string = re.sub(r"(\'\w+)", " \1 ", string) # spaces around 'word
+    string = re.sub(r",", " , ", string) # spaces around ,
+    string = re.sub(r"!", " ! ", string) # spaces around !
+    string = re.sub(r"\(", " \( ", string) # spaces around (
+    string = re.sub(r"\)", " \) ", string) # spaces around )
+    string = re.sub(r"\?", " \? ", string) # spaces around ?
+    string = re.sub(r"\s{2,}", " ", string) # whitespace to single space
+    return string.strip().lower() # make lowercase
 
 if __name__=="__main__":
-    w2v_file = sys.argv[1]    
-    #data_folder = [TRAIN_MAP_FILE,TEST_MAP_FILE]
-    data_folder = 1 #placeholder value
+    w2v_file = FASTTEXT_FILE
     print("loading data...")
-    revs, vocab = build_data_cv(data_folder,  cv=10, clean_string=True)
+    revs, vocab = build_data()
     max_l = np.max(pd.DataFrame(revs)["num_words"])
     print("data loaded!")
     print("number of sentences: " + str(len(revs)))

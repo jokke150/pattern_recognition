@@ -3,6 +3,7 @@
 # CUSTOM
 
 /src/*.p
+/data/*.vec
 
 ############
 
