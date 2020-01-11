@@ -67,20 +67,21 @@ class TextCNN(object):
             C = tf.Variable(tf.random_normal([num_filters_total,100]),name="C")
             b_prime = tf.Variable( tf.constant(0.1,shape=[100]),name="b_prime")
             self.h_last = tf.nn.xw_plus_b(self.h_pool_flat,C,b_prime, name="h_last")
-            
-#        # Add user embeddings
-#        with tf.name_scope("user_embedding_layer"):
-#            U = tf.Variable(tf.random_normal([300,400]), name="U")
-#            b_user = tf.Variable( tf.constant(0.1, shape=[400], name='b_user'))
-#            self.combined_vectors = tf.concat([self.h_last,self.user_embedding_vectors], 1)
-#            self.combined_vectors = tf.concat([self.combined_vectors,self.topic_embedding_vectors], 1)
-#            self.final_vector = tf.nn.relu(tf.nn.xw_plus_b(self.combined_vectors, U, b_user), name = 'final_vector')
-#         with tf.name_scope("another_layer"):
-#             V = tf.Variable(tf.random_normal([100,300]), name = 
-                         
+
+        # Add user embeddings
+        # with tf.name_scope("user_embedding_layer"):
+        #     U = tf.Variable(tf.random_normal([300,400]), name="U")
+        #     b_user = tf.Variable( tf.constant(0.1, shape=[400], name='b_user'))
+        #     self.combined_vectors = tf.concat([self.h_last,self.user_embedding_vectors], 1)
+        #     self.combined_vectors = tf.concat([self.combined_vectors,self.topic_embedding_vectors], 1)
+        #     self.final_vector = tf.nn.relu(tf.nn.xw_plus_b(self.combined_vectors, U, b_user), name = 'final_vector')
+        #  with tf.name_scope("another_layer"):
+        #      V = tf.Variable(tf.random_normal([100,300]), name = 
+           
+        # TODO: FIX!              
         # Add dropout
-        with tf.name_scope("dropout"):
-            self.h_drop = tf.nn.dropout(self.final_vector, self.dropout_keep_prob, name="h_drop")
+        # with tf.name_scope("dropout"):
+        #     self.h_drop = tf.nn.dropout(self.final_vector, self.dropout_keep_prob, name="h_drop")
 
         # Final (unnormalized) scores and predictions
         with tf.name_scope("output"):

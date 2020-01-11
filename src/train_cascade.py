@@ -56,7 +56,7 @@ tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on 
 FLAGS = tf.flags.FLAGS
 
 print("loading data...")
-x = pickle.load(open("./test.p","rb"))
+x = pickle.load(open("./mainbalancedpickle.p","rb"))
 # print("X is:")
 # print(x)
 revs, W, W2, word_idx_map, vocab, max_l = x[0], x[1], x[2], x[3], x[4], x[5]
@@ -110,8 +110,8 @@ test_x = []
 test_y = []
 
 for i in range(len(revs)):
-    if revs[i]['split']==0:
-        x_text.append(revs[i]['tweet'])
+    if revs[i]['split']==1:
+        x_text.append(revs[i]['text'])
         # try:
         #     author_text_id.append(wgcca_dict['"'+revs[i]['author']+'"'])
         # except KeyError:
@@ -123,7 +123,7 @@ for i in range(len(revs)):
         temp_y = revs[i]['label']
         y.append(temp_y)
     else:
-        test_x.append(revs[i]['tweet'])
+        test_x.append(revs[i]['text'])
         # try:
         #     test_author.append(wgcca_dict['"'+revs[i]['author']+'"'])
         # except:
@@ -135,8 +135,6 @@ for i in range(len(revs)):
         test_y.append(revs[i]['label'])  
 
 y = np.asarray(y)
-print("y is:")
-print(y)
 test_y = np.asarray(test_y)
 
 # get word indices
@@ -198,9 +196,6 @@ rev_dict = {v: k for k, v in word_idx_map.items()}
 
 # Training
 # ==================================================
-
-print("y_train:")
-print(y_train)
 
 with tf.Graph().as_default():
 
