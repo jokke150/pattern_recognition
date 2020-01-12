@@ -62,32 +62,22 @@ class TextCNN(object):
         self.h_pool = tf.concat(pooled_outputs, 3)
         self.h_pool_flat = tf.reshape(self.h_pool, [-1, num_filters_total],name="h_pool_flat")
 
+        # TODO: What is thios layer doing and how do we use it without the context?   
         # Add another layer
-        with tf.name_scope("last_layer"):
-            C = tf.Variable(tf.random_normal([num_filters_total,100]),name="C")
-            b_prime = tf.Variable( tf.constant(0.1,shape=[100]),name="b_prime")
-            self.h_last = tf.nn.xw_plus_b(self.h_pool_flat,C,b_prime, name="h_last")
+        # with tf.name_scope("last_layer"):
+        #     C = tf.Variable(tf.random_normal([num_filters_total,100]),name="C")
+        #     b_prime = tf.Variable( tf.constant(0.1,shape=[100]),name="b_prime")
+        #     self.h_last = tf.nn.xw_plus_b(self.h_pool_flat,C,b_prime, name="h_last")
 
-        # Add user embeddings
-        # with tf.name_scope("user_embedding_layer"):
-        #     U = tf.Variable(tf.random_normal([300,400]), name="U")
-        #     b_user = tf.Variable( tf.constant(0.1, shape=[400], name='b_user'))
-        #     self.combined_vectors = tf.concat([self.h_last,self.user_embedding_vectors], 1)
-        #     self.combined_vectors = tf.concat([self.combined_vectors,self.topic_embedding_vectors], 1)
-        #     self.final_vector = tf.nn.relu(tf.nn.xw_plus_b(self.combined_vectors, U, b_user), name = 'final_vector')
-        #  with tf.name_scope("another_layer"):
-        #      V = tf.Variable(tf.random_normal([100,300]), name = 
-           
-        # TODO: FIX!              
         # Add dropout
-        # with tf.name_scope("dropout"):
-        #     self.h_drop = tf.nn.dropout(self.final_vector, self.dropout_keep_prob, name="h_drop")
+        with tf.name_scope("dropout"):
+            self.h_drop = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob, name="h_drop")
 
         # Final (unnormalized) scores and predictions
         with tf.name_scope("output"):
             W = tf.get_variable(
                 "W",
-                shape=[400, num_classes],
+                shape=[num_filters_total, num_classes],
                 initializer=tf.contrib.layers.xavier_initializer())
             b = tf.Variable(tf.constant(0.1, shape=[num_classes]), name="b")
             l2_loss += tf.nn.l2_loss(W)

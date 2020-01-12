@@ -1,0 +1,2 @@
+model_checkpoint_path: "main_balanced_user_plus_topic-1"
+all_model_checkpoint_paths: "main_balanced_user_plus_topic-1"
