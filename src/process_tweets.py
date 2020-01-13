@@ -42,7 +42,6 @@ def get_revs(type, revs, vocab):
         label = [0, 1]
 
     with open(tweets_file, encoding='UTF-8') as f:
-        revs = []
         json_object = json.load(f)
         for i, line in enumerate(json_object):
             if i < 2 * lines:
@@ -150,8 +149,14 @@ def add_unknown_words(word_vecs, vocab, min_df=1, k=300):
 def clean_str(string):
     """
     Tokenization/string cleaning
+    Remove hashtags we used to search for
+    Remove hyperlinks
+
     """
-    string = re.sub(r"#\w*", "", string) # remove hashtags
+    #string = re.sub(r"#\w*", "", string) # remove hashtags
+    string = re.sub(r"#(sarcasme|sarcastisch|ironisch|ironie|cynisch|cynisme|not|niet)", "", string) # remove scraping hashtags
+    # remove hyperlinks, copied from https://stackoverflow.com/questions/11331982/how-to-remove-any-url-within-a-string-in-python/11332580
+    string = re.sub(r"^https?:\/\/.*[\r\n]*", "", string)
     string = re.sub(r"#\@*", "", string) # remove mentions
     string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string) # clean characters
     string = re.sub(r"(\`\w+)", " \1 ", string) # spaces around `word
@@ -184,3 +189,4 @@ if __name__=="__main__":
     W2, _ = get_W(rand_vecs)
     pickle.dump([revs, W, W2, word_idx_map, vocab, max_l], open("mainbalancedpickle.p", "wb"))
     print("dataset created!")
+
