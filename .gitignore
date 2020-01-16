@@ -2,8 +2,10 @@
 
 # CUSTOM
 
-/src/*.p
-/data/*.vec
+src/*.p
+data/*.vec
+data/context/*.json
+*.bak
 
 ############
 
