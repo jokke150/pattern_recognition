@@ -128,7 +128,7 @@ def preprocess():
 
     return x_train, y_train, x_dev, y_dev, W, word_idx_map, vocab, max_l
 
-def train(x_train, y_train, x_dev, y_dev, W, word_idx_map, vocab, max_l):
+def train(x_train, y_train, x_test, y_test, x_dev, y_dev, W, word_idx_map, vocab, max_l):
 # Training
 # ==================================================
     with tf.Graph().as_default():
@@ -244,6 +244,20 @@ def train(x_train, y_train, x_dev, y_dev, W, word_idx_map, vocab, max_l):
             print("\nEvaluation:")
             #dev_step(x_dev, y_dev, writer=dev_summary_writer)
             print("")
+            test_batches = data_helpers.batch_iter_dev(list(zip(x_test, y_test)), FLAGS.batch_size)
+            test_loss = []
+            conf_mat = np.zeros((2, 2))
+            for test_batch in test_batches:
+                x_test_batch = x_test[test_batch[0]:test_batch[1]]
+                y_test_batch = y_test[test_batch[0]:test_batch[1]]
+                a, b = dev_step(x_test_batch,
+                                y_test_batch, writer=dev_summary_writer)
+                test_loss.append(a)
+                conf_mat += b
+            print("Test loss {:g}, Test acc {:g}".format(np.mean(np.asarray(test_loss)),
+                                                         float(conf_mat[0][0] + conf_mat[1][1]) / len(y_test)))
+            print("Test - Confusion Matrix: ")
+            print(conf_mat)
         if current_step % FLAGS.checkpoint_every == 0:
             path = saver.save(sess, checkpoint_prefix, global_step=current_step)
             print("Saved model checkpoint to {}\n".format(path))
