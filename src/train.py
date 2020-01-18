@@ -19,7 +19,7 @@ import pickle
 
 # Selecting the GPU to work on
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 # Desired graphics card config
 session_conf = tf.ConfigProto(
@@ -56,7 +56,7 @@ tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on 
 FLAGS = tf.flags.FLAGS
 
 print("loading data...")
-x = pickle.load(open("./mainbalancedpickle.p","rb"))
+x = pickle.load(open("./pickle.p","rb"))
 revs, W, W2, word_idx_map, vocab, max_l = x[0], x[1], x[2], x[3], x[4], x[5]
 print("data loaded!")# Load data
 
@@ -79,9 +79,6 @@ for i in range(len(revs)):
 
 y = np.asarray(y)
 test_y = np.asarray(test_y)
-
-print(x_text)
-print(test_x)
 
 # get word indices
 x = []

@@ -7,12 +7,14 @@ from collections import defaultdict
 import sys, re
 import pandas as pd
 import json
+from math import ceil, floor
 
 # noinspection PyCompatibility
 from builtins import range
 
-NUM_SARCASTIC = 25
-NUM_NORMAL = 75
+NUM_TRAIN = 10000
+NUM_TEST = 2000
+BALANCED = True
 
 FASTTEXT_FILE = "../data/cc.nl.300.vec" 
 SARCASTIC_TWEETS_FILE = "../data/sarcastic.json" 
@@ -26,6 +28,8 @@ def build_data():
     """
     revs = []
     vocab = defaultdict(float)
+    print("train tweets:" + str(NUM_TRAIN))
+    print("test tweets:" + str(NUM_TEST))
     revs, vocab = get_revs('sarcastic', revs, vocab)
     revs, vocab = get_revs('normal', revs, vocab)
 
@@ -34,17 +38,23 @@ def build_data():
 def get_revs(type, revs, vocab):
     if type == 'sarcastic':
         tweets_file = SARCASTIC_TWEETS_FILE
-        lines = NUM_SARCASTIC
+        train_lines = floor(NUM_TRAIN * 0.5) if BALANCED else floor(NUM_TRAIN * 0.25)
+        test_lines = floor(NUM_TEST * 0.5) if BALANCED else floor(NUM_TEST * 0.25)
+        print("lines sarcastic: " + str(train_lines + test_lines))
         label = [1, 0]
     else:
         tweets_file = NORMAL_TWEETS_FILE
-        lines = NUM_NORMAL
+        train_lines = ceil(NUM_TRAIN * 0.5) if BALANCED else ceil(NUM_TRAIN * 0.75)
+        test_lines = ceil(NUM_TEST * 0.5) if BALANCED else ceil(NUM_TEST * 0.75)
+        print("lines normal: " + str(train_lines + test_lines))
         label = [0, 1]
+
+    lines = train_lines + test_lines
 
     with open(tweets_file, encoding='UTF-8') as f:
         json_object = json.load(f)
         for i, line in enumerate(json_object):
-            if i < 2 * lines:
+            if i < lines:
                 rev = []
                 rev.append(line['tweet'].strip())
                 orig_rev = clean_str(" ".join(rev))
@@ -53,7 +63,7 @@ def get_revs(type, revs, vocab):
                     vocab[word] += 1
                 orig_rev = (orig_rev.split())[0:100]
                 orig_rev = " ".join(orig_rev)
-                split = int(1) if i < lines else int (0)
+                split = int(1) if i < train_lines else int (0)
                 datum = {"id": line['id'],
                          "text": orig_rev,
                          "author": line['username'],
@@ -187,6 +197,6 @@ if __name__=="__main__":
     rand_vecs = {}
     add_unknown_words(rand_vecs, vocab)
     W2, _ = get_W(rand_vecs)
-    pickle.dump([revs, W, W2, word_idx_map, vocab, max_l], open("mainbalancedpickle.p", "wb"))
+    pickle.dump([revs, W, W2, word_idx_map, vocab, max_l], open("pickle.p", "wb"))
     print("dataset created!")
 
