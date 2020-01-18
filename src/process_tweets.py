@@ -8,6 +8,7 @@ import sys, re
 import pandas as pd
 import json
 from math import ceil, floor
+from emoji import UNICODE_EMOJI
 
 # noinspection PyCompatibility
 from builtins import range
@@ -159,25 +160,32 @@ def add_unknown_words(word_vecs, vocab, min_df=1, k=300):
 def clean_str(string):
     """
     Tokenization/string cleaning
-    Remove hashtags we used to search for
-    Remove hyperlinks
-
     """
+    emojis = extract_emoji(string)
     #string = re.sub(r"#\w*", "", string) # remove hashtags
     string = re.sub(r"#(sarcasme|sarcastisch|ironisch|ironie|cynisch|cynisme|not|niet)", "", string) # remove scraping hashtags
     # remove hyperlinks, copied from https://stackoverflow.com/questions/11331982/how-to-remove-any-url-within-a-string-in-python/11332580
-    string = re.sub(r"^https?:\/\/.*[\r\n]*", "", string)
-    string = re.sub(r"#\@*", "", string) # remove mentions
+    string = re.sub(r"https?:\/\/.*[\r\n]*", "", string)
+    string = re.sub(r"\@\w*", "", string) # remove mentions
     string = re.sub(r"[^A-Za-z0-9(),!?\'\`]", " ", string) # clean characters
     string = re.sub(r"(\`\w+)", " \1 ", string) # spaces around `word
     string = re.sub(r"(\'\w+)", " \1 ", string) # spaces around 'word
     string = re.sub(r",", " , ", string) # spaces around ,
     string = re.sub(r"!", " ! ", string) # spaces around !
-    string = re.sub(r"\(", " \( ", string) # spaces around (
-    string = re.sub(r"\)", " \) ", string) # spaces around )
-    string = re.sub(r"\?", " \? ", string) # spaces around ?
+    string = re.sub(r"\(", " ( ", string) # spaces around (
+    string = re.sub(r"\)", " ) ", string) # spaces around )
+    string = re.sub(r"\?", " ? ", string) # spaces around ?
     string = re.sub(r"\s{2,}", " ", string) # whitespace to single space
+    string = add_emoji(string, emojis)
     return string.strip().lower() # make lowercase
+
+def extract_emoji(string):
+    return ''.join(c for c in string if c in UNICODE_EMOJI)
+
+def add_emoji(string, emojis):
+    for emoji in emojis:
+        string = string + ' ' + emoji
+    return(string)
 
 if __name__=="__main__":
     w2v_file = FASTTEXT_FILE
