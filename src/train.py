@@ -47,6 +47,7 @@ tf.flags.DEFINE_integer("num_filters", 128, "Number of filters per filter size (
 tf.flags.DEFINE_float("learn_rate", 1e-03, "Learn rate for Adam optimizer (default: 1e-03)")
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
 tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 0.5)")
+tf.flags.DEFINE_boolean("l2_all_layers", False, "Apply L2 regularization on all layers (default: False)")
 
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 4096, "Batch Size (default: 64)")
@@ -148,16 +149,17 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
         sess = tf.Session(config=session_conf)
         with sess.as_default():
             cnn = TextCNN(
-                sequence_length=max_l,
-                num_classes=len(y_train[0]) ,
-                vocab_size=len(vocab),
+                sequence_length = max_l,
+                num_classes = len(y_train[0]) ,
+                vocab_size = len(vocab),
                 word2vec_W = W,
                 word_idx_map = word_idx_map,
-                embedding_size=FLAGS.embedding_dim,
-                batch_size=FLAGS.batch_size,
-                filter_sizes=list(map(int, FLAGS.filter_sizes.split(","))),
-                num_filters=FLAGS.num_filters,
-                l2_reg_lambda=l2_reg_lambda)
+                embedding_size = FLAGS.embedding_dim,
+                batch_size = FLAGS.batch_size,
+                filter_sizes = list(map(int, FLAGS.filter_sizes.split(","))),
+                num_filters = FLAGS.num_filters,
+                l2_reg_lambda = l2_reg_lambda,
+                l2_all_layers = FLAGS.l2_all_layers)
 
             # Define Training procedure
             global_step = tf.Variable(0, name="global_step", trainable=False)
