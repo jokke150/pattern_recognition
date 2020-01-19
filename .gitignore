@@ -2,10 +2,12 @@
 
 # CUSTOM
 
+*.bak
 src/*.p
+src/models/
+src/runs/
 data/*.vec
 data/context/*.json
-*.bak
 
 ############
 

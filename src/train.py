@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 
 # Selecting the GPU to work on
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 # Desired graphics card config
 session_conf = tf.ConfigProto(
@@ -32,6 +32,8 @@ session_conf = tf.ConfigProto(
 # Parameters
 # ==================================================
 
+TUNE_HYPERPARAMS = True
+
 np.random.seed(10)
 
 
@@ -39,18 +41,30 @@ np.random.seed(10)
 tf.flags.DEFINE_float("dev_sample_percentage", .1, "Percentage of the training data to use for validation")
 
 # Model Hyperparameters
-tf.flags.DEFINE_integer("embedding_dim", 300, "Dimensionality of character embedding (default: 128)")
+tf.flags.DEFINE_integer("embedding_dim", 300, "Dimensionality of character embedding (default: 300)")
 tf.flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated filter sizes (default: '3,4,5')")
 tf.flags.DEFINE_integer("num_filters", 128, "Number of filters per filter size (default: 128)")
+tf.flags.DEFINE_float("learn_rate", 1e-03, "Learn rate for Adam optimizer (default: 1e-03)")
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
-tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 0.0)")
+tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 0.5)")
 
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 4096, "Batch Size (default: 64)")
-tf.flags.DEFINE_integer("num_epochs", 100, "Number of training epochs (default: 200)")
+tf.flags.DEFINE_integer("num_epochs", 100, "Number of training epochs (default: 100)")
 tf.flags.DEFINE_integer("evaluate_every", 100, "Evaluate model on dev set after this many steps (default: 100)")
 tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many steps (default: 100)")
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
+
+# Tuning parameters
+tf.flags.DEFINE_boolean("tune_hyperparams", False, "Tune the hyper parameters with a random search (default: false)")
+tf.flags.DEFINE_integer("tune_iterations", 10, "Number of tuning iterations (default: 10)")
+tf.flags.DEFINE_float("learn_rate_min", 1e-05, "Min value for tuning learn rate (default: 1e-05")
+tf.flags.DEFINE_float("learn_rate_max", 1e-01, "Max value for tuning learn rate (default: 1e-01")
+tf.flags.DEFINE_float("dropout_keep_prob_min", 0.1, "Min value for tuning dropout keep probability (default: 0.1)")
+tf.flags.DEFINE_float("dropout_keep_prob_max", 1.0, "Max value for tuning dropout keep probability (default: 1.0)")
+tf.flags.DEFINE_float("l2_reg_lambda_min", 0.0, "Min value for tuning L2 regularization lambda (default: 0.0)")
+tf.flags.DEFINE_float("l2_reg_lambda_max", 1.0, "Max value for tuning L2 regularization lambda (default: 1.0)")
+
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
 tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on devices")
@@ -59,7 +73,7 @@ FLAGS = tf.flags.FLAGS
 
 def preprocess():
     print("loading data...")
-    x = pickle.load(open("./mainbalancedpickle.p","rb"))
+    x = pickle.load(open("./pickle.p","rb"))
     revs, W, W2, word_idx_map, vocab, max_l = x[0], x[1], x[2], x[3], x[4], x[5]
     print("data loaded!")# Load data
 
@@ -82,9 +96,6 @@ def preprocess():
 
     y = np.asarray(y)
     test_y = np.asarray(test_y)
-
-    print(x_text)
-    print(test_x)
 
     # get word indices
     x = []
@@ -126,9 +137,11 @@ def preprocess():
     word_idx_map["@"] = 0
     rev_dict = {v: k for k, v in word_idx_map.items()}
 
-    return x_train, y_train, x_dev, y_dev, W, word_idx_map, vocab, max_l
+    return x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l
 
-def train(x_train, y_train, x_dev, y_dev, W, word_idx_map, vocab, max_l):
+
+def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l, learn_rate = FLAGS.learn_rate, keep_prob = FLAGS.dropout_keep_prob, l2_reg_lambda = FLAGS.l2_reg_lambda):
+
 # Training
 # ==================================================
     with tf.Graph().as_default():
@@ -145,14 +158,15 @@ def train(x_train, y_train, x_dev, y_dev, W, word_idx_map, vocab, max_l):
                 batch_size=FLAGS.batch_size,
                 filter_sizes=list(map(int, FLAGS.filter_sizes.split(","))),
                 num_filters=FLAGS.num_filters,
-                l2_reg_lambda=FLAGS.l2_reg_lambda)
+                l2_reg_lambda=l2_reg_lambda)
 
             # Define Training procedure
             global_step = tf.Variable(0, name="global_step", trainable=False)
-            optimizer = tf.train.AdamOptimizer(1e-3)
+            optimizer = tf.train.AdamOptimizer(learn_rate)
             grads_and_vars = optimizer.compute_gradients(cnn.loss)
             train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
             saver = tf.train.Saver(tf.global_variables(), max_to_keep=FLAGS.num_checkpoints)
+
 
             # Keep track of gradient values and sparsity (optional)
             grad_summaries = []
@@ -196,16 +210,14 @@ def train(x_train, y_train, x_dev, y_dev, W, word_idx_map, vocab, max_l):
             sess.run(tf.global_variables_initializer())
 
 
-    def train_step(x_batch,
-        # author_batch, topic_batch,
-        y_batch):
+    def train_step(x_batch, y_batch):
         """
         A single training step
         """
         feed_dict = {
           cnn.input_x: x_batch,
           cnn.input_y: y_batch,
-          cnn.dropout_keep_prob: FLAGS.dropout_keep_prob
+          cnn.dropout_keep_prob: keep_prob
         }
         _, step, summaries, loss, accuracy = sess.run(
             [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy],
@@ -214,7 +226,7 @@ def train(x_train, y_train, x_dev, y_dev, W, word_idx_map, vocab, max_l):
         train_summary_writer.add_summary(summaries, step)
         return loss, accuracy
 
-    def dev_step(x_batch, y_batch, writer=None):
+    def dev_step(x_batch, y_batch):
         """
         Evaluates model on a dev set
         """
@@ -226,92 +238,125 @@ def train(x_train, y_train, x_dev, y_dev, W, word_idx_map, vocab, max_l):
         step, summaries, loss, conf_mat = sess.run(
             [global_step, dev_summary_op, cnn.loss, cnn.confusion_matrix],
             feed_dict)
-        if writer:
-            writer.add_summary(summaries, step)
+        dev_summary_writer.add_summary(summaries, step)
         return loss, conf_mat
 
 
-    # Generate batches
-    batches = data_helpers.batch_iter(
+    # Generate train batches
+    train_batches = data_helpers.batch_iter(
         list(zip(x_train, y_train)), FLAGS.batch_size, FLAGS.num_epochs)
-    # Training loop. For each batch...
-    for batch in batches:
+    
+    train_losses = []
+    train_accuracies = []
+
+    # Training loop. For each train batch...
+    for batch in train_batches:
         x_batch, y_batch = zip(*batch)
-        train_step(x_batch, y_batch)
-        dev_step(x_dev, y_dev, writer=dev_summary_writer)
+
+        loss, acc = train_step(x_batch, y_batch)
+        train_losses.append(loss)
+        train_accuracies.append(acc)
+
         current_step = tf.train.global_step(sess, global_step)
         if current_step % FLAGS.evaluate_every == 0:
-            print("\nEvaluation:")
-            #dev_step(x_dev, y_dev, writer=dev_summary_writer)
+            print("\nEvaluation for step " + str(current_step) + ":")
             print("")
+
+            train_loss = np.mean(np.asarray(train_losses))
+            train_acc = np.mean(np.asarray(train_accuracies))
+            print("Train loss {:g}, Train acc {:g}".format(train_loss, train_acc))
+
+            # Evalutate on validation set
+            dev_batches = data_helpers.batch_iter_dev(list(zip(x_dev, y_dev)), FLAGS.batch_size)
+            dev_losses = []
+            dev_conf_mat = np.zeros((2,2))
+            for dev_batch in dev_batches:
+                x_dev_batch = x_dev[dev_batch[0]:dev_batch[1]]
+                y_dev_batch = y_dev[dev_batch[0]:dev_batch[1]]
+                loss, conf_mat = dev_step(x_dev_batch, y_dev_batch)
+                dev_losses.append(loss)
+                dev_conf_mat += conf_mat
+
+            dev_loss = np.mean(np.asarray(dev_losses))
+            dev_acc = float(dev_conf_mat[0][0]+dev_conf_mat[1][1])/len(y_dev)
+            print("Valid loss {:g}, Valid acc {:g}".format(dev_loss, dev_acc))
+            
+            # Evalutate on test set
+            test_batches = data_helpers.batch_iter_dev(list(zip(x_test, y_test)), FLAGS.batch_size)
+            test_losses = []
+            test_conf_mat = np.zeros((2, 2))
+            for test_batch in test_batches:
+                x_test_batch = x_test[test_batch[0]:test_batch[1]]
+                y_test_batch = y_test[test_batch[0]:test_batch[1]]
+                loss, conf_mat = dev_step(x_test_batch, y_test_batch)
+                test_losses.append(loss)
+                test_conf_mat += conf_mat
+
+            test_loss = np.mean(np.asarray(test_losses))
+            test_acc = float(test_conf_mat[0][0] + test_conf_mat[1][1]) / len(y_test)
+            print("Test loss {:g}, Test acc {:g}".format(test_loss, test_acc))
+            print("Test - Confusion Matrix: ")
+            print(test_conf_mat)
+
         if current_step % FLAGS.checkpoint_every == 0:
             path = saver.save(sess, checkpoint_prefix, global_step=current_step)
             print("Saved model checkpoint to {}\n".format(path))
 
+    return train_loss, train_acc, dev_loss, dev_acc, test_loss, test_acc
 
-#dev_batches = data_helpers.batch_iter(list(zip(x_dev, y_dev)), FLAGS.batch_size, FLAGS.num_epochs)
-# Training loop. For each batch...
-'''
-train_loss = []
-train_acc = []
-best_acc = 0
-for batch in batches:
-    x_batch, y_batch = zip(*batch)
-    x_batch = np.asarray(x_batch)
-    y_batch = np.asarray(y_batch)
 
-    t_loss, t_acc = train_step(x_batch, y_batch)
-    current_step = tf.train.global_step(sess, global_step)
-    train_loss.append(t_loss)
-    train_acc.append(t_acc)
-    print('Loss at step %s: %s' % (current_step, t_loss))
-    print('Accuracy at step %s: %s' % (current_step, t_acc))
+def generate_random_hyperparams(lr_min, lr_max, kp_min, kp_max, l2_min, l2_max):
+    # random search through log space
+    random_learning_rate = np.random.uniform(lr_min, lr_max)
+    random_keep_prob = np.random.uniform(kp_min, kp_max)
+    random_l2_reg_lambda = np.random.uniform(l2_min, l2_max)
+    return random_learning_rate, random_keep_prob, random_l2_reg_lambda
 
-    if current_step % FLAGS.evaluate_every == 0:
-        print(current_step)
-        print("Train loss {:g}, Train acc {:g}".format(np.mean(np.asarray(train_loss)), np.mean(np.asarray(train_acc))))
-        train_loss = []
-        train_acc = []
-        # Divide into batches
-        dev_batches = data_helpers.batch_iter_dev(list(zip(x_dev, y_dev)), FLAGS.batch_size)
-        dev_loss = []
-        ll = len(dev_batches)
-        conf_mat = np.zeros((2,2))
-        for dev_batch in dev_batches:
-            x_dev_batch = x_dev[dev_batch[0]:dev_batch[1]]
-            y_dev_batch = y_dev[dev_batch[0]:dev_batch[1]]
-            a, b = dev_step(x_dev_batch, y_dev_batch, writer=dev_summary_writer)
-            dev_loss.append(a)
-            conf_mat += b
-        valid_accuracy = float(conf_mat[0][0]+conf_mat[1][1])/len(y_dev)
-        print("Valid loss {:g}, Valid acc {:g}".format(np.mean(np.asarray(dev_loss)), valid_accuracy))
-        print("Valid - Confusion Matrix: ")
-        print(conf_mat)
-        test_batches = data_helpers.batch_iter_dev(list(zip(x_test, y_test)), FLAGS.batch_size)
-        test_loss = []
-        conf_mat = np.zeros((2,2))
-        for test_batch in test_batches:
-            x_test_batch = x_test[test_batch[0]:test_batch[1]]
-            y_test_batch = y_test[test_batch[0]:test_batch[1]]
-            a, b = dev_step(x_test_batch, 
-                y_test_batch, writer=dev_summary_writer)
-            test_loss.append(a)
-            conf_mat += b
-        print("Test loss {:g}, Test acc {:g}".format(np.mean(np.asarray(test_loss)), float(conf_mat[0][0]+conf_mat[1][1])/len(y_test)))
-        print("Test - Confusion Matrix: ")
-        print(conf_mat)
-        sys.stdout.flush()
-        if best_acc < valid_accuracy:
-            best_acc = valid_accuracy
-            directory = "./models"
-            if not os.path.exists(directory):
-                os.makedirs(directory)
-            saver.save(sess, directory+'/main_balanced_user_plus_topic', global_step=1)
-'''
+
+def tune(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l):
+    def print_result(result):
+        print("Loss: " + str(result["loss"]) + 
+                ", Accuracy: " + str(result["accuracy"]) + 
+                ", Learn rate: " + str(result["learn_rate"]) + 
+                ", Keep prob: " + str(result["keep_prob"]) + 
+                ", L2 reg lambda: " + str(result["l2_reg_lambda"]))
+
+    tune_results =  []
+    for i in range(FLAGS.tune_iterations):
+        learn_rate, keep_prob, l2_reg_lambda = generate_random_hyperparams(FLAGS.learn_rate_min, FLAGS.learn_rate_max, FLAGS.dropout_keep_prob_min, FLAGS.dropout_keep_prob_max, FLAGS.l2_reg_lambda_min, FLAGS.l2_reg_lambda_max)
+        train_loss, train_acc, dev_loss, dev_acc, test_loss, test_acc = train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l, learn_rate, keep_prob, l2_reg_lambda)
+        tune_result =  {
+          "loss": dev_loss,
+          "accuracy": dev_acc,
+          "learn_rate": learn_rate,
+          "keep_prob": keep_prob,
+          "l2_reg_lambda": l2_reg_lambda,
+        }
+        tune_results.append(tune_result)
+        print("Tuning iteration: " + str(i))
+        print_result(tune_result)
+   
+    best_result = None
+    best_acc = 0.0;
+    for i, result in enumerate(tune_results):
+        print("Result " + str(i) + ":")
+        print_result(result)
+        if result["accuracy"] > best_acc:
+            best_acc = result["accuracy"]
+            best_result = result
+
+    print("Best result:")
+    print_result(best_result)
+
 
 def main(argv=None):
-    x_train, y_train, x_dev, y_dev, W, word_idx_map, vocab, max_l = preprocess()
-    train(x_train, y_train, x_dev, y_dev, W, word_idx_map, vocab, max_l)
+    x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l = preprocess()
+
+    if FLAGS.tune_hyperparams:
+        tune(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l)
+    else:
+        train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l)
+
 
 if __name__ == '__main__':
     tf.app.run()
