@@ -141,7 +141,6 @@ def preprocess():
 
 
 def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l, learn_rate = FLAGS.learn_rate, keep_prob = FLAGS.dropout_keep_prob, l2_reg_lambda = FLAGS.l2_reg_lambda):
-
 # Training
 # ==================================================
     with tf.Graph().as_default():
