@@ -1,0 +1,3906 @@
+"K:\documents\masters study\PatRec\project\pattern_recognition-master\venv2\Scripts\python.exe" "K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py"
+2020-01-19 17:03:49.483668: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:27: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:30: The name tf.GPUOptions is deprecated. Please use tf.compat.v1.GPUOptions instead.
+
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:363: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+loading data...
+data loaded!
+Train/Dev split: 81000/9000
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:149: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0119 17:03:53.025171 12348 module_wrapper.py:139] From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:149: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-01-19 17:03:53.025551: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-01-19 17:03:53.028758: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-01-19 17:03:53.138752: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2070 major: 7 minor: 5 memoryClockRate(GHz): 1.62
+pciBusID: 0000:08:00.0
+2020-01-19 17:03:53.138922: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-19 17:03:53.141493: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-19 17:03:53.147052: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-19 17:03:53.150211: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-19 17:03:53.158716: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-19 17:03:53.163117: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-19 17:03:53.182104: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-19 17:03:53.182664: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-19 17:03:53.674883: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-19 17:03:53.675001: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-01-19 17:03:53.675064: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-01-19 17:03:53.675785: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6308 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2070, pci bus id: 0000:08:00.0, compute capability: 7.5)
+WARNING:tensorflow:From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0119 17:03:53.677261 12348 module_wrapper.py:139] From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0119 17:03:54.079627 12348 module_wrapper.py:139] From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+WARNING:tensorflow:From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+W0119 17:03:54.085632 12348 module_wrapper.py:139] From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0119 17:03:54.098644 12348 deprecation.py:506] From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0119 17:03:54.102648 12348 module_wrapper.py:139] From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+W0119 17:03:54.102648 12348 lazy_loader.py:50] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+W0119 17:03:54.108653 12348 module_wrapper.py:139] From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+WARNING:tensorflow:From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W0119 17:03:54.109654 12348 deprecation.py:323] From K:\documents\masters study\PatRec\project\pattern_recognition-master\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:166: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0119 17:03:54.152693 12348 module_wrapper.py:139] From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:166: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:169: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+W0119 17:03:54.267798 12348 module_wrapper.py:139] From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:169: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:169: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+W0119 17:03:54.267798 12348 module_wrapper.py:139] From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:169: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:176: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+W0119 17:03:54.283813 12348 module_wrapper.py:139] From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:176: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:03:54.283813 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:177: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0119 17:03:54.286817 12348 module_wrapper.py:139] From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:177: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:03:54.297826 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:03:54.298826 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:03:54.306834 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:03:54.307834 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:03:54.315841 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:03:54.316843 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:03:54.323849 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:03:54.324849 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:03:54.332857 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:03:54.332857 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:03:54.341866 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:03:54.341866 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:03:54.349874 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:03:54.350874 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:03:54.358881 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:03:54.358881 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:03:54.366888 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:180: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+W0119 17:03:54.366888 12348 module_wrapper.py:139] From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:180: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:194: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+W0119 17:03:54.368890 12348 module_wrapper.py:139] From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:194: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+Writing to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834
+
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:211: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+W0119 17:04:01.230543 12348 module_wrapper.py:139] From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:211: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+0
+2020-01-19 17:04:05.324265: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-19 17:04:05.790650: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-19 17:04:06.829808: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Internal: Invoking ptxas not supported on Windows
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2020-01-19 17:04:07.838206: W tensorflow/core/common_runtime/bfc_allocator.cc:305] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+WARNING:tensorflow:From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:261: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+W0119 17:04:11.529915 12348 module_wrapper.py:139] From K:/documents/masters study/PatRec/project/pattern_recognition-master/src/train.py:261: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 1.24847, Train acc 0.679296
+Valid loss 0.900738, Valid acc 0.753222
+Test loss 0.920515, Test acc 0.762
+Test - Confusion Matrix: 
+[[3407. 1593.]
+ [ 787. 4213.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.786557, Train acc 0.776465
+Valid loss 1.52173, Valid acc 0.763556
+Test loss 1.76682, Test acc 0.7646
+Test - Confusion Matrix: 
+[[3691. 1309.]
+ [1045. 3955.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.600469, Train acc 0.822204
+Valid loss 2.42036, Valid acc 0.756667
+Test loss 2.49973, Test acc 0.758
+Test - Confusion Matrix: 
+[[3489. 1511.]
+ [ 909. 4091.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.506037, Train acc 0.847212
+Valid loss 3.15369, Valid acc 0.751111
+Test loss 3.35844, Test acc 0.7525
+Test - Confusion Matrix: 
+[[3531. 1469.]
+ [1006. 3994.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.456853, Train acc 0.861802
+Valid loss 4.59935, Valid acc 0.747667
+Test loss 5.22276, Test acc 0.7532
+Test - Confusion Matrix: 
+[[3394. 1606.]
+ [ 862. 4138.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.445855, Train acc 0.868922
+Valid loss 10.0534, Valid acc 0.751556
+Test loss 12.1551, Test acc 0.7516
+Test - Confusion Matrix: 
+[[3697. 1303.]
+ [1181. 3819.]]
+WARNING:tensorflow:From K:\documents\masters study\PatRec\project\pattern_recognition-master\venv2\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+W0119 17:16:50.820402 12348 deprecation.py:323] From K:\documents\masters study\PatRec\project\pattern_recognition-master\venv2\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 0.478202, Train acc 0.868339
+Valid loss 20.3735, Valid acc 0.728556
+Test loss 20.6841, Test acc 0.735
+Test - Confusion Matrix: 
+[[3313. 1687.]
+ [ 963. 4037.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 0.524194, Train acc 0.862291
+Valid loss 33.798, Valid acc 0.712444
+Test loss 33.0397, Test acc 0.7187
+Test - Confusion Matrix: 
+[[2998. 2002.]
+ [ 811. 4189.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 0.564197, Train acc 0.853152
+Valid loss 51.4518, Valid acc 0.675333
+Test loss 48.8833, Test acc 0.6801
+Test - Confusion Matrix: 
+[[2556. 2444.]
+ [ 755. 4245.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 0.612535, Train acc 0.844124
+Valid loss 53.4688, Valid acc 0.646778
+Test loss 48.9502, Test acc 0.6505
+Test - Confusion Matrix: 
+[[2132. 2868.]
+ [ 627. 4373.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 0.636242, Train acc 0.836197
+Valid loss 81.0612, Valid acc 0.657333
+Test loss 79.6356, Test acc 0.6632
+Test - Confusion Matrix: 
+[[2251. 2749.]
+ [ 619. 4381.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 0.657611, Train acc 0.828892
+Valid loss 66.0456, Valid acc 0.642889
+Test loss 63.8044, Test acc 0.6463
+Test - Confusion Matrix: 
+[[1975. 3025.]
+ [ 512. 4488.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 0.680339, Train acc 0.822037
+Valid loss 84.7799, Valid acc 0.621444
+Test loss 82.4682, Test acc 0.6274
+Test - Confusion Matrix: 
+[[1685. 3315.]
+ [ 411. 4589.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 0.67804, Train acc 0.815636
+Valid loss 64.5044, Valid acc 0.621111
+Test loss 59.5339, Test acc 0.6273
+Test - Confusion Matrix: 
+[[1674. 3326.]
+ [ 401. 4599.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 0.69398, Train acc 0.810647
+Valid loss 112.735, Valid acc 0.623222
+Test loss 109.234, Test acc 0.6292
+Test - Confusion Matrix: 
+[[1713. 3287.]
+ [ 421. 4579.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 0.70224, Train acc 0.806103
+Valid loss 94.5206, Valid acc 0.624889
+Test loss 103.195, Test acc 0.6287
+Test - Confusion Matrix: 
+[[1824. 3176.]
+ [ 537. 4463.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 0.709477, Train acc 0.801996
+Valid loss 141.398, Valid acc 0.627556
+Test loss 163.635, Test acc 0.6268
+Test - Confusion Matrix: 
+[[1798. 3202.]
+ [ 530. 4470.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 0.729851, Train acc 0.798167
+Valid loss 118.559, Valid acc 0.621111
+Test loss 117.981, Test acc 0.6203
+Test - Confusion Matrix: 
+[[1734. 3266.]
+ [ 531. 4469.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 0.725824, Train acc 0.794591
+Valid loss 91.5004, Valid acc 0.620111
+Test loss 104.292, Test acc 0.621
+Test - Confusion Matrix: 
+[[1628. 3372.]
+ [ 418. 4582.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 0.73096, Train acc 0.791659
+Valid loss 144.202, Valid acc 0.625444
+Test loss 179.212, Test acc 0.6243
+Test - Confusion Matrix: 
+[[1742. 3258.]
+ [ 499. 4501.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579449834\checkpoints\model-2000
+
+Tuning iteration: 0
+Loss: 144.20221, Accuracy: 0.6254444444444445, Learn rate: 0.038982868771725715, Keep prob: 0.1492790617998962, L2 reg lambda: 0.020285014397878665
+2020-01-19 17:44:33.116234: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2070 major: 7 minor: 5 memoryClockRate(GHz): 1.62
+pciBusID: 0000:08:00.0
+2020-01-19 17:44:33.116409: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-19 17:44:33.116507: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-19 17:44:33.116621: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-19 17:44:33.116728: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-19 17:44:33.116823: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-19 17:44:33.116924: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-19 17:44:33.117055: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-19 17:44:33.117488: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-19 17:44:33.117621: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-19 17:44:33.117738: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-01-19 17:44:33.117799: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-01-19 17:44:33.123158: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6308 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2070, pci bus id: 0000:08:00.0, compute capability: 7.5)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:44:33.750188 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:44:33.762199 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:44:33.763200 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:44:33.770206 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:44:33.771207 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:44:33.779215 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:44:33.779215 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:44:33.787222 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:44:33.788223 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:44:33.796230 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:44:33.796230 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:44:33.804238 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:44:33.805239 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:44:33.813246 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:44:33.813246 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:44:33.821253 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 17:44:33.822254 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 17:44:33.830261 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 0.551763, Train acc 0.837439
+Valid loss 0.659974, Valid acc 0.775444
+Test loss 0.672413, Test acc 0.7738
+Test - Confusion Matrix: 
+[[3909. 1091.]
+ [1171. 3829.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.332134, Train acc 0.900226
+Valid loss 0.865054, Valid acc 0.768778
+Test loss 0.861545, Test acc 0.7665
+Test - Confusion Matrix: 
+[[3778. 1222.]
+ [1113. 3887.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.247719, Train acc 0.925444
+Valid loss 1.03337, Valid acc 0.763667
+Test loss 1.00796, Test acc 0.7581
+Test - Confusion Matrix: 
+[[3619. 1381.]
+ [1038. 3962.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.20155, Train acc 0.939668
+Valid loss 1.12439, Valid acc 0.760556
+Test loss 1.19638, Test acc 0.7581
+Test - Confusion Matrix: 
+[[3890. 1110.]
+ [1309. 3691.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.17205, Train acc 0.948814
+Valid loss 1.4077, Valid acc 0.760333
+Test loss 1.53318, Test acc 0.7546
+Test - Confusion Matrix: 
+[[3947. 1053.]
+ [1401. 3599.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.154067, Train acc 0.954601
+Valid loss 1.63881, Valid acc 0.759111
+Test loss 1.79392, Test acc 0.7556
+Test - Confusion Matrix: 
+[[3940. 1060.]
+ [1384. 3616.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 0.150702, Train acc 0.957053
+Valid loss 1.49362, Valid acc 0.766778
+Test loss 1.64966, Test acc 0.759
+Test - Confusion Matrix: 
+[[3895. 1105.]
+ [1305. 3695.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 0.13724, Train acc 0.960964
+Valid loss 1.45749, Valid acc 0.765889
+Test loss 1.57192, Test acc 0.758
+Test - Confusion Matrix: 
+[[3891. 1109.]
+ [1311. 3689.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 0.125877, Train acc 0.964333
+Valid loss 1.65474, Valid acc 0.761889
+Test loss 1.7623, Test acc 0.7545
+Test - Confusion Matrix: 
+[[3799. 1201.]
+ [1254. 3746.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 0.117917, Train acc 0.966951
+Valid loss 7.891, Valid acc 0.756556
+Test loss 9.0352, Test acc 0.7454
+Test - Confusion Matrix: 
+[[3943. 1057.]
+ [1489. 3511.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 0.280279, Train acc 0.962585
+Valid loss 1.44444, Valid acc 0.763667
+Test loss 1.411, Test acc 0.7584
+Test - Confusion Matrix: 
+[[3648. 1352.]
+ [1064. 3936.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 0.265514, Train acc 0.962771
+Valid loss 1.79402, Valid acc 0.762222
+Test loss 1.88588, Test acc 0.755
+Test - Confusion Matrix: 
+[[3909. 1091.]
+ [1359. 3641.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 0.250492, Train acc 0.963877
+Valid loss 2.07098, Valid acc 0.760333
+Test loss 2.18507, Test acc 0.7562
+Test - Confusion Matrix: 
+[[3875. 1125.]
+ [1313. 3687.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 0.236625, Train acc 0.965203
+Valid loss 2.10673, Valid acc 0.757
+Test loss 2.14787, Test acc 0.7541
+Test - Confusion Matrix: 
+[[3689. 1311.]
+ [1148. 3852.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 0.224192, Train acc 0.966514
+Valid loss 2.29077, Valid acc 0.758222
+Test loss 2.53692, Test acc 0.7526
+Test - Confusion Matrix: 
+[[4012.  988.]
+ [1486. 3514.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 0.213023, Train acc 0.967765
+Valid loss 2.29198, Valid acc 0.759111
+Test loss 2.46155, Test acc 0.7546
+Test - Confusion Matrix: 
+[[3878. 1122.]
+ [1332. 3668.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 0.202881, Train acc 0.968958
+Valid loss 2.52388, Valid acc 0.758111
+Test loss 2.69439, Test acc 0.7534
+Test - Confusion Matrix: 
+[[3779. 1221.]
+ [1245. 3755.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 0.193877, Train acc 0.970036
+Valid loss 2.67312, Valid acc 0.758333
+Test loss 2.98872, Test acc 0.7516
+Test - Confusion Matrix: 
+[[3971. 1029.]
+ [1455. 3545.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 0.185909, Train acc 0.971008
+Valid loss 2.43101, Valid acc 0.761222
+Test loss 2.54879, Test acc 0.755
+Test - Confusion Matrix: 
+[[3757. 1243.]
+ [1207. 3793.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 0.178419, Train acc 0.971941
+Valid loss 2.44177, Valid acc 0.763667
+Test loss 2.57603, Test acc 0.7535
+Test - Confusion Matrix: 
+[[3806. 1194.]
+ [1271. 3729.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579452273\checkpoints\model-2000
+
+Tuning iteration: 1
+Loss: 2.4417675, Accuracy: 0.7636666666666667, Learn rate: 0.015664418595093012, Keep prob: 0.34247229609271035, L2 reg lambda: 0.8361489779794808
+2020-01-19 18:26:13.657285: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2070 major: 7 minor: 5 memoryClockRate(GHz): 1.62
+pciBusID: 0000:08:00.0
+2020-01-19 18:26:13.657451: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-19 18:26:13.657547: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-19 18:26:13.657645: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-19 18:26:13.657741: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-19 18:26:13.657838: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-19 18:26:13.657935: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-19 18:26:13.658034: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-19 18:26:13.658455: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-19 18:26:13.658575: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-19 18:26:13.658679: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-01-19 18:26:13.658741: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-01-19 18:26:13.659212: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6308 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2070, pci bus id: 0000:08:00.0, compute capability: 7.5)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 18:26:14.272497 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 18:26:14.284508 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 18:26:14.284508 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 18:26:14.293516 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 18:26:14.293516 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 18:26:14.301523 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 18:26:14.302524 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 18:26:14.309530 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 18:26:14.310533 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 18:26:14.318538 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 18:26:14.318538 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 18:26:14.326546 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 18:26:14.327547 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 18:26:14.335555 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 18:26:14.335555 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 18:26:14.343562 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 18:26:14.343562 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 18:26:14.351569 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 3.29673, Train acc 0.509697
+Valid loss 1.81095, Valid acc 0.496889
+Test loss 1.96737, Test acc 0.5033
+Test - Confusion Matrix: 
+[[ 305. 4695.]
+ [ 272. 4728.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 2.18161, Train acc 0.517584
+Valid loss 1.01947, Valid acc 0.506
+Test loss 1.39001, Test acc 0.5096
+Test - Confusion Matrix: 
+[[ 370. 4630.]
+ [ 274. 4726.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 2.13645, Train acc 0.525593
+Valid loss 3.26791, Valid acc 0.517556
+Test loss 3.75229, Test acc 0.5169
+Test - Confusion Matrix: 
+[[ 793. 4207.]
+ [ 624. 4376.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 2.2346, Train acc 0.543867
+Valid loss 2.70529, Valid acc 0.594111
+Test loss 3.77495, Test acc 0.5958
+Test - Confusion Matrix: 
+[[1418. 3582.]
+ [ 460. 4540.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 2.02591, Train acc 0.560675
+Valid loss 3.64186, Valid acc 0.594444
+Test loss 5.36441, Test acc 0.5929
+Test - Confusion Matrix: 
+[[1284. 3716.]
+ [ 355. 4645.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 1.83679, Train acc 0.573252
+Valid loss 2.70132, Valid acc 0.603778
+Test loss 4.00792, Test acc 0.6027
+Test - Confusion Matrix: 
+[[1337. 3663.]
+ [ 310. 4690.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 1.75855, Train acc 0.582969
+Valid loss 4.54919, Valid acc 0.602778
+Test loss 7.52255, Test acc 0.603
+Test - Confusion Matrix: 
+[[1344. 3656.]
+ [ 314. 4686.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 1.69354, Train acc 0.590488
+Valid loss 6.30435, Valid acc 0.602444
+Test loss 10.0813, Test acc 0.6003
+Test - Confusion Matrix: 
+[[1385. 3615.]
+ [ 382. 4618.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 1.61721, Train acc 0.596424
+Valid loss 4.59907, Valid acc 0.597667
+Test loss 6.21698, Test acc 0.5963
+Test - Confusion Matrix: 
+[[1213. 3787.]
+ [ 250. 4750.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 1.55472, Train acc 0.601241
+Valid loss 31.647, Valid acc 0.597667
+Test loss 48.399, Test acc 0.5967
+Test - Confusion Matrix: 
+[[1275. 3725.]
+ [ 308. 4692.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 1.63895, Train acc 0.604804
+Valid loss 8.87368, Valid acc 0.597222
+Test loss 12.6208, Test acc 0.5973
+Test - Confusion Matrix: 
+[[1314. 3686.]
+ [ 341. 4659.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 1.71116, Train acc 0.60767
+Valid loss 19.0086, Valid acc 0.594667
+Test loss 25.751, Test acc 0.5947
+Test - Confusion Matrix: 
+[[1212. 3788.]
+ [ 265. 4735.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 1.684, Train acc 0.60985
+Valid loss 17.1228, Valid acc 0.594556
+Test loss 20.6681, Test acc 0.5939
+Test - Confusion Matrix: 
+[[1188. 3812.]
+ [ 249. 4751.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 1.70388, Train acc 0.611938
+Valid loss 24.7947, Valid acc 0.596667
+Test loss 34.2797, Test acc 0.5942
+Test - Confusion Matrix: 
+[[1257. 3743.]
+ [ 315. 4685.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 1.7966, Train acc 0.613618
+Valid loss 29.0968, Valid acc 0.595556
+Test loss 41.4083, Test acc 0.5931
+Test - Confusion Matrix: 
+[[1246. 3754.]
+ [ 315. 4685.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 2.02043, Train acc 0.614816
+Valid loss 38.7669, Valid acc 0.589222
+Test loss 64.0457, Test acc 0.586
+Test - Confusion Matrix: 
+[[1169. 3831.]
+ [ 309. 4691.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 2.05418, Train acc 0.615662
+Valid loss 26.3445, Valid acc 0.589556
+Test loss 43.3043, Test acc 0.5895
+Test - Confusion Matrix: 
+[[1153. 3847.]
+ [ 258. 4742.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 2.04829, Train acc 0.616109
+Valid loss 26.3937, Valid acc 0.586778
+Test loss 35.6556, Test acc 0.5881
+Test - Confusion Matrix: 
+[[1113. 3887.]
+ [ 232. 4768.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 2.01233, Train acc 0.616528
+Valid loss 19.3233, Valid acc 0.584667
+Test loss 25.3123, Test acc 0.5866
+Test - Confusion Matrix: 
+[[1080. 3920.]
+ [ 214. 4786.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 2.0212, Train acc 0.616851
+Valid loss 33.4719, Valid acc 0.586556
+Test loss 46.8452, Test acc 0.5864
+Test - Confusion Matrix: 
+[[1086. 3914.]
+ [ 222. 4778.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579454774\checkpoints\model-2000
+
+2020-01-19 19:05:31.525342: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2070 major: 7 minor: 5 memoryClockRate(GHz): 1.62
+pciBusID: 0000:08:00.0
+2020-01-19 19:05:31.525519: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-19 19:05:31.525623: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-19 19:05:31.525723: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-19 19:05:31.525823: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-19 19:05:31.525915: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-19 19:05:31.526028: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-19 19:05:31.526124: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-19 19:05:31.526543: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-19 19:05:31.526662: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-19 19:05:31.526763: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-01-19 19:05:31.526824: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-01-19 19:05:31.527321: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6308 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2070, pci bus id: 0000:08:00.0, compute capability: 7.5)
+Tuning iteration: 2
+Loss: 33.47192, Accuracy: 0.5865555555555556, Learn rate: 0.08328825961822663, Keep prob: 0.27821240617259824, L2 reg lambda: 0.5192752687392379
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:05:32.138488 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:05:32.149498 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:05:32.149498 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:05:32.157505 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:05:32.158505 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:05:32.165512 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:05:32.166513 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:05:32.174520 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:05:32.174520 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:05:32.182520 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:05:32.182520 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:05:32.190535 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:05:32.191536 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:05:32.199543 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:05:32.199543 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:05:32.207551 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:05:32.208551 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:05:32.215557 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 0.456018, Train acc 0.855631
+Valid loss 0.615939, Valid acc 0.775
+Test loss 0.608759, Test acc 0.774
+Test - Confusion Matrix: 
+[[3860. 1140.]
+ [1120. 3880.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.285302, Train acc 0.909963
+Valid loss 0.816539, Valid acc 0.764444
+Test loss 0.81231, Test acc 0.763
+Test - Confusion Matrix: 
+[[3805. 1195.]
+ [1175. 3825.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.215168, Train acc 0.93278
+Valid loss 0.98337, Valid acc 0.759556
+Test loss 1.02314, Test acc 0.755
+Test - Confusion Matrix: 
+[[3960. 1040.]
+ [1410. 3590.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.175578, Train acc 0.945721
+Valid loss 1.04068, Valid acc 0.760333
+Test loss 1.05104, Test acc 0.7563
+Test - Confusion Matrix: 
+[[3821. 1179.]
+ [1258. 3742.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.149594, Train acc 0.954157
+Valid loss 1.2294, Valid acc 0.759667
+Test loss 1.2496, Test acc 0.7515
+Test - Confusion Matrix: 
+[[3841. 1159.]
+ [1326. 3674.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.131195, Train acc 0.960101
+Valid loss 1.35723, Valid acc 0.759444
+Test loss 1.30752, Test acc 0.7498
+Test - Confusion Matrix: 
+[[3645. 1355.]
+ [1147. 3853.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 0.117945, Train acc 0.96439
+Valid loss 1.34903, Valid acc 0.757222
+Test loss 1.28483, Test acc 0.7513
+Test - Confusion Matrix: 
+[[3626. 1374.]
+ [1113. 3887.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 0.107059, Train acc 0.967897
+Valid loss 1.44837, Valid acc 0.758
+Test loss 1.40958, Test acc 0.7504
+Test - Confusion Matrix: 
+[[3631. 1369.]
+ [1127. 3873.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 0.0982937, Train acc 0.970698
+Valid loss 1.5263, Valid acc 0.761222
+Test loss 1.47302, Test acc 0.747
+Test - Confusion Matrix: 
+[[3635. 1365.]
+ [1165. 3835.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 0.0912702, Train acc 0.972956
+Valid loss 1.84561, Valid acc 0.758667
+Test loss 1.90909, Test acc 0.7493
+Test - Confusion Matrix: 
+[[3918. 1082.]
+ [1425. 3575.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 0.0855202, Train acc 0.974792
+Valid loss 1.60174, Valid acc 0.760111
+Test loss 1.57652, Test acc 0.7488
+Test - Confusion Matrix: 
+[[3695. 1305.]
+ [1207. 3793.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 0.0804875, Train acc 0.976387
+Valid loss 1.85897, Valid acc 0.754889
+Test loss 1.76549, Test acc 0.7493
+Test - Confusion Matrix: 
+[[3581. 1419.]
+ [1088. 3912.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 0.0759545, Train acc 0.977794
+Valid loss 1.85596, Valid acc 0.754444
+Test loss 1.92582, Test acc 0.752
+Test - Confusion Matrix: 
+[[4049.  951.]
+ [1529. 3471.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 0.0719747, Train acc 0.979023
+Valid loss 1.78184, Valid acc 0.753222
+Test loss 1.81025, Test acc 0.749
+Test - Confusion Matrix: 
+[[3885. 1115.]
+ [1395. 3605.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 0.0696447, Train acc 0.979884
+Valid loss 2.33542, Valid acc 0.755667
+Test loss 2.26041, Test acc 0.7512
+Test - Confusion Matrix: 
+[[3702. 1298.]
+ [1190. 3810.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 0.0668123, Train acc 0.980769
+Valid loss 1.76392, Valid acc 0.756222
+Test loss 1.67739, Test acc 0.7548
+Test - Confusion Matrix: 
+[[3603. 1397.]
+ [1055. 3945.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 0.0640116, Train acc 0.981625
+Valid loss 2.28373, Valid acc 0.756667
+Test loss 2.17895, Test acc 0.7559
+Test - Confusion Matrix: 
+[[3632. 1368.]
+ [1073. 3927.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 0.0632014, Train acc 0.982119
+Valid loss 2.02869, Valid acc 0.754778
+Test loss 1.8573, Test acc 0.753
+Test - Confusion Matrix: 
+[[3470. 1530.]
+ [ 940. 4060.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 0.0610821, Train acc 0.982769
+Valid loss 2.11115, Valid acc 0.758556
+Test loss 2.03289, Test acc 0.7561
+Test - Confusion Matrix: 
+[[3732. 1268.]
+ [1171. 3829.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 0.0589265, Train acc 0.983405
+Valid loss 1.95884, Valid acc 0.760778
+Test loss 1.95075, Test acc 0.7543
+Test - Confusion Matrix: 
+[[3795. 1205.]
+ [1252. 3748.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579457132\checkpoints\model-2000
+
+Tuning iteration: 3
+Loss: 1.9588381, Accuracy: 0.7607777777777778, Learn rate: 0.007113147131571288, Keep prob: 0.41529318058771736, L2 reg lambda: 0.44140040253391
+2020-01-19 19:47:19.649264: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2070 major: 7 minor: 5 memoryClockRate(GHz): 1.62
+pciBusID: 0000:08:00.0
+2020-01-19 19:47:19.649439: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-19 19:47:19.649536: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-19 19:47:19.649635: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-19 19:47:19.649729: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-19 19:47:19.649824: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-19 19:47:19.649919: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-19 19:47:19.650012: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-19 19:47:19.650431: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-19 19:47:19.650556: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-19 19:47:19.650669: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-01-19 19:47:19.650737: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-01-19 19:47:19.651204: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6308 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2070, pci bus id: 0000:08:00.0, compute capability: 7.5)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:47:20.262160 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:47:20.274171 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:47:20.274171 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:47:20.282179 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:47:20.282179 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:47:20.290185 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:47:20.291187 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:47:20.299194 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:47:20.299194 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:47:20.307202 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:47:20.308202 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:47:20.316210 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:47:20.316210 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:47:20.325218 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:47:20.326219 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:47:20.333225 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 19:47:20.334226 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 19:47:20.342233 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 1.36132, Train acc 0.774521
+Valid loss 0.72783, Valid acc 0.759667
+Test loss 0.770337, Test acc 0.7647
+Test - Confusion Matrix: 
+[[3709. 1291.]
+ [1062. 3938.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.750674, Train acc 0.862156
+Valid loss 0.984413, Valid acc 0.753667
+Test loss 1.06673, Test acc 0.7602
+Test - Confusion Matrix: 
+[[3771. 1229.]
+ [1169. 3831.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.534128, Train acc 0.896807
+Valid loss 1.11384, Valid acc 0.752222
+Test loss 1.24788, Test acc 0.7553
+Test - Confusion Matrix: 
+[[3888. 1112.]
+ [1335. 3665.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.42167, Train acc 0.916061
+Valid loss 1.22869, Valid acc 0.751889
+Test loss 1.31548, Test acc 0.7535
+Test - Confusion Matrix: 
+[[3673. 1327.]
+ [1138. 3862.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.350596, Train acc 0.928711
+Valid loss 1.47649, Valid acc 0.748444
+Test loss 1.68398, Test acc 0.7523
+Test - Confusion Matrix: 
+[[3843. 1157.]
+ [1320. 3680.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.306233, Train acc 0.937017
+Valid loss 3.34163, Valid acc 0.742333
+Test loss 3.92708, Test acc 0.7422
+Test - Confusion Matrix: 
+[[3850. 1150.]
+ [1428. 3572.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 0.273339, Train acc 0.942895
+Valid loss 1.74662, Valid acc 0.749778
+Test loss 1.82986, Test acc 0.7496
+Test - Confusion Matrix: 
+[[3673. 1327.]
+ [1177. 3823.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 0.245188, Train acc 0.948258
+Valid loss 2.09438, Valid acc 0.749778
+Test loss 2.17019, Test acc 0.7484
+Test - Confusion Matrix: 
+[[3638. 1362.]
+ [1154. 3846.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 0.231603, Train acc 0.95114
+Valid loss 2.14261, Valid acc 0.755111
+Test loss 2.49466, Test acc 0.752
+Test - Confusion Matrix: 
+[[3868. 1132.]
+ [1348. 3652.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 0.214445, Train acc 0.95429
+Valid loss 1.95135, Valid acc 0.753556
+Test loss 2.14472, Test acc 0.7504
+Test - Confusion Matrix: 
+[[3756. 1244.]
+ [1252. 3748.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 0.215736, Train acc 0.955435
+Valid loss 2.06769, Valid acc 0.747667
+Test loss 2.27499, Test acc 0.7532
+Test - Confusion Matrix: 
+[[3749. 1251.]
+ [1217. 3783.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 0.20577, Train acc 0.956716
+Valid loss 2.23822, Valid acc 0.756111
+Test loss 2.6631, Test acc 0.7541
+Test - Confusion Matrix: 
+[[3827. 1173.]
+ [1286. 3714.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 0.197132, Train acc 0.958342
+Valid loss 3.53451, Valid acc 0.751444
+Test loss 4.35, Test acc 0.7524
+Test - Confusion Matrix: 
+[[3619. 1381.]
+ [1095. 3905.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 0.187931, Train acc 0.959868
+Valid loss 2.58758, Valid acc 0.753556
+Test loss 3.10533, Test acc 0.7524
+Test - Confusion Matrix: 
+[[3723. 1277.]
+ [1199. 3801.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 0.17948, Train acc 0.961442
+Valid loss 3.02229, Valid acc 0.754222
+Test loss 3.7047, Test acc 0.7506
+Test - Confusion Matrix: 
+[[3857. 1143.]
+ [1351. 3649.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 0.170873, Train acc 0.963036
+Valid loss 2.59029, Valid acc 0.753222
+Test loss 2.99136, Test acc 0.7524
+Test - Confusion Matrix: 
+[[3732. 1268.]
+ [1208. 3792.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 0.166946, Train acc 0.964295
+Valid loss 19.7283, Valid acc 0.741556
+Test loss 26.5958, Test acc 0.7412
+Test - Confusion Matrix: 
+[[3572. 1428.]
+ [1160. 3840.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 0.173198, Train acc 0.963705
+Valid loss 3.60939, Valid acc 0.757
+Test loss 4.39138, Test acc 0.7519
+Test - Confusion Matrix: 
+[[3723. 1277.]
+ [1204. 3796.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 0.168347, Train acc 0.964362
+Valid loss 4.92841, Valid acc 0.756778
+Test loss 5.63619, Test acc 0.7556
+Test - Confusion Matrix: 
+[[3714. 1286.]
+ [1158. 3842.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 0.162631, Train acc 0.965257
+Valid loss 3.26325, Valid acc 0.757111
+Test loss 3.72682, Test acc 0.7526
+Test - Confusion Matrix: 
+[[3620. 1380.]
+ [1094. 3906.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579459640\checkpoints\model-2000
+
+2020-01-19 20:28:34.144161: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2070 major: 7 minor: 5 memoryClockRate(GHz): 1.62
+pciBusID: 0000:08:00.0
+2020-01-19 20:28:34.144334: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-19 20:28:34.144440: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-19 20:28:34.144536: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-19 20:28:34.144634: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-19 20:28:34.144734: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-19 20:28:34.144832: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-19 20:28:34.144927: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-19 20:28:34.145348: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-19 20:28:34.145467: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-19 20:28:34.145562: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-01-19 20:28:34.145623: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-01-19 20:28:34.146086: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6308 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2070, pci bus id: 0000:08:00.0, compute capability: 7.5)
+Tuning iteration: 4
+Loss: 3.2632484, Accuracy: 0.7571111111111111, Learn rate: 0.0367928789490179, Keep prob: 0.7198600924633582, L2 reg lambda: 0.720061455232347
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 20:28:34.755212 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 20:28:34.767223 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 20:28:34.767223 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 20:28:34.775230 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 20:28:34.775230 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 20:28:34.783476 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 20:28:34.784239 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 20:28:34.792246 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 20:28:34.793247 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 20:28:34.800253 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 20:28:34.801254 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 20:28:34.809261 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 20:28:34.809261 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 20:28:34.817268 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 20:28:34.818269 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 20:28:34.825276 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 20:28:34.826277 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 20:28:34.834284 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 1.32801, Train acc 0.788906
+Valid loss 0.969868, Valid acc 0.769889
+Test loss 1.06743, Test acc 0.7688
+Test - Confusion Matrix: 
+[[3941. 1059.]
+ [1253. 3747.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.73961, Train acc 0.866251
+Valid loss 1.03715, Valid acc 0.772222
+Test loss 1.10871, Test acc 0.764
+Test - Confusion Matrix: 
+[[3760. 1240.]
+ [1120. 3880.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.526558, Train acc 0.8986
+Valid loss 1.36911, Valid acc 0.767111
+Test loss 1.50764, Test acc 0.7582
+Test - Confusion Matrix: 
+[[3859. 1141.]
+ [1277. 3723.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.415162, Train acc 0.916722
+Valid loss 1.51635, Valid acc 0.765778
+Test loss 1.61733, Test acc 0.7601
+Test - Confusion Matrix: 
+[[3714. 1286.]
+ [1113. 3887.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.345259, Train acc 0.928735
+Valid loss 1.9608, Valid acc 0.760333
+Test loss 1.99116, Test acc 0.7565
+Test - Confusion Matrix: 
+[[3769. 1231.]
+ [1204. 3796.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.29992, Train acc 0.936855
+Valid loss 1.77093, Valid acc 0.762556
+Test loss 1.86393, Test acc 0.7577
+Test - Confusion Matrix: 
+[[3627. 1373.]
+ [1050. 3950.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 0.301796, Train acc 0.93977
+Valid loss 6.07887, Valid acc 0.717444
+Test loss 6.59609, Test acc 0.7174
+Test - Confusion Matrix: 
+[[3034. 1966.]
+ [ 860. 4140.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 0.413769, Train acc 0.93031
+Valid loss 5.08305, Valid acc 0.734667
+Test loss 6.16373, Test acc 0.7367
+Test - Confusion Matrix: 
+[[3851. 1149.]
+ [1484. 3516.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 0.427397, Train acc 0.926461
+Valid loss 6.40551, Valid acc 0.754222
+Test loss 8.19038, Test acc 0.7501
+Test - Confusion Matrix: 
+[[3451. 1549.]
+ [ 950. 4050.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 0.404629, Train acc 0.927481
+Valid loss 5.41301, Valid acc 0.759111
+Test loss 6.7167, Test acc 0.7494
+Test - Confusion Matrix: 
+[[3444. 1556.]
+ [ 950. 4050.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 0.380346, Train acc 0.929536
+Valid loss 5.29801, Valid acc 0.758889
+Test loss 6.578, Test acc 0.7503
+Test - Confusion Matrix: 
+[[3713. 1287.]
+ [1210. 3790.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 0.357944, Train acc 0.931912
+Valid loss 4.06806, Valid acc 0.758111
+Test loss 4.94051, Test acc 0.7524
+Test - Confusion Matrix: 
+[[3711. 1289.]
+ [1187. 3813.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 0.343199, Train acc 0.934191
+Valid loss 4.13973, Valid acc 0.759667
+Test loss 5.35829, Test acc 0.7453
+Test - Confusion Matrix: 
+[[3556. 1444.]
+ [1103. 3897.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 0.331407, Train acc 0.936238
+Valid loss 27.3258, Valid acc 0.751333
+Test loss 36.1981, Test acc 0.7482
+Test - Confusion Matrix: 
+[[3626. 1374.]
+ [1144. 3856.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 0.318142, Train acc 0.937942
+Valid loss 6.66651, Valid acc 0.761
+Test loss 8.1624, Test acc 0.7513
+Test - Confusion Matrix: 
+[[3827. 1173.]
+ [1314. 3686.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 0.304207, Train acc 0.939683
+Valid loss 4.9141, Valid acc 0.763333
+Test loss 5.72084, Test acc 0.7477
+Test - Confusion Matrix: 
+[[3562. 1438.]
+ [1085. 3915.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 0.294326, Train acc 0.941154
+Valid loss 5.17633, Valid acc 0.758111
+Test loss 5.99422, Test acc 0.7493
+Test - Confusion Matrix: 
+[[3572. 1428.]
+ [1079. 3921.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 0.283032, Train acc 0.942556
+Valid loss 6.87177, Valid acc 0.756889
+Test loss 7.62618, Test acc 0.7473
+Test - Confusion Matrix: 
+[[3406. 1594.]
+ [ 933. 4067.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 0.285228, Train acc 0.943377
+Valid loss 57.6721, Valid acc 0.746222
+Test loss 57.4189, Test acc 0.7369
+Test - Confusion Matrix: 
+[[3372. 1628.]
+ [1003. 3997.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 0.336893, Train acc 0.939673
+Valid loss 26.5628, Valid acc 0.683444
+Test loss 27.4418, Test acc 0.6834
+Test - Confusion Matrix: 
+[[2498. 2502.]
+ [ 664. 4336.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579462114\checkpoints\model-2000
+
+Tuning iteration: 5
+Loss: 26.56281, Accuracy: 0.6834444444444444, Learn rate: 0.0516864178606036, Keep prob: 0.7717439019946382, L2 reg lambda: 0.16465642135705838
+2020-01-19 21:09:16.107230: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2070 major: 7 minor: 5 memoryClockRate(GHz): 1.62
+pciBusID: 0000:08:00.0
+2020-01-19 21:09:16.107404: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-19 21:09:16.107505: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-19 21:09:16.107604: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-19 21:09:16.107699: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-19 21:09:16.107794: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-19 21:09:16.107887: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-19 21:09:16.107984: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-19 21:09:16.108456: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-19 21:09:16.108575: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-19 21:09:16.108689: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-01-19 21:09:16.108755: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-01-19 21:09:16.109223: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6308 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2070, pci bus id: 0000:08:00.0, compute capability: 7.5)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:09:16.719625 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:09:16.730635 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:09:16.731636 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:09:16.739643 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:09:16.739643 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:09:16.814703 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:09:16.815712 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:09:16.823719 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:09:16.823719 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:09:16.831727 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:09:16.832728 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:09:16.839734 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:09:16.840735 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:09:16.848742 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:09:16.848742 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:09:16.856749 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:09:16.857750 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:09:16.864757 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 1.31024, Train acc 0.737941
+Valid loss 0.880758, Valid acc 0.754667
+Test loss 0.863188, Test acc 0.7624
+Test - Confusion Matrix: 
+[[3453. 1547.]
+ [ 829. 4171.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.838368, Train acc 0.800682
+Valid loss 1.44285, Valid acc 0.756556
+Test loss 1.34554, Test acc 0.7657
+Test - Confusion Matrix: 
+[[3542. 1458.]
+ [ 885. 4115.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.652756, Train acc 0.833226
+Valid loss 2.03763, Valid acc 0.758222
+Test loss 1.9257, Test acc 0.7609
+Test - Confusion Matrix: 
+[[3573. 1427.]
+ [ 964. 4036.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.564842, Train acc 0.850524
+Valid loss 3.57805, Valid acc 0.756444
+Test loss 3.09574, Test acc 0.7589
+Test - Confusion Matrix: 
+[[3501. 1499.]
+ [ 912. 4088.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.55177, Train acc 0.858654
+Valid loss 6.37959, Valid acc 0.750667
+Test loss 5.56023, Test acc 0.7536
+Test - Confusion Matrix: 
+[[3429. 1571.]
+ [ 893. 4107.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.607662, Train acc 0.857526
+Valid loss 15.2559, Valid acc 0.715778
+Test loss 13.5581, Test acc 0.7222
+Test - Confusion Matrix: 
+[[2909. 2091.]
+ [ 687. 4313.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 0.701371, Train acc 0.8498
+Valid loss 19.0534, Valid acc 0.685222
+Test loss 18.2821, Test acc 0.6926
+Test - Confusion Matrix: 
+[[2496. 2504.]
+ [ 570. 4430.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 0.834863, Train acc 0.839307
+Valid loss 20.7582, Valid acc 0.664111
+Test loss 23.4122, Test acc 0.6663
+Test - Confusion Matrix: 
+[[2237. 2763.]
+ [ 574. 4426.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 0.888146, Train acc 0.829969
+Valid loss 25.3344, Valid acc 0.647
+Test loss 25.9537, Test acc 0.6536
+Test - Confusion Matrix: 
+[[2112. 2888.]
+ [ 576. 4424.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 0.917363, Train acc 0.821613
+Valid loss 23.8054, Valid acc 0.637333
+Test loss 25.6798, Test acc 0.6424
+Test - Confusion Matrix: 
+[[1880. 3120.]
+ [ 456. 4544.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 0.937997, Train acc 0.814522
+Valid loss 19.6971, Valid acc 0.637222
+Test loss 22.7191, Test acc 0.6455
+Test - Confusion Matrix: 
+[[1932. 3068.]
+ [ 477. 4523.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 0.976803, Train acc 0.808588
+Valid loss 33.6098, Valid acc 0.637333
+Test loss 40.0467, Test acc 0.646
+Test - Confusion Matrix: 
+[[1923. 3077.]
+ [ 463. 4537.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 1.05263, Train acc 0.803381
+Valid loss 34.5138, Valid acc 0.573889
+Test loss 37.4598, Test acc 0.5739
+Test - Confusion Matrix: 
+[[4516.  484.]
+ [3777. 1223.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 1.09142, Train acc 0.798715
+Valid loss 26.4665, Valid acc 0.630333
+Test loss 29.2238, Test acc 0.6314
+Test - Confusion Matrix: 
+[[1765. 3235.]
+ [ 451. 4549.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 1.10742, Train acc 0.794268
+Valid loss 36.1056, Valid acc 0.620111
+Test loss 42.979, Test acc 0.6181
+Test - Confusion Matrix: 
+[[1565. 3435.]
+ [ 384. 4616.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 1.11477, Train acc 0.789743
+Valid loss 33.7807, Valid acc 0.622667
+Test loss 37.5323, Test acc 0.6207
+Test - Confusion Matrix: 
+[[1584. 3416.]
+ [ 377. 4623.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 1.171, Train acc 0.785998
+Valid loss 81.7412, Valid acc 0.626778
+Test loss 98.434, Test acc 0.6297
+Test - Confusion Matrix: 
+[[1703. 3297.]
+ [ 406. 4594.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 1.26085, Train acc 0.782749
+Valid loss 45.266, Valid acc 0.622444
+Test loss 52.4341, Test acc 0.6259
+Test - Confusion Matrix: 
+[[1649. 3351.]
+ [ 390. 4610.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 1.28004, Train acc 0.779695
+Valid loss 44.0156, Valid acc 0.619778
+Test loss 49.9453, Test acc 0.6218
+Test - Confusion Matrix: 
+[[1611. 3389.]
+ [ 393. 4607.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 1.29651, Train acc 0.77655
+Valid loss 67.2042, Valid acc 0.618556
+Test loss 74.9952, Test acc 0.6228
+Test - Confusion Matrix: 
+[[1571. 3429.]
+ [ 343. 4657.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579464556\checkpoints\model-2000
+
+Tuning iteration: 6
+Loss: 67.20422, Accuracy: 0.6185555555555555, Learn rate: 0.0558559975793388, Keep prob: 0.2040025074721144, L2 reg lambda: 0.6179800773373877
+2020-01-19 21:48:53.786422: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2070 major: 7 minor: 5 memoryClockRate(GHz): 1.62
+pciBusID: 0000:08:00.0
+2020-01-19 21:48:53.787030: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-19 21:48:53.787159: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-19 21:48:53.787288: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-19 21:48:53.787434: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-19 21:48:53.787550: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-19 21:48:53.787646: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-19 21:48:53.787745: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-19 21:48:53.788173: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-19 21:48:53.788296: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-19 21:48:53.788398: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-01-19 21:48:53.788463: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-01-19 21:48:53.788925: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6308 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2070, pci bus id: 0000:08:00.0, compute capability: 7.5)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:48:54.404676 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:48:54.416688 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:48:54.416688 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:48:54.424695 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:48:54.425695 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:48:54.432702 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:48:54.433703 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:48:54.441710 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:48:54.441710 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:48:54.449717 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:48:54.450718 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:48:54.458726 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:48:54.459727 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:48:54.467734 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:48:54.467734 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:48:54.475741 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 21:48:54.476742 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 21:48:54.484749 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 0.804458, Train acc 0.821724
+Valid loss 0.77129, Valid acc 0.769556
+Test loss 0.814345, Test acc 0.7726
+Test - Confusion Matrix: 
+[[3882. 1118.]
+ [1156. 3844.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.476347, Train acc 0.883708
+Valid loss 1.25129, Valid acc 0.768556
+Test loss 1.28547, Test acc 0.7635
+Test - Confusion Matrix: 
+[[3740. 1260.]
+ [1105. 3895.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.352028, Train acc 0.910274
+Valid loss 1.47276, Valid acc 0.763556
+Test loss 1.39671, Test acc 0.7617
+Test - Confusion Matrix: 
+[[3571. 1429.]
+ [ 954. 4046.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.286101, Train acc 0.925508
+Valid loss 1.6312, Valid acc 0.762333
+Test loss 1.58193, Test acc 0.7639
+Test - Confusion Matrix: 
+[[3721. 1279.]
+ [1082. 3918.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.302314, Train acc 0.931976
+Valid loss 8.03657, Valid acc 0.728778
+Test loss 7.53546, Test acc 0.7318
+Test - Confusion Matrix: 
+[[3219. 1781.]
+ [ 901. 4099.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.334957, Train acc 0.926943
+Valid loss 6.06432, Valid acc 0.747667
+Test loss 6.87452, Test acc 0.7531
+Test - Confusion Matrix: 
+[[3685. 1315.]
+ [1154. 3846.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 0.326011, Train acc 0.928186
+Valid loss 4.10902, Valid acc 0.749222
+Test loss 4.42923, Test acc 0.7541
+Test - Confusion Matrix: 
+[[3486. 1514.]
+ [ 945. 4055.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 0.304937, Train acc 0.930721
+Valid loss 7.24473, Valid acc 0.755111
+Test loss 7.73477, Test acc 0.7529
+Test - Confusion Matrix: 
+[[3686. 1314.]
+ [1157. 3843.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 0.299767, Train acc 0.932979
+Valid loss 6.40862, Valid acc 0.749778
+Test loss 8.1702, Test acc 0.75
+Test - Confusion Matrix: 
+[[3808. 1192.]
+ [1308. 3692.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 0.283099, Train acc 0.935298
+Valid loss 5.66432, Valid acc 0.755889
+Test loss 7.01202, Test acc 0.7518
+Test - Confusion Matrix: 
+[[3603. 1397.]
+ [1085. 3915.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 0.268823, Train acc 0.937629
+Valid loss 4.09039, Valid acc 0.755667
+Test loss 4.29984, Test acc 0.7519
+Test - Confusion Matrix: 
+[[3693. 1307.]
+ [1174. 3826.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 0.568348, Train acc 0.934496
+Valid loss 57.5235, Valid acc 0.586778
+Test loss 74.6334, Test acc 0.5815
+Test - Confusion Matrix: 
+[[4411.  589.]
+ [3596. 1404.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 0.692883, Train acc 0.919972
+Valid loss 19.7957, Valid acc 0.586889
+Test loss 23.9727, Test acc 0.5909
+Test - Confusion Matrix: 
+[[4394.  606.]
+ [3485. 1515.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 0.689592, Train acc 0.910092
+Valid loss 16.5342, Valid acc 0.662111
+Test loss 18.1822, Test acc 0.6717
+Test - Confusion Matrix: 
+[[2362. 2638.]
+ [ 645. 4355.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 0.689683, Train acc 0.903582
+Valid loss 24.6372, Valid acc 0.680444
+Test loss 27.4141, Test acc 0.6875
+Test - Confusion Matrix: 
+[[2676. 2324.]
+ [ 801. 4199.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 0.681476, Train acc 0.899856
+Valid loss 29.8826, Valid acc 0.683111
+Test loss 36.0874, Test acc 0.691
+Test - Confusion Matrix: 
+[[2681. 2319.]
+ [ 771. 4229.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 0.661384, Train acc 0.897967
+Valid loss 12.6371, Valid acc 0.721556
+Test loss 14.3195, Test acc 0.7298
+Test - Confusion Matrix: 
+[[3268. 1732.]
+ [ 970. 4030.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 0.673483, Train acc 0.896582
+Valid loss 102.118, Valid acc 0.651111
+Test loss 113.317, Test acc 0.6585
+Test - Confusion Matrix: 
+[[2093. 2907.]
+ [ 508. 4492.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 0.664388, Train acc 0.894738
+Valid loss 18.6146, Valid acc 0.716889
+Test loss 20.6987, Test acc 0.7251
+Test - Confusion Matrix: 
+[[3115. 1885.]
+ [ 864. 4136.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 0.649275, Train acc 0.894485
+Valid loss 23.3953, Valid acc 0.740889
+Test loss 23.933, Test acc 0.7436
+Test - Confusion Matrix: 
+[[3551. 1449.]
+ [1115. 3885.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579466934\checkpoints\model-2000
+
+2020-01-19 22:29:23.641188: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2070 major: 7 minor: 5 memoryClockRate(GHz): 1.62
+pciBusID: 0000:08:00.0
+2020-01-19 22:29:23.641343: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-19 22:29:23.641438: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-19 22:29:23.641535: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-19 22:29:23.641630: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-19 22:29:23.641736: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-19 22:29:23.641832: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-19 22:29:23.642198: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-19 22:29:23.642705: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-19 22:29:23.642833: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-19 22:29:23.642995: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-01-19 22:29:23.643113: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-01-19 22:29:23.643687: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6308 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2070, pci bus id: 0000:08:00.0, compute capability: 7.5)
+Tuning iteration: 7
+Loss: 23.395325, Accuracy: 0.7408888888888889, Learn rate: 0.04688161581311599, Keep prob: 0.6294957674406609, L2 reg lambda: 0.12745493856011236
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 22:29:24.261412 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 22:29:24.272423 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 22:29:24.272423 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 22:29:24.280430 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 22:29:24.281430 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 22:29:24.289438 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 22:29:24.290439 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 22:29:24.297445 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 22:29:24.298446 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 22:29:24.306453 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 22:29:24.306453 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 22:29:24.314461 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 22:29:24.315462 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 22:29:24.323469 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 22:29:24.323469 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 22:29:24.331476 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 22:29:24.331476 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 22:29:24.339483 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 0.969248, Train acc 0.818506
+Valid loss 0.676711, Valid acc 0.776222
+Test loss 0.71209, Test acc 0.7762
+Test - Confusion Matrix: 
+[[3997. 1003.]
+ [1235. 3765.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.544816, Train acc 0.889295
+Valid loss 0.825178, Valid acc 0.767222
+Test loss 0.874163, Test acc 0.7629
+Test - Confusion Matrix: 
+[[3943. 1057.]
+ [1314. 3686.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.3895, Train acc 0.918734
+Valid loss 1.04077, Valid acc 0.756667
+Test loss 1.01006, Test acc 0.7487
+Test - Confusion Matrix: 
+[[3529. 1471.]
+ [1042. 3958.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.30652, Train acc 0.935371
+Valid loss 1.04494, Valid acc 0.752444
+Test loss 1.01977, Test acc 0.7476
+Test - Confusion Matrix: 
+[[3557. 1443.]
+ [1081. 3919.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.391282, Train acc 0.934621
+Valid loss 0.904533, Valid acc 0.756
+Test loss 0.923392, Test acc 0.7582
+Test - Confusion Matrix: 
+[[3576. 1424.]
+ [ 994. 4006.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.346078, Train acc 0.938431
+Valid loss 1.27737, Valid acc 0.749889
+Test loss 1.31234, Test acc 0.7506
+Test - Confusion Matrix: 
+[[3613. 1387.]
+ [1107. 3893.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 0.308047, Train acc 0.943515
+Valid loss 1.42974, Valid acc 0.749333
+Test loss 1.46814, Test acc 0.7483
+Test - Confusion Matrix: 
+[[3732. 1268.]
+ [1249. 3751.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 0.277999, Train acc 0.947908
+Valid loss 1.56618, Valid acc 0.746556
+Test loss 1.61649, Test acc 0.7485
+Test - Confusion Matrix: 
+[[3758. 1242.]
+ [1273. 3727.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 0.255214, Train acc 0.951453
+Valid loss 1.60536, Valid acc 0.748556
+Test loss 1.75456, Test acc 0.7453
+Test - Confusion Matrix: 
+[[3806. 1194.]
+ [1353. 3647.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 0.234974, Train acc 0.954692
+Valid loss 1.71828, Valid acc 0.743667
+Test loss 1.73273, Test acc 0.7423
+Test - Confusion Matrix: 
+[[3549. 1451.]
+ [1126. 3874.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 0.217914, Train acc 0.957528
+Valid loss 1.91664, Valid acc 0.746889
+Test loss 2.10318, Test acc 0.7432
+Test - Confusion Matrix: 
+[[3722. 1278.]
+ [1290. 3710.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 0.203528, Train acc 0.959984
+Valid loss 1.90047, Valid acc 0.743111
+Test loss 1.99329, Test acc 0.744
+Test - Confusion Matrix: 
+[[3739. 1261.]
+ [1299. 3701.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 0.190926, Train acc 0.962191
+Valid loss 1.99815, Valid acc 0.746889
+Test loss 2.1048, Test acc 0.748
+Test - Confusion Matrix: 
+[[3752. 1248.]
+ [1272. 3728.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 0.17984, Train acc 0.964179
+Valid loss 1.9493, Valid acc 0.742778
+Test loss 1.99294, Test acc 0.7439
+Test - Confusion Matrix: 
+[[3724. 1276.]
+ [1285. 3715.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 0.170055, Train acc 0.965964
+Valid loss 2.16181, Valid acc 0.742222
+Test loss 2.26826, Test acc 0.7458
+Test - Confusion Matrix: 
+[[3743. 1257.]
+ [1285. 3715.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 0.161488, Train acc 0.967538
+Valid loss 2.38146, Valid acc 0.742333
+Test loss 2.6857, Test acc 0.7431
+Test - Confusion Matrix: 
+[[3965. 1035.]
+ [1534. 3466.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 0.171698, Train acc 0.967206
+Valid loss 2.66123, Valid acc 0.660778
+Test loss 2.67794, Test acc 0.6625
+Test - Confusion Matrix: 
+[[3797. 1203.]
+ [2172. 2828.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 0.167868, Train acc 0.967126
+Valid loss 2.10065, Valid acc 0.754222
+Test loss 2.19748, Test acc 0.7499
+Test - Confusion Matrix: 
+[[3685. 1315.]
+ [1186. 3814.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 0.161634, Train acc 0.968053
+Valid loss 2.50856, Valid acc 0.749333
+Test loss 2.72911, Test acc 0.7458
+Test - Confusion Matrix: 
+[[3670. 1330.]
+ [1212. 3788.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 0.155468, Train acc 0.969067
+Valid loss 2.35875, Valid acc 0.753778
+Test loss 2.49699, Test acc 0.7468
+Test - Confusion Matrix: 
+[[3751. 1249.]
+ [1283. 3717.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579469364\checkpoints\model-2000
+
+Tuning iteration: 8
+Loss: 2.3587525, Accuracy: 0.7537777777777778, Learn rate: 0.02848041151245098, Keep prob: 0.9501203202824839, L2 reg lambda: 0.9333433660168204
+2020-01-19 23:11:53.040469: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2070 major: 7 minor: 5 memoryClockRate(GHz): 1.62
+pciBusID: 0000:08:00.0
+2020-01-19 23:11:53.040638: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-19 23:11:53.040753: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-19 23:11:53.040868: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-19 23:11:53.040974: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-19 23:11:53.041078: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-19 23:11:53.041175: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-19 23:11:53.041270: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-19 23:11:53.041701: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-19 23:11:53.041814: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-19 23:11:53.041909: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2020-01-19 23:11:53.041971: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2020-01-19 23:11:53.042464: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6308 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2070, pci bus id: 0000:08:00.0, compute capability: 7.5)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 23:11:53.665987 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 23:11:53.676997 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 23:11:53.677998 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 23:11:53.686005 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 23:11:53.686005 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 23:11:53.694013 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 23:11:53.695013 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 23:11:53.702020 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 23:11:53.703021 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 23:11:53.711028 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 23:11:53.711028 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 23:11:53.719035 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 23:11:53.720036 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 23:11:53.728043 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 23:11:53.728043 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 23:11:53.736051 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0119 23:11:53.737051 12348 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0119 23:11:53.745059 12348 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 3.35282, Train acc 0.515999
+Valid loss 1.31355, Valid acc 0.520444
+Test loss 1.43407, Test acc 0.5172
+Test - Confusion Matrix: 
+[[ 565. 4435.]
+ [ 393. 4607.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 2.17425, Train acc 0.54502
+Valid loss 1.78478, Valid acc 0.591333
+Test loss 2.32285, Test acc 0.5922
+Test - Confusion Matrix: 
+[[1253. 3747.]
+ [ 331. 4669.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 1.71899, Train acc 0.578179
+Valid loss 4.3859, Valid acc 0.617667
+Test loss 5.51663, Test acc 0.6145
+Test - Confusion Matrix: 
+[[1724. 3276.]
+ [ 579. 4421.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 1.53475, Train acc 0.600377
+Valid loss 4.33001, Valid acc 0.612
+Test loss 6.26011, Test acc 0.6141
+Test - Confusion Matrix: 
+[[1692. 3308.]
+ [ 551. 4449.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 1.4669, Train acc 0.614652
+Valid loss 9.59618, Valid acc 0.611556
+Test loss 15.4309, Test acc 0.6105
+Test - Confusion Matrix: 
+[[1426. 3574.]
+ [ 321. 4679.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 1.46093, Train acc 0.62402
+Valid loss 18.9685, Valid acc 0.602111
+Test loss 28.9249, Test acc 0.6036
+Test - Confusion Matrix: 
+[[1349. 3651.]
+ [ 313. 4687.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 1.44966, Train acc 0.630248
+Valid loss 20.6347, Valid acc 0.604
+Test loss 34.0609, Test acc 0.6072
+Test - Confusion Matrix: 
+[[1488. 3512.]
+ [ 416. 4584.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 1.40175, Train acc 0.634879
+Valid loss 41.4283, Valid acc 0.603111
+Test loss 57.2413, Test acc 0.6067
+Test - Confusion Matrix: 
+[[1395. 3605.]
+ [ 328. 4672.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 1.36518, Train acc 0.638168
+Valid loss 15.3353, Valid acc 0.597222
+Test loss 23.3947, Test acc 0.604
+Test - Confusion Matrix: 
+[[1341. 3659.]
+ [ 301. 4699.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 1.40779, Train acc 0.640695
+Valid loss 60.5628, Valid acc 0.595667
+Test loss 110.976, Test acc 0.5997
+Test - Confusion Matrix: 
+[[1346. 3654.]
+ [ 349. 4651.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 1.46072, Train acc 0.642454
+Valid loss 49.0455, Valid acc 0.599444
+Test loss 94.1319, Test acc 0.6019
+Test - Confusion Matrix: 
+[[1400. 3600.]
+ [ 381. 4619.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 1.49532, Train acc 0.643881
+Valid loss 48.6983, Valid acc 0.597889
+Test loss 106.409, Test acc 0.6043
+Test - Confusion Matrix: 
+[[1370. 3630.]
+ [ 327. 4673.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 1.55509, Train acc 0.644885
+Valid loss 50.3418, Valid acc 0.596889
+Test loss 104.946, Test acc 0.5971
+Test - Confusion Matrix: 
+[[1242. 3758.]
+ [ 271. 4729.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 1.72873, Train acc 0.645407
+Valid loss 70.1037, Valid acc 0.592889
+Test loss 132.756, Test acc 0.5966
+Test - Confusion Matrix: 
+[[1276. 3724.]
+ [ 310. 4690.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 1.82639, Train acc 0.645293
+Valid loss 69.43, Valid acc 0.590667
+Test loss 148.595, Test acc 0.5947
+Test - Confusion Matrix: 
+[[1241. 3759.]
+ [ 294. 4706.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 1.93622, Train acc 0.645284
+Valid loss 88.2242, Valid acc 0.589333
+Test loss 168.654, Test acc 0.5916
+Test - Confusion Matrix: 
+[[1184. 3816.]
+ [ 268. 4732.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 1.91652, Train acc 0.644896
+Valid loss 37.364, Valid acc 0.589
+Test loss 66.2106, Test acc 0.5909
+Test - Confusion Matrix: 
+[[1152. 3848.]
+ [ 243. 4757.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 1.95045, Train acc 0.644698
+Valid loss 94.4525, Valid acc 0.589111
+Test loss 176.069, Test acc 0.5912
+Test - Confusion Matrix: 
+[[1176. 3824.]
+ [ 264. 4736.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 1.97923, Train acc 0.644628
+Valid loss 76.3494, Valid acc 0.589778
+Test loss 172.824, Test acc 0.5929
+Test - Confusion Matrix: 
+[[1201. 3799.]
+ [ 272. 4728.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 1.99478, Train acc 0.644494
+Valid loss 55.3074, Valid acc 0.587222
+Test loss 100.205, Test acc 0.5922
+Test - Confusion Matrix: 
+[[1214. 3786.]
+ [ 292. 4708.]]
+Saved model checkpoint to K:\documents\masters study\PatRec\project\pattern_recognition-master\src\runs\1579471913\checkpoints\model-2000
+
+Tuning iteration: 9
+Loss: 55.307384, Accuracy: 0.5872222222222222, Learn rate: 0.08895536149029051, Keep prob: 0.373843645044727, L2 reg lambda: 0.09819106571967928
+Result 0:
+Loss: 144.20221, Accuracy: 0.6254444444444445, Learn rate: 0.038982868771725715, Keep prob: 0.1492790617998962, L2 reg lambda: 0.020285014397878665
+Result 1:
+Loss: 2.4417675, Accuracy: 0.7636666666666667, Learn rate: 0.015664418595093012, Keep prob: 0.34247229609271035, L2 reg lambda: 0.8361489779794808
+Result 2:
+Loss: 33.47192, Accuracy: 0.5865555555555556, Learn rate: 0.08328825961822663, Keep prob: 0.27821240617259824, L2 reg lambda: 0.5192752687392379
+Result 3:
+Loss: 1.9588381, Accuracy: 0.7607777777777778, Learn rate: 0.007113147131571288, Keep prob: 0.41529318058771736, L2 reg lambda: 0.44140040253391
+Result 4:
+Loss: 3.2632484, Accuracy: 0.7571111111111111, Learn rate: 0.0367928789490179, Keep prob: 0.7198600924633582, L2 reg lambda: 0.720061455232347
+Result 5:
+Loss: 26.56281, Accuracy: 0.6834444444444444, Learn rate: 0.0516864178606036, Keep prob: 0.7717439019946382, L2 reg lambda: 0.16465642135705838
+Result 6:
+Loss: 67.20422, Accuracy: 0.6185555555555555, Learn rate: 0.0558559975793388, Keep prob: 0.2040025074721144, L2 reg lambda: 0.6179800773373877
+Result 7:
+Loss: 23.395325, Accuracy: 0.7408888888888889, Learn rate: 0.04688161581311599, Keep prob: 0.6294957674406609, L2 reg lambda: 0.12745493856011236
+Result 8:
+Loss: 2.3587525, Accuracy: 0.7537777777777778, Learn rate: 0.02848041151245098, Keep prob: 0.9501203202824839, L2 reg lambda: 0.9333433660168204
+Result 9:
+Loss: 55.307384, Accuracy: 0.5872222222222222, Learn rate: 0.08895536149029051, Keep prob: 0.373843645044727, L2 reg lambda: 0.09819106571967928
+Best result:
+Loss: 2.4417675, Accuracy: 0.7636666666666667, Learn rate: 0.015664418595093012, Keep prob: 0.34247229609271035, L2 reg lambda: 0.8361489779794808
+
+Process finished with exit code 0
