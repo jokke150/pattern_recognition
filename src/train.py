@@ -50,6 +50,8 @@ tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 
 tf.flags.DEFINE_boolean("l2_all_layers", False, "Apply L2 regularization on all layers (default: False)")
 tf.flags.DEFINE_boolean("early_stop", True, "Apply early stop check (default: False)")
 tf.flags.DEFINE_integer("early_stopping_step", 5, "How many dev steps without improvement till early stop (default: 5)")
+tf.flags.DEFINE_float("max_norm", 1, "Max-norm regularization threshold (default: 1)")
+tf.flags.DEFINE_boolean("max_norm_all_layers", False, "Apply max-norm regularization on all layers (default: False)")
 
 # Training parameters
 tf.flags.DEFINE_integer("batch_size", 4096, "Batch Size (default: 64)")
@@ -67,6 +69,8 @@ tf.flags.DEFINE_float("dropout_keep_prob_min", 0.1, "Min value for tuning dropou
 tf.flags.DEFINE_float("dropout_keep_prob_max", 1.0, "Max value for tuning dropout keep probability (default: 1.0)")
 tf.flags.DEFINE_float("l2_reg_lambda_min", 0.0, "Min value for tuning L2 regularization lambda (default: 0.0)")
 tf.flags.DEFINE_float("l2_reg_lambda_max", 1.0, "Max value for tuning L2 regularization lambda (default: 1.0)")
+tf.flags.DEFINE_float("max_norm_reg_min", 1.0, "Min value for tuning max-norm threshold (default: 1.0)")
+tf.flags.DEFINE_float("max_norm_reg_max", 4.0, "Max value for tuning max-norm threshold (default: 4.0)")
 
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
@@ -142,7 +146,7 @@ def preprocess():
 
     return x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l
 
-def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l, learn_rate = FLAGS.learn_rate, keep_prob = FLAGS.dropout_keep_prob, l2_reg_lambda = FLAGS.l2_reg_lambda):
+def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l, learn_rate = FLAGS.learn_rate, keep_prob = FLAGS.dropout_keep_prob, l2_reg_lambda = FLAGS.l2_reg_lambda, max_norm = FLAGS.max_norm):
 # Training
 # ==================================================
     with tf.Graph().as_default():
@@ -167,6 +171,13 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
             optimizer = tf.train.AdamOptimizer(learn_rate)
             grads_and_vars = optimizer.compute_gradients(cnn.loss)
             train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
+
+            if FLAGS.max_norm_all_layers and max_norm > 0.:
+                l2_loss = tf.add_n([tf.nn.l2_loss(var) for var in tf.trainable_variables() if "W" in var.name])
+                for var in tf.trainable_variables() if "W" in var.name:
+                    clipped_weights = tf.clip_by_norm(var, clip_norm=max_norm, axes=1)
+                    clip_weights = tf.assign(var, clipped_weights)
+
             saver = tf.train.Saver(tf.global_variables(), max_to_keep=FLAGS.num_checkpoints)
 
 
@@ -224,6 +235,8 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
         _, step, summaries, loss, accuracy = sess.run(
             [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy],
             feed_dict)
+        if FLAGS.max_norm_all_layers and FLAGS.max_norm > 0.:
+            clip_weights.eval()
         time_str = datetime.datetime.now().isoformat()
         train_summary_writer.add_summary(summaries, step)
         return loss, accuracy
@@ -326,12 +339,13 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
     return train_loss, train_acc, dev_loss, dev_acc, test_loss, test_acc
 
 
-def generate_random_hyperparams(lr_min, lr_max, kp_min, kp_max, l2_min, l2_max):
+def generate_random_hyperparams(lr_min, lr_max, kp_min, kp_max, l2_min, l2_max, norm_min, norm_max):
     # random search through log space
     random_learning_rate = np.random.uniform(lr_min, lr_max)
     random_keep_prob = np.random.uniform(kp_min, kp_max)
     random_l2_reg_lambda = np.random.uniform(l2_min, l2_max)
-    return random_learning_rate, random_keep_prob, random_l2_reg_lambda
+    random_max_norm = np.random.uniform(norm_min, norm_max)
+    return random_learning_rate, random_keep_prob, random_l2_reg_lambda, random_max_norm
 
 
 def tune(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l):
@@ -344,7 +358,7 @@ def tune(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab,
 
     tune_results =  []
     for i in range(FLAGS.tune_iterations):
-        learn_rate, keep_prob, l2_reg_lambda = generate_random_hyperparams(FLAGS.learn_rate_min, FLAGS.learn_rate_max, FLAGS.dropout_keep_prob_min, FLAGS.dropout_keep_prob_max, FLAGS.l2_reg_lambda_min, FLAGS.l2_reg_lambda_max)
+        learn_rate, keep_prob, l2_reg_lambda, max_norm = generate_random_hyperparams(FLAGS.learn_rate_min, FLAGS.learn_rate_max, FLAGS.dropout_keep_prob_min, FLAGS.dropout_keep_prob_max, FLAGS.l2_reg_lambda_min, FLAGS.l2_reg_lambda_max, FLAGS.max_norm_reg_min, FLAGS.max_norm_reg_max)
         train_loss, train_acc, dev_loss, dev_acc, test_loss, test_acc = train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l, learn_rate, keep_prob, l2_reg_lambda)
         tune_result =  {
           "loss": dev_loss,
@@ -352,6 +366,7 @@ def tune(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab,
           "learn_rate": learn_rate,
           "keep_prob": keep_prob,
           "l2_reg_lambda": l2_reg_lambda,
+          "max_norm": max_norm
         }
         tune_results.append(tune_result)
         print("Tuning iteration: " + str(i))
