@@ -10,7 +10,7 @@ class TextCNN(object):
     def __init__(
         self, sequence_length, num_classes, vocab_size, word2vec_W, word_idx_map,
 #         user_embeddings, topic_embeddings,
-        embedding_size, batch_size, filter_sizes, num_filters, l2_reg_lambda=0.0, l2_all_layers=False):
+        embedding_size, batch_size, filter_sizes, num_filters, l2_reg_lambda=0.0, l2_all_layers=False, max_norm_all_layers=False):
 
         # Placeholders for input, output and dropout
         self.input_x = tf.placeholder(tf.int32, [None, sequence_length], name="input_x")
@@ -67,7 +67,7 @@ class TextCNN(object):
                 shape=[num_filters_total, num_classes],
                 initializer=tf.contrib.layers.xavier_initializer())
             b = tf.Variable(tf.constant(0.1, shape=[num_classes]), name="b")
-            if not l2_all_layers:
+            if not max_norm_all_layers and not l2_all_layers:
                 l2_loss += tf.nn.l2_loss(W)
                 l2_loss += tf.nn.l2_loss(b)
             self.scores = tf.nn.xw_plus_b(self.h_drop, W, b, name="scores")
@@ -75,7 +75,7 @@ class TextCNN(object):
             self.predictions = tf.argmax(self.scores, 1, name="predictions")
 
          # Calculate L2 Regularization
-        if l2_all_layers and l2_reg_lambda > 0.:
+        if not max_norm_all_layers and l2_all_layers and l2_reg_lambda > 0.:
             l2_loss = tf.add_n([tf.nn.l2_loss(var) for var in tf.trainable_variables()[1:] if "W" in var.name])
 
         # CalculateMean cross-entropy loss

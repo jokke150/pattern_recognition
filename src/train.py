@@ -63,7 +63,6 @@ tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (d
 # Tuning parameters
 tf.flags.DEFINE_boolean("tune_hyperparams", False, "Tune the hyper parameters with a random search (default: False)")
 tf.flags.DEFINE_integer("tune_iterations", 10, "Number of tuning iterations (default: 10)")
-tf.flags.DEFINE_boolean("tune_on_loss", True, "Evaluate tuning by the loss instead of accuracy (default: True)")
 tf.flags.DEFINE_float("learn_rate_min", 1e-05, "Min value for tuning learn rate (default: 1e-05")
 tf.flags.DEFINE_float("learn_rate_max", 1e-01, "Max value for tuning learn rate (default: 1e-01")
 tf.flags.DEFINE_float("dropout_keep_prob_min", 0.1, "Min value for tuning dropout keep probability (default: 0.1)")
@@ -165,7 +164,8 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
                 filter_sizes = list(map(int, FLAGS.filter_sizes.split(","))),
                 num_filters = FLAGS.num_filters,
                 l2_reg_lambda = l2_reg_lambda,
-                l2_all_layers = FLAGS.l2_all_layers)
+                l2_all_layers = FLAGS.l2_all_layers,
+                max_norm_all_layers = FLAGS.max_norm_all_layers)
 
             # Define Training procedure
             global_step = tf.Variable(0, name="global_step", trainable=False)
@@ -174,10 +174,10 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
             train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
 
             if FLAGS.max_norm_all_layers and max_norm > 0.:
-                l2_loss = tf.add_n([tf.nn.l2_loss(var) for var in tf.trainable_variables() if "W" in var.name])
-                for var in tf.trainable_variables() if "W" in var.name:
-                    clipped_weights = tf.clip_by_norm(var, clip_norm=max_norm, axes=1)
-                    clip_weights = tf.assign(var, clipped_weights)
+                for var in tf.trainable_variables():
+                    if "W" in var.name:
+                        clipped_weights = tf.clip_by_norm(var, clip_norm=max_norm, axes=1)
+                        clip_weights = tf.assign(var, clipped_weights)
 
             saver = tf.train.Saver(tf.global_variables(), max_to_keep=FLAGS.num_checkpoints)
 
@@ -234,7 +234,7 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
             [train_op, global_step, train_summary_op, cnn.loss, cnn.accuracy],
             feed_dict)
         if FLAGS.max_norm_all_layers and FLAGS.max_norm > 0.:
-            clip_weights.eval()
+            clip_weights.eval(session=sess)
         time_str = datetime.datetime.now().isoformat()
         train_summary_writer.add_summary(summaries, step)
         return loss, accuracy
@@ -318,7 +318,7 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
 
             # Early stop check
             if FLAGS.early_stop:
-                if (not FLAGS.tune_on_loss and dev_acc > early_dev_acc) or (FLAGS.tune_on_loss and dev_loss < early_dev_loss):
+                if dev_loss < early_dev_loss:
                     stopping_step = 0
                     early_train_loss, early_train_acc, early_dev_loss, early_dev_acc, early_test_loss, early_test_acc = train_loss, train_acc, dev_loss, dev_acc, test_loss, test_acc
                     # This is probably really efficient because it saves models too often
@@ -327,8 +327,11 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
                 else:
                     stopping_step += 1
                 if stopping_step >= FLAGS.early_stopping_step:
-                    print("Early stopping is triggered at step:{} loss:{}".format(current_step, dev_loss))
-                    print("The best model is the last saved model with best dev loss.")
+                    print("Early stopping is triggered at step {}. Step {} lead to the best results:".format(current_step, current_step - FLAGS.early_stopping_step))
+                    print("Best train loss {:g}, Best train acc {:g}".format(early_train_loss, early_train_acc))
+                    print("Best valid loss {:g}, Best valid acc {:g}".format(early_dev_loss, early_dev_acc))
+                    print("Best test loss {:g}, Best test acc {:g}".format(early_test_loss, early_test_acc))
+                    print("The best model is the last saved model.")
                     return early_train_loss, early_train_acc, early_dev_loss, early_dev_acc, early_test_loss, early_test_acc
 
         if not FLAGS.early_stop and current_step % FLAGS.checkpoint_every == 0:
@@ -353,7 +356,8 @@ def tune(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab,
                 ", Accuracy: " + str(result["accuracy"]) + 
                 ", Learn rate: " + str(result["learn_rate"]) + 
                 ", Keep prob: " + str(result["keep_prob"]) + 
-                ", L2 reg lambda: " + str(result["l2_reg_lambda"]))
+                ", L2 reg lambda: " + str(result["l2_reg_lambda"]) +
+                ", Max_norm: " + str(result["max_norm"]))
 
     tune_results =  []
     for i in range(FLAGS.tune_iterations):
@@ -377,11 +381,8 @@ def tune(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab,
     for i, result in enumerate(tune_results):
         print("Result " + str(i) + ":")
         print_result(result)
-        if not FLAGS.tune_on_loss and result["accuracy"] > best_acc:
+        if result["accuracy"] > best_acc:
             best_acc = result["accuracy"]
-            best_result = result
-        if not FLAGS.tune_on_loss and result["loss"] < best_loss:
-            best_loss = result["loss"]
             best_result = result
 
     print("Best result:")
