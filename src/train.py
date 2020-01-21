@@ -332,7 +332,7 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
                     print("The best model is the last saved model with best dev loss.")
                     break
 
-        if current_step % FLAGS.checkpoint_every == 0:
+        if not FLAGS.early_stop and current_step % FLAGS.checkpoint_every == 0:
             path = saver.save(sess, checkpoint_prefix, global_step=current_step)
             print("Saved model checkpoint to {}\n".format(path))
 
