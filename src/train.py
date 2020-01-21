@@ -63,7 +63,7 @@ tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (d
 # Tuning parameters
 tf.flags.DEFINE_boolean("tune_hyperparams", False, "Tune the hyper parameters with a random search (default: False)")
 tf.flags.DEFINE_integer("tune_iterations", 10, "Number of tuning iterations (default: 10)")
-tf.flags.DEFINE_boolean("tune_on_loss", True, "Tune the hyper parameters with a random search (default: True)")
+tf.flags.DEFINE_boolean("tune_on_loss", True, "Evaluate tuning by the loss instead of accuracy (default: True)")
 tf.flags.DEFINE_float("learn_rate_min", 1e-05, "Min value for tuning learn rate (default: 1e-05")
 tf.flags.DEFINE_float("learn_rate_max", 1e-01, "Max value for tuning learn rate (default: 1e-01")
 tf.flags.DEFINE_float("dropout_keep_prob_min", 0.1, "Min value for tuning dropout keep probability (default: 0.1)")
