@@ -13,8 +13,8 @@ from emoji import UNICODE_EMOJI
 # noinspection PyCompatibility
 from builtins import range
 
-NUM_TRAIN = 90000
-NUM_TEST = 10000
+NUM_TRAIN = 1000
+NUM_TEST = 1000
 BALANCED = True
 
 FASTTEXT_FILE = "../data/cc.nl.300.vec" 

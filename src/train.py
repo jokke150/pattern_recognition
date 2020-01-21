@@ -48,7 +48,7 @@ tf.flags.DEFINE_float("learn_rate", 1e-03, "Learn rate for Adam optimizer (defau
 tf.flags.DEFINE_float("dropout_keep_prob", 0.5, "Dropout keep probability (default: 0.5)")
 tf.flags.DEFINE_float("l2_reg_lambda", 0.5, "L2 regularization lambda (default: 0.5)")
 tf.flags.DEFINE_boolean("l2_all_layers", False, "Apply L2 regularization on all layers (default: False)")
-tf.flags.DEFINE_boolean("early_stop", True, "Apply early stop check (default: False)")
+tf.flags.DEFINE_boolean("early_stop", True, "Apply early stop check (default: True)")
 tf.flags.DEFINE_integer("early_stopping_step", 5, "How many dev steps without improvement till early stop (default: 5)")
 
 # Training parameters
@@ -59,8 +59,9 @@ tf.flags.DEFINE_integer("checkpoint_every", 100, "Save model after this many ste
 tf.flags.DEFINE_integer("num_checkpoints", 5, "Number of checkpoints to store (default: 5)")
 
 # Tuning parameters
-tf.flags.DEFINE_boolean("tune_hyperparams", False, "Tune the hyper parameters with a random search (default: false)")
+tf.flags.DEFINE_boolean("tune_hyperparams", False, "Tune the hyper parameters with a random search (default: False)")
 tf.flags.DEFINE_integer("tune_iterations", 10, "Number of tuning iterations (default: 10)")
+tf.flags.DEFINE_boolean("tune_on_loss", True, "Tune the hyper parameters with a random search (default: True)")
 tf.flags.DEFINE_float("learn_rate_min", 1e-05, "Min value for tuning learn rate (default: 1e-05")
 tf.flags.DEFINE_float("learn_rate_max", 1e-01, "Max value for tuning learn rate (default: 1e-01")
 tf.flags.DEFINE_float("dropout_keep_prob_min", 0.1, "Min value for tuning dropout keep probability (default: 0.1)")
@@ -206,9 +207,6 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
                 os.makedirs(checkpoint_dir)
             saver = tf.train.Saver(tf.global_variables(), max_to_keep=FLAGS.num_checkpoints)
 
-            # Write vocabulary
-            #vocab_processor.save(os.path.join(out_dir, "vocab"))
-
             sess.run(tf.global_variables_initializer())
 
 
@@ -228,6 +226,7 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
         train_summary_writer.add_summary(summaries, step)
         return loss, accuracy
 
+
     def dev_step(x_batch, y_batch):
         """
         Evaluates model on a dev set
@@ -243,6 +242,7 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
         dev_summary_writer.add_summary(summaries, step)
         return loss, conf_mat
 
+
     # Generate train batches
     train_batches = data_helpers.batch_iter(
         list(zip(x_train, y_train)), FLAGS.batch_size, FLAGS.num_epochs)
@@ -251,8 +251,7 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
     train_accuracies = []
 
     # Early stop parameters
-    best_dev_loss = 1000 # Randomly chosen high number
-    early_stop = False
+    early_train_loss, early_train_acc, early_dev_loss, early_dev_acc, early_test_loss, early_test_acc = None, None, 1000, 0, None, None
 
     # Training loop. For each train batch...
     for batch in train_batches:
@@ -306,9 +305,9 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
 
             # Early stop check
             if FLAGS.early_stop:
-                if dev_loss < best_dev_loss:
+                if (not FLAGS.tune_on_loss and dev_acc > early_dev_acc) or (FLAGS.tune_on_loss and dev_loss < early_dev_loss):
                     stopping_step = 0
-                    best_dev_loss = dev_loss
+                    early_train_loss, early_train_acc, early_dev_loss, early_dev_acc, early_test_loss, early_test_acc = train_loss, train_acc, dev_loss, dev_acc, test_loss, test_acc
                     # This is probably really efficient because it saves models too often
                     path = saver.save(sess, checkpoint_prefix, global_step=current_step)
                     print("Saved model with best dev loss checkpoint to {}\n".format(path))
@@ -317,7 +316,7 @@ def train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab
                 if stopping_step >= FLAGS.early_stopping_step:
                     print("Early stopping is triggered at step:{} loss:{}".format(current_step, dev_loss))
                     print("The best model is the last saved model with best dev loss.")
-                    break
+                    return early_train_loss, early_train_acc, early_dev_loss, early_dev_acc, early_test_loss, early_test_acc
 
         if not FLAGS.early_stop and current_step % FLAGS.checkpoint_every == 0:
             path = saver.save(sess, checkpoint_prefix, global_step=current_step)
@@ -358,18 +357,20 @@ def tune(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab,
         print_result(tune_result)
    
     best_result = None
-    best_acc = 0.0;
+    best_loss = 1000
+    best_acc = 0.0
     for i, result in enumerate(tune_results):
         print("Result " + str(i) + ":")
         print_result(result)
-        if result["accuracy"] > best_acc:
+        if not FLAGS.tune_on_loss and result["accuracy"] > best_acc:
             best_acc = result["accuracy"]
+            best_result = result
+        if not FLAGS.tune_on_loss and result["loss"] < best_loss:
+            best_loss = result["loss"]
             best_result = result
 
     print("Best result:")
     print_result(best_result)
-
-
 
 
 def main(argv=None):
