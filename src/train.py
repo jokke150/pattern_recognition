@@ -75,12 +75,14 @@ tf.flags.DEFINE_float("max_norm_reg_max", 4.0, "Max value for tuning max-norm th
 # Misc Parameters
 tf.flags.DEFINE_boolean("allow_soft_placement", True, "Allow device soft device placement")
 tf.flags.DEFINE_boolean("log_device_placement", False, "Log placement of ops on devices")
+tf.flags.DEFINE_string("pickle_name", "pickle.p", "Name of the pickle file (default: \"pickle.p\"")
+
 
 FLAGS = tf.flags.FLAGS
 
 def preprocess():
     print("loading data...")
-    x = pickle.load(open("./pickle.p","rb"))
+    x = pickle.load(open("./" + FLAGS.pickle_name, "rb"))
     revs, W, W2, word_idx_map, vocab, max_l = x[0], x[1], x[2], x[3], x[4], x[5]
     print("data loaded!")# Load data
 
