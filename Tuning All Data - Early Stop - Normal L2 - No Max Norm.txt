@@ -1,0 +1,1645 @@
+(venv) C:\Users\Jokke\Repositories\pattern_recognition\src>python train.py --tune_hyperparams=True --tune_iterations=10 --early_stop=True --l2_all_layers=False --max_norm_all_layers=False
+2020-01-23 00:07:48.032512: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+WARNING:tensorflow:From train.py:27: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From train.py:30: The name tf.GPUOptions is deprecated. Please use tf.compat.v1.GPUOptions instead.
+
+WARNING:tensorflow:From train.py:402: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+loading data...
+data loaded!
+Train/Dev split: 81000/9000
+WARNING:tensorflow:From train.py:154: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0123 00:07:55.991668 25148 module_wrapper.py:139] From train.py:154: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-01-23 00:07:55.994277: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-01-23 00:07:56.004504: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-01-23 00:07:56.037961: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 00:07:56.045183: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 00:07:56.075106: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 00:07:56.100085: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 00:07:56.123119: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 00:07:56.155927: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 00:07:56.183035: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 00:07:56.221421: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 00:07:56.228095: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 00:07:56.894490: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 00:07:56.900340: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 00:07:56.905006: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 00:07:56.909768: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0123 00:07:56.924380 25148 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0123 00:07:57.612376 25148 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+W0123 00:07:57.620381 25148 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0123 00:07:57.639376 25148 deprecation.py:506] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0123 00:07:57.647381 25148 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+W0123 00:07:57.648382 25148 lazy_loader.py:50]
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+W0123 00:07:57.657381 25148 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W0123 00:07:57.659361 25148 deprecation.py:323] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From train.py:172: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0123 00:07:57.721376 25148 module_wrapper.py:139] From train.py:172: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From train.py:182: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+W0123 00:07:57.887376 25148 module_wrapper.py:139] From train.py:182: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From train.py:182: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+W0123 00:07:57.889359 25148 module_wrapper.py:139] From train.py:182: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From train.py:189: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+W0123 00:07:57.913375 25148 module_wrapper.py:139] From train.py:189: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:07:57.915359 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+WARNING:tensorflow:From train.py:190: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0123 00:07:57.920376 25148 module_wrapper.py:139] From train.py:190: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:07:57.934380 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:07:57.935382 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:07:57.948376 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:07:57.949381 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:07:57.961375 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:07:57.963376 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:07:57.974376 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:07:57.977382 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:07:57.989375 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:07:57.990392 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:07:58.003365 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:07:58.006359 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:07:58.018376 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:07:58.020377 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:07:58.032365 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:07:58.033392 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:07:58.045376 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+WARNING:tensorflow:From train.py:193: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+W0123 00:07:58.047383 25148 module_wrapper.py:139] From train.py:193: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579734478
+
+WARNING:tensorflow:From train.py:207: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+W0123 00:07:58.051376 25148 module_wrapper.py:139] From train.py:207: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+WARNING:tensorflow:From train.py:221: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+W0123 00:08:02.098731 25148 module_wrapper.py:139] From train.py:221: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+0
+2020-01-23 00:08:08.432101: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 00:08:09.096357: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 00:08:09.930442: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Internal: Invoking ptxas not supported on Windows
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2020-01-23 00:08:10.108674: W tensorflow/core/common_runtime/bfc_allocator.cc:305] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+2020-01-23 00:08:10.723316: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.79GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 00:08:10.933402: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.21GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 00:08:12.057228: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 00:08:12.069617: W tensorflow/core/kernels/gpu_utils.cc:48] Failed to allocate memory for convolution redzone checking; skipping this check. This is benign and only means that we won't check cudnn for out-of-bounds reads and writes. This message will only be printed once.
+2020-01-23 00:08:13.189822: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+WARNING:tensorflow:From train.py:277: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+W0123 00:08:14.718395 25148 module_wrapper.py:139] From train.py:277: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 0.780981, Train acc 0.746167
+Valid loss 0.938697, Valid acc 0.758778
+Test loss 0.990291, Test acc 0.7648
+Test - Confusion Matrix:
+[[3429. 1571.]
+ [ 781. 4219.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579734478\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.538522, Train acc 0.815023
+Valid loss 1.91612, Valid acc 0.757556
+Test loss 2.10333, Test acc 0.7608
+Test - Confusion Matrix:
+[[3523. 1477.]
+ [ 915. 4085.]]
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.457519, Train acc 0.841571
+Valid loss 3.54895, Valid acc 0.748
+Test loss 3.94983, Test acc 0.7547
+Test - Confusion Matrix:
+[[3373. 1627.]
+ [ 826. 4174.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.457062, Train acc 0.848281
+Valid loss 8.6839, Valid acc 0.738889
+Test loss 9.78592, Test acc 0.7418
+Test - Confusion Matrix:
+[[3260. 1740.]
+ [ 842. 4158.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.498588, Train acc 0.841378
+Valid loss 16.4889, Valid acc 0.669222
+Test loss 20.4907, Test acc 0.6664
+Test - Confusion Matrix:
+[[2271. 2729.]
+ [ 607. 4393.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.552122, Train acc 0.827793
+Valid loss 34.689, Valid acc 0.641
+Test loss 38.6132, Test acc 0.6476
+Test - Confusion Matrix:
+[[1973. 3027.]
+ [ 497. 4503.]]
+Early stopping is triggered at step 600. Step 595 lead to the best results:
+Best train loss 0.780981, Best train acc 0.746167
+Best valid loss 0.938697, Best valid acc 0.758778
+Best test loss 0.990291, Best test acc 0.7648
+The best model is the last saved model.
+Tuning iteration: 0
+Loss: 0.93869734, Accuracy: 0.7587777777777778, Learn rate: 0.038982868771725715, Keep prob: 0.1492790617998962, L2 reg lambda: 0.020285014397878665, Max_norm: 1.3541236685104991
+2020-01-23 00:27:09.549457: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 00:27:09.555895: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 00:27:09.561209: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 00:27:09.565883: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 00:27:09.571426: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 00:27:09.576401: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 00:27:09.582318: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 00:27:09.587658: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 00:27:09.592455: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 00:27:09.595704: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 00:27:09.601378: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 00:27:09.603879: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 00:27:09.607859: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:27:10.587600 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:27:10.606611 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:27:10.608602 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:27:10.627616 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:27:10.630596 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:27:10.642595 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:27:10.645596 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:27:10.657595 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:27:10.660602 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:27:10.672600 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:27:10.675601 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:27:10.688598 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:27:10.691599 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:27:10.704598 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:27:10.705600 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:27:10.719598 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:27:10.721601 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:27:10.735601 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579735630
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 0.720409, Train acc 0.833011
+Valid loss 0.838592, Valid acc 0.772
+Test loss 0.873009, Test acc 0.7711
+Test - Confusion Matrix:
+[[3799. 1201.]
+ [1088. 3912.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579735630\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.415905, Train acc 0.89558
+Valid loss 1.22464, Valid acc 0.764444
+Test loss 1.21085, Test acc 0.7618
+Test - Confusion Matrix:
+[[3696. 1304.]
+ [1078. 3922.]]
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.303345, Train acc 0.921376
+Valid loss 1.51746, Valid acc 0.764556
+Test loss 1.6014, Test acc 0.7585
+Test - Confusion Matrix:
+[[3696. 1304.]
+ [1111. 3889.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.24413, Train acc 0.935607
+Valid loss 1.69217, Valid acc 0.764667
+Test loss 1.79335, Test acc 0.7607
+Test - Confusion Matrix:
+[[3833. 1167.]
+ [1226. 3774.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.208081, Train acc 0.944659
+Valid loss 1.89, Valid acc 0.756222
+Test loss 2.01361, Test acc 0.7497
+Test - Confusion Matrix:
+[[3511. 1489.]
+ [1014. 3986.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.184241, Train acc 0.950774
+Valid loss 2.47996, Valid acc 0.760111
+Test loss 2.68109, Test acc 0.7541
+Test - Confusion Matrix:
+[[3929. 1071.]
+ [1388. 3612.]]
+Early stopping is triggered at step 600. Step 595 lead to the best results:
+Best train loss 0.720409, Best train acc 0.833011
+Best valid loss 0.838592, Best valid acc 0.772
+Best test loss 0.873009, Best test acc 0.7711
+The best model is the last saved model.
+Tuning iteration: 1
+Loss: 0.83859223, Accuracy: 0.772, Learn rate: 0.04169492970538432, Keep prob: 0.5449048438583974, L2 reg lambda: 0.0843324309384873, Max_norm: 2.8180596913619294
+2020-01-23 00:46:24.240742: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 00:46:24.247013: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 00:46:24.252180: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 00:46:24.256729: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 00:46:24.262150: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 00:46:24.267399: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 00:46:24.273641: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 00:46:24.279801: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 00:46:24.285965: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 00:46:24.290703: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 00:46:24.296258: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 00:46:24.300923: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 00:46:24.304954: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:46:25.257351 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:46:25.275356 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:46:25.277343 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:46:25.289356 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:46:25.291369 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:46:25.303356 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:46:25.304359 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:46:25.316350 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:46:25.317357 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:46:25.329351 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:46:25.330357 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:46:25.343351 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:46:25.344358 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:46:25.356351 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:46:25.358360 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:46:25.370352 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 00:46:25.371358 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 00:46:25.383351 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579736785
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 3.26438, Train acc 0.686299
+Valid loss 0.898001, Valid acc 0.748111
+Test loss 1.04955, Test acc 0.7549
+Test - Confusion Matrix:
+[[3956. 1044.]
+ [1407. 3593.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579736785\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 2.08058, Train acc 0.767802
+Valid loss 2.30693, Valid acc 0.755444
+Test loss 1.99917, Test acc 0.759
+Test - Confusion Matrix:
+[[3597. 1403.]
+ [1007. 3993.]]
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 1.61093, Train acc 0.801292
+Valid loss 1.15699, Valid acc 0.756333
+Test loss 1.51721, Test acc 0.7614
+Test - Confusion Matrix:
+[[3548. 1452.]
+ [ 934. 4066.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 1.40158, Train acc 0.825478
+Valid loss 4.95455, Valid acc 0.749444
+Test loss 6.6593, Test acc 0.7505
+Test - Confusion Matrix:
+[[3689. 1311.]
+ [1184. 3816.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 1.3378, Train acc 0.838664
+Valid loss 1.795, Valid acc 0.747111
+Test loss 1.9367, Test acc 0.7494
+Test - Confusion Matrix:
+[[3511. 1489.]
+ [1017. 3983.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 1.24815, Train acc 0.850129
+Valid loss 2.59103, Valid acc 0.747444
+Test loss 2.47262, Test acc 0.7528
+Test - Confusion Matrix:
+[[3840. 1160.]
+ [1312. 3688.]]
+Early stopping is triggered at step 600. Step 595 lead to the best results:
+Best train loss 3.26438, Best train acc 0.686299
+Best valid loss 0.898001, Best valid acc 0.748111
+Best test loss 1.04955, Best test acc 0.7549
+The best model is the last saved model.
+Tuning iteration: 2
+Loss: 0.8980007, Accuracy: 0.7481111111111111, Learn rate: 0.08279126374773749, Keep prob: 0.9891803216655493, L2 reg lambda: 0.3794007755722454, Max_norm: 3.232665622685167
+2020-01-23 01:05:16.356323: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 01:05:16.364972: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 01:05:16.369952: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 01:05:16.375079: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 01:05:16.379214: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 01:05:16.384719: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 01:05:16.389153: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 01:05:16.395277: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 01:05:16.399850: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 01:05:16.402445: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 01:05:16.407426: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 01:05:16.409810: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 01:05:16.413243: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:05:17.458426 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:05:17.480423 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:05:17.482424 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:05:17.495429 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:05:17.497430 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:05:17.512435 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:05:17.513423 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:05:17.531429 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:05:17.534429 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:05:17.551445 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:05:17.554428 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:05:17.571426 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:05:17.575429 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:05:17.592424 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:05:17.596427 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:05:17.612429 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:05:17.615425 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:05:17.630426 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579737917
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 1.60895, Train acc 0.586912
+Valid loss 0.818061, Valid acc 0.687333
+Test loss 0.858503, Test acc 0.6912
+Test - Confusion Matrix:
+[[4096.  904.]
+ [2184. 2816.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579737917\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 1.02822, Train acc 0.706658
+Valid loss 1.52263, Valid acc 0.752778
+Test loss 1.59142, Test acc 0.7534
+Test - Confusion Matrix:
+[[3643. 1357.]
+ [1109. 3891.]]
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.774654, Train acc 0.771489
+Valid loss 1.91624, Valid acc 0.751444
+Test loss 2.17639, Test acc 0.7542
+Test - Confusion Matrix:
+[[3788. 1212.]
+ [1246. 3754.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.627018, Train acc 0.811197
+Valid loss 2.46689, Valid acc 0.759444
+Test loss 2.66071, Test acc 0.7549
+Test - Confusion Matrix:
+[[3850. 1150.]
+ [1301. 3699.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.533624, Train acc 0.83697
+Valid loss 2.34685, Valid acc 0.753
+Test loss 2.41987, Test acc 0.7509
+Test - Confusion Matrix:
+[[3590. 1410.]
+ [1081. 3919.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.514496, Train acc 0.851146
+Valid loss 4.06261, Valid acc 0.743889
+Test loss 4.43936, Test acc 0.7398
+Test - Confusion Matrix:
+[[3349. 1651.]
+ [ 951. 4049.]]
+Early stopping is triggered at step 600. Step 595 lead to the best results:
+Best train loss 1.60895, Best train acc 0.586912
+Best valid loss 0.818061, Best valid acc 0.687333
+Best test loss 0.858503, Best test acc 0.6912
+The best model is the last saved model.
+Tuning iteration: 3
+Loss: 0.8180608, Accuracy: 0.6873333333333334, Learn rate: 0.05298304009027, Keep prob: 0.4837184478177472, L2 reg lambda: 0.338398240748937, Max_norm: 2.45100008003146
+2020-01-23 01:24:11.959528: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 01:24:11.966312: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 01:24:11.971836: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 01:24:11.976322: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 01:24:11.982936: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 01:24:11.989234: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 01:24:11.994774: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 01:24:12.001432: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 01:24:12.008269: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 01:24:12.012253: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 01:24:12.019076: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 01:24:12.022582: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 01:24:12.027626: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:24:13.002573 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:24:13.022557 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:24:13.024552 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:24:13.037572 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:24:13.039551 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:24:13.052568 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:24:13.054574 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:24:13.068572 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:24:13.070572 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:24:13.082568 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:24:13.085567 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:24:13.097556 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:24:13.098558 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:24:13.111556 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:24:13.112560 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:24:13.124556 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:24:13.126559 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:24:13.138556 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579739053
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 0.561799, Train acc 0.848614
+Valid loss 0.736798, Valid acc 0.771
+Test loss 0.776898, Test acc 0.7732
+Test - Confusion Matrix:
+[[3971. 1029.]
+ [1239. 3761.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579739053\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.333748, Train acc 0.90669
+Valid loss 1.03712, Valid acc 0.755667
+Test loss 0.94893, Test acc 0.755
+Test - Confusion Matrix:
+[[3449. 1551.]
+ [ 899. 4101.]]
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.365049, Train acc 0.915258
+Valid loss 1.44864, Valid acc 0.740333
+Test loss 1.46961, Test acc 0.7384
+Test - Confusion Matrix:
+[[3374. 1626.]
+ [ 990. 4010.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.310674, Train acc 0.923584
+Valid loss 1.35021, Valid acc 0.758
+Test loss 1.35331, Test acc 0.7617
+Test - Confusion Matrix:
+[[3817. 1183.]
+ [1200. 3800.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.265174, Train acc 0.933387
+Valid loss 1.48809, Valid acc 0.754667
+Test loss 1.55405, Test acc 0.757
+Test - Confusion Matrix:
+[[3879. 1121.]
+ [1309. 3691.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.232846, Train acc 0.94086
+Valid loss 2.08132, Valid acc 0.750333
+Test loss 1.97929, Test acc 0.7534
+Test - Confusion Matrix:
+[[3618. 1382.]
+ [1084. 3916.]]
+Early stopping is triggered at step 600. Step 595 lead to the best results:
+Best train loss 0.561799, Best train acc 0.848614
+Best valid loss 0.736798, Best valid acc 0.771
+Best test loss 0.776898, Best test acc 0.7732
+The best model is the last saved model.
+Tuning iteration: 4
+Loss: 0.7367975, Accuracy: 0.771, Learn rate: 0.029788110407261766, Keep prob: 0.48807033799063215, L2 reg lambda: 0.9350679414889546, Max_norm: 3.0876850851638142
+2020-01-23 01:43:22.487466: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 01:43:22.494000: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 01:43:22.500129: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 01:43:22.504423: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 01:43:22.509714: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 01:43:22.513949: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 01:43:22.519096: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 01:43:22.523693: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 01:43:22.529465: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 01:43:22.532266: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 01:43:22.538158: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 01:43:22.541670: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 01:43:22.546688: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:43:23.508208 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:43:23.529210 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:43:23.531213 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:43:23.544210 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:43:23.546213 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:43:23.558211 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:43:23.560213 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:43:23.572210 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:43:23.574212 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:43:23.586210 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:43:23.587212 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:43:23.602210 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:43:23.604212 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:43:23.616210 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:43:23.618213 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:43:23.630210 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 01:43:23.632222 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 01:43:23.645210 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579740203
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 0.973701, Train acc 0.785602
+Valid loss 0.67487, Valid acc 0.768333
+Test loss 0.710169, Test acc 0.7681
+Test - Confusion Matrix:
+[[3877. 1123.]
+ [1196. 3804.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579740203\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.562493, Train acc 0.865367
+Valid loss 0.850058, Valid acc 0.764889
+Test loss 0.917749, Test acc 0.7617
+Test - Confusion Matrix:
+[[3910. 1090.]
+ [1293. 3707.]]
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.412197, Train acc 0.897363
+Valid loss 1.08268, Valid acc 0.760889
+Test loss 1.11365, Test acc 0.7547
+Test - Confusion Matrix:
+[[3809. 1191.]
+ [1262. 3738.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.332079, Train acc 0.915376
+Valid loss 1.21404, Valid acc 0.758
+Test loss 1.18229, Test acc 0.7518
+Test - Confusion Matrix:
+[[3514. 1486.]
+ [ 996. 4004.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.281974, Train acc 0.926963
+Valid loss 1.51606, Valid acc 0.755778
+Test loss 1.48443, Test acc 0.7511
+Test - Confusion Matrix:
+[[3481. 1519.]
+ [ 970. 4030.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.24727, Train acc 0.935123
+Valid loss 1.44572, Valid acc 0.758333
+Test loss 1.44602, Test acc 0.7537
+Test - Confusion Matrix:
+[[3650. 1350.]
+ [1113. 3887.]]
+Early stopping is triggered at step 600. Step 595 lead to the best results:
+Best train loss 0.973701, Best train acc 0.785602
+Best valid loss 0.67487, Best valid acc 0.768333
+Best test loss 0.710169, Best test acc 0.7681
+The best model is the last saved model.
+Tuning iteration: 5
+Loss: 0.67486984, Accuracy: 0.7683333333333333, Learn rate: 0.028852704668176125, Keep prob: 0.42021179644754103, L2 reg lambda: 0.8249028347519661, Max_norm: 3.747919598474125
+2020-01-23 02:02:30.269736: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 02:02:30.278571: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 02:02:30.283525: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 02:02:30.289964: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 02:02:30.294268: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 02:02:30.299593: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 02:02:30.304016: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 02:02:30.309407: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 02:02:30.314121: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 02:02:30.318078: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 02:02:30.322338: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 02:02:30.324782: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 02:02:30.328879: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:02:31.284863 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:02:31.302863 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:02:31.304866 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:02:31.317863 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:02:31.319864 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:02:31.331863 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:02:31.332864 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:02:31.345863 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:02:31.347864 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:02:31.359863 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:02:31.360868 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:02:31.373863 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:02:31.375866 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:02:31.388863 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:02:31.390866 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:02:31.402863 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:02:31.404867 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:02:31.417863 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579741351
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 0.421037, Train acc 0.868126
+Valid loss 0.736446, Valid acc 0.779889
+Test loss 0.738432, Test acc 0.7723
+Test - Confusion Matrix:
+[[3881. 1119.]
+ [1158. 3842.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579741351\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.248391, Train acc 0.922612
+Valid loss 0.936824, Valid acc 0.767778
+Test loss 0.924146, Test acc 0.7623
+Test - Confusion Matrix:
+[[3751. 1249.]
+ [1128. 3872.]]
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.180921, Train acc 0.944319
+Valid loss 1.15408, Valid acc 0.763778
+Test loss 1.20927, Test acc 0.7579
+Test - Confusion Matrix:
+[[3963. 1037.]
+ [1384. 3616.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.143807, Train acc 0.956196
+Valid loss 1.19848, Valid acc 0.762444
+Test loss 1.20299, Test acc 0.7593
+Test - Confusion Matrix:
+[[3827. 1173.]
+ [1234. 3766.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.139785, Train acc 0.961834
+Valid loss 5.92753, Valid acc 0.653667
+Test loss 5.54032, Test acc 0.6452
+Test - Confusion Matrix:
+[[3744. 1256.]
+ [2292. 2708.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.200197, Train acc 0.955315
+Valid loss 1.14349, Valid acc 0.763889
+Test loss 1.17795, Test acc 0.7612
+Test - Confusion Matrix:
+[[3798. 1202.]
+ [1186. 3814.]]
+Early stopping is triggered at step 600. Step 595 lead to the best results:
+Best train loss 0.421037, Best train acc 0.868126
+Best valid loss 0.736446, Best valid acc 0.779889
+Best test loss 0.738432, Best test acc 0.7723
+The best model is the last saved model.
+Tuning iteration: 6
+Loss: 0.7364456, Accuracy: 0.7798888888888889, Learn rate: 0.018545715362838045, Keep prob: 0.6939669648131451, L2 reg lambda: 0.22900248090507513, Max_norm: 3.85299481936302
+2020-01-23 02:21:47.704228: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 02:21:47.711074: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 02:21:47.717040: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 02:21:47.722405: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 02:21:47.727926: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 02:21:47.734372: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 02:21:47.738837: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 02:21:47.745540: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 02:21:47.751923: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 02:21:47.754876: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 02:21:47.759202: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 02:21:47.762885: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 02:21:47.766138: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:21:48.739398 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:21:48.758398 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:21:48.761378 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:21:48.773378 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:21:48.774401 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:21:48.787400 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:21:48.789378 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:21:48.802377 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:21:48.804377 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:21:48.819377 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:21:48.822399 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:21:48.836382 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:21:48.843662 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:21:48.861665 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:21:48.864663 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:21:48.878667 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:21:48.881661 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:21:48.898682 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579742508
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 1.73525, Train acc 0.597044
+Valid loss 1.08976, Valid acc 0.746
+Test loss 1.18319, Test acc 0.748
+Test - Confusion Matrix:
+[[3406. 1594.]
+ [ 926. 4074.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579742508\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 1.00085, Train acc 0.747338
+Valid loss 1.00781, Valid acc 0.760222
+Test loss 1.11977, Test acc 0.7569
+Test - Confusion Matrix:
+[[3460. 1540.]
+ [ 891. 4109.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579742508\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.714745, Train acc 0.814026
+Valid loss 1.75608, Valid acc 0.755667
+Test loss 1.88129, Test acc 0.7578
+Test - Confusion Matrix:
+[[3597. 1403.]
+ [1019. 3981.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.562978, Train acc 0.85102
+Valid loss 4.7136, Valid acc 0.747333
+Test loss 5.07258, Test acc 0.7501
+Test - Confusion Matrix:
+[[3773. 1227.]
+ [1272. 3728.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.470603, Train acc 0.874405
+Valid loss 2.56962, Valid acc 0.749778
+Test loss 2.73962, Test acc 0.754
+Test - Confusion Matrix:
+[[3806. 1194.]
+ [1266. 3734.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.404855, Train acc 0.890781
+Valid loss 1.94438, Valid acc 0.748222
+Test loss 1.87596, Test acc 0.7584
+Test - Confusion Matrix:
+[[3647. 1353.]
+ [1063. 3937.]]
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 0.356682, Train acc 0.903022
+Valid loss 3.38405, Valid acc 0.746
+Test loss 3.34862, Test acc 0.7553
+Test - Confusion Matrix:
+[[3670. 1330.]
+ [1117. 3883.]]
+Early stopping is triggered at step 700. Step 695 lead to the best results:
+Best train loss 1.00085, Best train acc 0.747338
+Best valid loss 1.00781, Best valid acc 0.760222
+Best test loss 1.11977, Best test acc 0.7569
+The best model is the last saved model.
+Tuning iteration: 7
+Loss: 1.0078107, Accuracy: 0.7602222222222222, Learn rate: 0.058662785421013025, Keep prob: 0.9258861144920536, L2 reg lambda: 0.15483122398859062, Max_norm: 2.327300252024062
+2020-01-23 02:44:01.951351: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 02:44:01.957914: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 02:44:01.963363: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 02:44:01.967685: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 02:44:01.972951: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 02:44:01.978105: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 02:44:01.983335: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 02:44:01.988330: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 02:44:01.993968: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 02:44:01.996842: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 02:44:02.001857: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 02:44:02.004184: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 02:44:02.007137: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:44:02.961481 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:44:02.979461 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:44:02.980461 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:44:02.993460 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:44:02.995461 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:44:03.007461 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:44:03.009461 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:44:03.022461 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:44:03.023460 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:44:03.035461 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:44:03.037462 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:44:03.050461 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:44:03.052461 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:44:03.065461 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:44:03.066462 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:44:03.081461 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 02:44:03.083460 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 02:44:03.096462 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579743843
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 0.441452, Train acc 0.865019
+Valid loss 0.637254, Valid acc 0.776111
+Test loss 0.637277, Test acc 0.7797
+Test - Confusion Matrix:
+[[3822. 1178.]
+ [1025. 3975.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579743843\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 0.265952, Train acc 0.920877
+Valid loss 0.833292, Valid acc 0.770889
+Test loss 0.860764, Test acc 0.7668
+Test - Confusion Matrix:
+[[3879. 1121.]
+ [1211. 3789.]]
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.194732, Train acc 0.943063
+Valid loss 1.00695, Valid acc 0.767778
+Test loss 1.0338, Test acc 0.7619
+Test - Confusion Matrix:
+[[3861. 1139.]
+ [1242. 3758.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.155093, Train acc 0.955251
+Valid loss 1.13542, Valid acc 0.764778
+Test loss 1.12821, Test acc 0.7613
+Test - Confusion Matrix:
+[[3767. 1233.]
+ [1154. 3846.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.129665, Train acc 0.962958
+Valid loss 1.23571, Valid acc 0.764667
+Test loss 1.25904, Test acc 0.7578
+Test - Confusion Matrix:
+[[3845. 1155.]
+ [1267. 3733.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.111921, Train acc 0.968292
+Valid loss 1.34088, Valid acc 0.763444
+Test loss 1.36604, Test acc 0.7577
+Test - Confusion Matrix:
+[[3870. 1130.]
+ [1293. 3707.]]
+Early stopping is triggered at step 600. Step 595 lead to the best results:
+Best train loss 0.441452, Best train acc 0.865019
+Best valid loss 0.637254, Best valid acc 0.776111
+Best test loss 0.637277, Best test acc 0.7797
+The best model is the last saved model.
+Tuning iteration: 8
+Loss: 0.6372542, Accuracy: 0.7761111111111111, Learn rate: 0.009321625477796388, Keep prob: 0.648271568633727, L2 reg lambda: 0.09013843197747506, Max_norm: 1.7817175714992346
+2020-01-23 03:03:16.499856: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 03:03:16.506468: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 03:03:16.511741: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 03:03:16.515931: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 03:03:16.521213: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 03:03:16.526542: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 03:03:16.532191: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 03:03:16.536623: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 03:03:16.542337: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 03:03:16.545270: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 03:03:16.550435: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 03:03:16.553091: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 03:03:16.557212: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 03:03:17.512313 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 03:03:17.531317 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 03:03:17.533309 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 03:03:17.546319 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 03:03:17.547303 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 03:03:17.562318 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 03:03:17.565304 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 03:03:17.577318 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 03:03:17.579320 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 03:03:17.591317 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 03:03:17.594304 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 03:03:17.608313 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 03:03:17.610312 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 03:03:17.624301 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 03:03:17.626302 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 03:03:17.638318 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 03:03:17.639301 25148 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 03:03:17.653302 25148 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579744997
+
+0
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 1.7355, Train acc 0.694132
+Valid loss 1.30959, Valid acc 0.753111
+Test loss 1.19011, Test acc 0.764
+Test - Confusion Matrix:
+[[3815. 1185.]
+ [1175. 3825.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579744997\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 1.00566, Train acc 0.79884
+Valid loss 1.20484, Valid acc 0.758778
+Test loss 1.37072, Test acc 0.7616
+Test - Confusion Matrix:
+[[3608. 1392.]
+ [ 992. 4008.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579744997\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 0.725264, Train acc 0.843998
+Valid loss 1.63473, Valid acc 0.757889
+Test loss 1.76344, Test acc 0.7579
+Test - Confusion Matrix:
+[[3613. 1387.]
+ [1034. 3966.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 0.581847, Train acc 0.869286
+Valid loss 2.13498, Valid acc 0.760444
+Test loss 2.37843, Test acc 0.7574
+Test - Confusion Matrix:
+[[3723. 1277.]
+ [1149. 3851.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 0.497741, Train acc 0.884978
+Valid loss 2.1239, Valid acc 0.753
+Test loss 2.17464, Test acc 0.7519
+Test - Confusion Matrix:
+[[3467. 1533.]
+ [ 948. 4052.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 0.461394, Train acc 0.895114
+Valid loss 3.49988, Valid acc 0.746
+Test loss 3.58992, Test acc 0.7423
+Test - Confusion Matrix:
+[[3441. 1559.]
+ [1018. 3982.]]
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 0.459767, Train acc 0.897444
+Valid loss 6.24486, Valid acc 0.748667
+Test loss 8.19063, Test acc 0.7454
+Test - Confusion Matrix:
+[[3747. 1253.]
+ [1293. 3707.]]
+Early stopping is triggered at step 700. Step 695 lead to the best results:
+Best train loss 1.00566, Best train acc 0.79884
+Best valid loss 1.20484, Best valid acc 0.758778
+Best test loss 1.37072, Best test acc 0.7616
+The best model is the last saved model.
+Tuning iteration: 9
+Loss: 1.204837, Accuracy: 0.7587777777777778, Learn rate: 0.060177125025775616, Keep prob: 0.5858670623472547, L2 reg lambda: 0.1429068324524242, Max_norm: 1.518399663367572
+Result 0:
+Loss: 0.93869734, Accuracy: 0.7587777777777778, Learn rate: 0.038982868771725715, Keep prob: 0.1492790617998962, L2 reg lambda: 0.020285014397878665, Max_norm: 1.3541236685104991
+Result 1:
+Loss: 0.83859223, Accuracy: 0.772, Learn rate: 0.04169492970538432, Keep prob: 0.5449048438583974, L2 reg lambda: 0.0843324309384873, Max_norm: 2.8180596913619294
+Result 2:
+Loss: 0.8980007, Accuracy: 0.7481111111111111, Learn rate: 0.08279126374773749, Keep prob: 0.9891803216655493, L2 reg lambda: 0.3794007755722454, Max_norm: 3.232665622685167
+Result 3:
+Loss: 0.8180608, Accuracy: 0.6873333333333334, Learn rate: 0.05298304009027, Keep prob: 0.4837184478177472, L2 reg lambda: 0.338398240748937, Max_norm: 2.45100008003146
+Result 4:
+Loss: 0.7367975, Accuracy: 0.771, Learn rate: 0.029788110407261766, Keep prob: 0.48807033799063215, L2 reg lambda: 0.9350679414889546, Max_norm: 3.0876850851638142
+Result 5:
+Loss: 0.67486984, Accuracy: 0.7683333333333333, Learn rate: 0.028852704668176125, Keep prob: 0.42021179644754103, L2 reg lambda: 0.8249028347519661, Max_norm: 3.747919598474125
+Result 6:
+Loss: 0.7364456, Accuracy: 0.7798888888888889, Learn rate: 0.018545715362838045, Keep prob: 0.6939669648131451, L2 reg lambda: 0.22900248090507513, Max_norm: 3.85299481936302
+Result 7:
+Loss: 1.0078107, Accuracy: 0.7602222222222222, Learn rate: 0.058662785421013025, Keep prob: 0.9258861144920536, L2 reg lambda: 0.15483122398859062, Max_norm: 2.327300252024062
+Result 8:
+Loss: 0.6372542, Accuracy: 0.7761111111111111, Learn rate: 0.009321625477796388, Keep prob: 0.648271568633727, L2 reg lambda: 0.09013843197747506, Max_norm: 1.7817175714992346
+Result 9:
+Loss: 1.204837, Accuracy: 0.7587777777777778, Learn rate: 0.060177125025775616, Keep prob: 0.5858670623472547, L2 reg lambda: 0.1429068324524242, Max_norm: 1.518399663367572
+Best result:
+Loss: 0.7364456, Accuracy: 0.7798888888888889, Learn rate: 0.018545715362838045, Keep prob: 0.6939669648131451, L2 reg lambda: 0.22900248090507513, Max_norm: 3.85299481936302
