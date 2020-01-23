@@ -1,0 +1,2656 @@
+(venv) C:\Users\Jokke\Repositories\pattern_recognition\src>.\get_results.bat
+
+python train.py --pickle_name=english_balanced.p --early_stop=True --l2_all_layers=True --learn_rate=0.02012769838514467 --dropout_keep_prob=0.8552388064773312 --l2_reg_lambda=0.16551256100556333
+2020-01-23 17:46:45.872458: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+WARNING:tensorflow:From train.py:27: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From train.py:30: The name tf.GPUOptions is deprecated. Please use tf.compat.v1.GPUOptions instead.
+
+WARNING:tensorflow:From train.py:404: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+loading data...
+data loaded!
+Train/Dev split: 81000/9000
+WARNING:tensorflow:From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0123 17:46:50.542301  8416 module_wrapper.py:139] From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-01-23 17:46:50.549969: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-01-23 17:46:50.566344: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-01-23 17:46:50.618508: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 17:46:50.626861: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 17:46:50.669570: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 17:46:50.709605: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 17:46:50.735137: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 17:46:50.794485: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 17:46:50.837065: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 17:46:50.925789: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 17:46:50.932766: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 17:46:52.917321: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 17:46:52.923372: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 17:46:52.926790: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 17:46:52.933164: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0123 17:46:52.936798  8416 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0123 17:46:53.636866  8416 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+W0123 17:46:53.649094  8416 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0123 17:46:53.667275  8416 deprecation.py:506] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0123 17:46:53.669398  8416 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+W0123 17:46:53.669398  8416 lazy_loader.py:50]
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+W0123 17:46:53.677447  8416 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+W0123 17:46:53.677447  8416 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W0123 17:46:53.689766  8416 deprecation.py:323] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0123 17:46:53.760703  8416 module_wrapper.py:139] From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+W0123 17:46:53.921362  8416 module_wrapper.py:139] From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+W0123 17:46:53.921362  8416 module_wrapper.py:139] From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+W0123 17:46:53.947043  8416 module_wrapper.py:139] From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 17:46:53.947043  8416 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+WARNING:tensorflow:From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0123 17:46:53.947043  8416 module_wrapper.py:139] From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 17:46:53.962653  8416 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 17:46:53.962653  8416 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 17:46:53.978300  8416 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 17:46:53.978300  8416 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 17:46:53.993921  8416 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 17:46:53.993921  8416 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 17:46:54.009546  8416 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 17:46:54.009546  8416 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 17:46:54.025172  8416 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 17:46:54.025172  8416 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 17:46:54.031704  8416 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 17:46:54.031704  8416 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 17:46:54.047358  8416 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 17:46:54.047358  8416 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 17:46:54.062982  8416 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 17:46:54.062982  8416 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 17:46:54.078594  8416 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+WARNING:tensorflow:From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+W0123 17:46:54.078594  8416 module_wrapper.py:139] From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579798014
+
+WARNING:tensorflow:From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+W0123 17:46:54.078594  8416 module_wrapper.py:139] From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+WARNING:tensorflow:From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+W0123 17:46:57.799780  8416 module_wrapper.py:139] From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+0
+2020-01-23 17:47:04.457590: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 17:47:05.342025: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 17:47:06.743449: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Internal: Invoking ptxas not supported on Windows
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2020-01-23 17:47:06.905468: W tensorflow/core/common_runtime/bfc_allocator.cc:305] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+2020-01-23 17:47:07.530625: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.79GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 17:47:07.739843: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.21GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 17:47:09.376405: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 17:47:09.386648: W tensorflow/core/kernels/gpu_utils.cc:48] Failed to allocate memory for convolution redzone checking; skipping this check. This is benign and only means that we won't check cudnn for out-of-bounds reads and writes. This message will only be printed once.
+2020-01-23 17:47:13.610138: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+WARNING:tensorflow:From train.py:279: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+W0123 17:47:15.808252  8416 module_wrapper.py:139] From train.py:279: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 12.6437, Train acc 0.732333
+Valid loss 0.622687, Valid acc 0.745778
+Test loss 0.634204, Test acc 0.7458
+Test - Confusion Matrix:
+[[3708. 1292.]
+ [1250. 3750.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579798014\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 6.54165, Train acc 0.803527
+Valid loss 0.692901, Valid acc 0.738111
+Test loss 0.70047, Test acc 0.7365
+Test - Confusion Matrix:
+[[3662. 1338.]
+ [1297. 3703.]]
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 4.49481, Train acc 0.834478
+Valid loss 0.691423, Valid acc 0.734444
+Test loss 0.680891, Test acc 0.7335
+Test - Confusion Matrix:
+[[3376. 1624.]
+ [1041. 3959.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 3.46172, Train acc 0.852942
+Valid loss 0.737776, Valid acc 0.733444
+Test loss 0.747465, Test acc 0.733
+Test - Confusion Matrix:
+[[3652. 1348.]
+ [1322. 3678.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 2.83625, Train acc 0.86569
+Valid loss 0.79359, Valid acc 0.734556
+Test loss 0.823703, Test acc 0.7266
+Test - Confusion Matrix:
+[[3740. 1260.]
+ [1474. 3526.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 2.41583, Train acc 0.875224
+Valid loss 0.730241, Valid acc 0.715778
+Test loss 0.678013, Test acc 0.7181
+Test - Confusion Matrix:
+[[2892. 2108.]
+ [ 711. 4289.]]
+Early stopping is triggered at step 600. Step 595 lead to the best results:
+Best train loss 12.6437, Best train acc 0.732333
+Best valid loss 0.622687, Best valid acc 0.745778
+Best test loss 0.634204, Best test acc 0.7458
+The best model is the last saved model.
+
+python train.py --pickle_name=english_imbalanced.p --early_stop=True --l2_all_layers=True --learn_rate=0.02012769838514467 --dropout_keep_prob=0.8552388064773312 --l2_reg_lambda=0.16551256100556333
+2020-01-23 18:07:02.190244: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+WARNING:tensorflow:From train.py:27: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From train.py:30: The name tf.GPUOptions is deprecated. Please use tf.compat.v1.GPUOptions instead.
+
+WARNING:tensorflow:From train.py:404: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+loading data...
+data loaded!
+Train/Dev split: 81000/9000
+WARNING:tensorflow:From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0123 18:07:06.915259 14628 module_wrapper.py:139] From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-01-23 18:07:06.919220: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-01-23 18:07:06.927366: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-01-23 18:07:06.956465: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 18:07:06.962934: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 18:07:06.974557: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 18:07:06.986852: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 18:07:06.994683: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 18:07:07.007089: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 18:07:07.016517: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 18:07:07.034565: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 18:07:07.039729: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 18:07:07.661033: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 18:07:07.666359: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 18:07:07.669432: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 18:07:07.674130: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0123 18:07:07.682261 14628 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0123 18:07:08.215412 14628 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+W0123 18:07:08.223461 14628 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0123 18:07:08.243696 14628 deprecation.py:506] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0123 18:07:08.245742 14628 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+W0123 18:07:08.245742 14628 lazy_loader.py:50]
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+W0123 18:07:08.263917 14628 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+W0123 18:07:08.263917 14628 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W0123 18:07:08.263917 14628 deprecation.py:323] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0123 18:07:08.326953 14628 module_wrapper.py:139] From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+W0123 18:07:08.479732 14628 module_wrapper.py:139] From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+W0123 18:07:08.487790 14628 module_wrapper.py:139] From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+W0123 18:07:08.510287 14628 module_wrapper.py:139] From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:07:08.510287 14628 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+WARNING:tensorflow:From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0123 18:07:08.510287 14628 module_wrapper.py:139] From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:07:08.530680 14628 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:07:08.530680 14628 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:07:08.540868 14628 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:07:08.540868 14628 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:07:08.548939 14628 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:07:08.559016 14628 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:07:08.569179 14628 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:07:08.569179 14628 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:07:08.581379 14628 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:07:08.581379 14628 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:07:08.589489 14628 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:07:08.599498 14628 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:07:08.599498 14628 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:07:08.599498 14628 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:07:08.615169 14628 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:07:08.615169 14628 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:07:08.630779 14628 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+WARNING:tensorflow:From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+W0123 18:07:08.630779 14628 module_wrapper.py:139] From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579799228
+
+WARNING:tensorflow:From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+W0123 18:07:08.630779 14628 module_wrapper.py:139] From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+WARNING:tensorflow:From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+W0123 18:07:11.734726 14628 module_wrapper.py:139] From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+0
+2020-01-23 18:07:16.854278: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 18:07:17.433580: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 18:07:18.242562: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Internal: Invoking ptxas not supported on Windows
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2020-01-23 18:07:18.401664: W tensorflow/core/common_runtime/bfc_allocator.cc:305] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+2020-01-23 18:07:19.014555: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.79GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 18:07:19.224185: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.21GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 18:07:20.620804: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 18:07:20.631656: W tensorflow/core/kernels/gpu_utils.cc:48] Failed to allocate memory for convolution redzone checking; skipping this check. This is benign and only means that we won't check cudnn for out-of-bounds reads and writes. This message will only be printed once.
+2020-01-23 18:07:24.475206: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+WARNING:tensorflow:From train.py:279: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+W0123 18:07:26.627704 14628 module_wrapper.py:139] From train.py:279: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 12.5339, Train acc 0.746589
+Valid loss 0.539242, Valid acc 0.798889
+Test loss 0.497007, Test acc 0.7985
+Test - Confusion Matrix:
+[[ 645. 1855.]
+ [ 160. 7340.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579799228\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 6.467, Train acc 0.813241
+Valid loss 0.549957, Valid acc 0.801556
+Test loss 0.518488, Test acc 0.8039
+Test - Confusion Matrix:
+[[1333. 1167.]
+ [ 794. 6706.]]
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 4.42434, Train acc 0.847177
+Valid loss 0.580447, Valid acc 0.791
+Test loss 0.544933, Test acc 0.8015
+Test - Confusion Matrix:
+[[1372. 1128.]
+ [ 857. 6643.]]
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 3.39295, Train acc 0.867913
+Valid loss 0.570384, Valid acc 0.806222
+Test loss 0.51646, Test acc 0.8107
+Test - Confusion Matrix:
+[[1110. 1390.]
+ [ 503. 6997.]]
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 2.77039, Train acc 0.881722
+Valid loss 0.577408, Valid acc 0.796667
+Test loss 0.531831, Test acc 0.8052
+Test - Confusion Matrix:
+[[1248. 1252.]
+ [ 696. 6804.]]
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 2.35315, Train acc 0.89155
+Valid loss 0.58448, Valid acc 0.799667
+Test loss 0.527179, Test acc 0.8093
+Test - Confusion Matrix:
+[[1114. 1386.]
+ [ 521. 6979.]]
+Early stopping is triggered at step 600. Step 595 lead to the best results:
+Best train loss 12.5339, Best train acc 0.746589
+Best valid loss 0.539242, Best valid acc 0.798889
+Best test loss 0.497007, Best test acc 0.7985
+The best model is the last saved model.
+
+pause
+Press any key to continue . . .
+
+ain.py --pickle_name=dutch_imbalanced.p --early_stop=True --l2_all_layers=True --learn_rate=0.02012769838514467 --dropout_keep_prob=0.8552388064773312 --l2_reg_lambda=0.16551256100556333
+'ain.py' is not recognized as an internal or external command,
+operable program or batch file.
+
+python train.py --pickle_name=english_imbalanced.p --early_stop=True --l2_all_layers=True --learn_rate=0.02012769838514467 --dropout_keep_prob=0.8552388064773312 --l2_reg_lambda=0.16551256100556333
+2020-01-23 18:39:10.118063: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+WARNING:tensorflow:From train.py:27: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From train.py:30: The name tf.GPUOptions is deprecated. Please use tf.compat.v1.GPUOptions instead.
+
+WARNING:tensorflow:From train.py:407: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+loading data...
+data loaded!
+Train/Dev split: 81000/9000
+WARNING:tensorflow:From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0123 18:39:14.885067 13936 module_wrapper.py:139] From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-01-23 18:39:14.887154: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-01-23 18:39:14.895969: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-01-23 18:39:14.926690: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 18:39:14.934760: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 18:39:14.945890: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 18:39:14.954584: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 18:39:14.961535: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 18:39:14.973752: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 18:39:14.983512: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 18:39:15.001786: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 18:39:15.008050: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 18:39:15.632058: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 18:39:15.637359: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 18:39:15.642105: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 18:39:15.646672: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0123 18:39:15.662066 13936 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+Traceback (most recent call last):
+  File "train.py", line 407, in <module>
+    tf.app.run()
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\platform\app.py", line 40, in run
+    _run(main=main, argv=argv, flags_parser=_parse_flags_tolerate_undef)
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\absl\app.py", line 299, in run
+    _run_main(main, args)
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\absl\app.py", line 250, in _run_main
+    sys.exit(main(argv))
+  File "train.py", line 403, in main
+    train(x_train, y_train, x_dev, y_dev, x_test, y_test, W, word_idx_map, vocab, max_l)
+  File "train.py", line 170, in train
+    max_norm_all_layers = FLAGS.max_norm_all_layers)
+  File "C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py", line 25, in __init__
+    self.W = tf.Variable(word2vec_W,name="W")
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\ops\variables.py", line 258, in __call__
+    return cls._variable_v1_call(*args, **kwargs)
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\ops\variables.py", line 219, in _variable_v1_call
+    shape=shape)
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\ops\variables.py", line 197, in <lambda>
+    previous_getter = lambda **kwargs: default_variable_creator(None, **kwargs)
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\ops\variable_scope.py", line 2519, in default_variable_creator
+    shape=shape)
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\ops\variables.py", line 262, in __call__
+    return super(VariableMetaclass, cls).__call__(*args, **kwargs)
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\ops\variables.py", line 1688, in __init__
+    shape=shape)
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\ops\variables.py", line 1861, in _init_from_args
+    name, self._initial_value),
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\ops\variables.py", line 2711, in _try_guard_against_uninitialized_dependencies
+    return _safe_initial_value_from_tensor(name, initial_value, op_cache={})
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\ops\variables.py", line 2751, in _safe_initial_value_from_tensor
+    new_op = _safe_initial_value_from_op(name, op, op_cache)
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\ops\variables.py", line 2771, in _safe_initial_value_from_op
+    op_type = op.node_def.op
+  File "C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\framework\ops.py", line 2278, in node_def
+    node_def.ParseFromString(compat.as_bytes(data))
+KeyboardInterrupt
+^CTerminate batch job (Y/N)?
+^C
+pause
+Press any key to continue . . .
+
+(venv) C:\Users\Jokke\Repositories\pattern_recognition\src>
+(venv) C:\Users\Jokke\Repositories\pattern_recognition\src>
+(venv) C:\Users\Jokke\Repositories\pattern_recognition\src>.\get_results.bat
+
+python train.py --pickle_name=dutch_balanced.p --early_stop=True --l2_all_layers=True --learn_rate=0.02012769838514467 --dropout_keep_prob=0.8552388064773312 --l2_reg_lambda=0.16551256100556333
+2020-01-23 18:39:49.261617: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+WARNING:tensorflow:From train.py:27: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From train.py:30: The name tf.GPUOptions is deprecated. Please use tf.compat.v1.GPUOptions instead.
+
+WARNING:tensorflow:From train.py:407: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+loading data...
+data loaded!
+Train/Dev split: 81000/9000
+WARNING:tensorflow:From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0123 18:39:54.476256 16608 module_wrapper.py:139] From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-01-23 18:39:54.479928: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-01-23 18:39:54.492727: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-01-23 18:39:54.523900: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 18:39:54.531732: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 18:39:54.541438: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 18:39:54.551222: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 18:39:54.558610: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 18:39:54.571478: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 18:39:54.580040: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 18:39:54.599235: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 18:39:54.606650: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 18:39:55.250178: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 18:39:55.255493: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 18:39:55.258476: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 18:39:55.263521: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0123 18:39:55.275465 16608 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0123 18:39:55.957466 16608 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+W0123 18:39:55.966466 16608 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0123 18:39:55.985478 16608 deprecation.py:506] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0123 18:39:55.993465 16608 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+W0123 18:39:55.994463 16608 lazy_loader.py:50]
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+W0123 18:39:56.006469 16608 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+W0123 18:39:56.011475 16608 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W0123 18:39:56.013473 16608 deprecation.py:323] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0123 18:39:56.081469 16608 module_wrapper.py:139] From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+W0123 18:39:56.246470 16608 module_wrapper.py:139] From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+W0123 18:39:56.249473 16608 module_wrapper.py:139] From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+W0123 18:39:56.274466 16608 module_wrapper.py:139] From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:39:56.276488 16608 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+WARNING:tensorflow:From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0123 18:39:56.283460 16608 module_wrapper.py:139] From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:39:56.298462 16608 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:39:56.301483 16608 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:39:56.314470 16608 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:39:56.316461 16608 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:39:56.328472 16608 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:39:56.330472 16608 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:39:56.345460 16608 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:39:56.347460 16608 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:39:56.361466 16608 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:39:56.362486 16608 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:39:56.375460 16608 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:39:56.377462 16608 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:39:56.389461 16608 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:39:56.391464 16608 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:39:56.402462 16608 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 18:39:56.404462 16608 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 18:39:56.416462 16608 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+WARNING:tensorflow:From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+W0123 18:39:56.417463 16608 module_wrapper.py:139] From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196
+
+WARNING:tensorflow:From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+W0123 18:39:56.422463 16608 module_wrapper.py:139] From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+WARNING:tensorflow:From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+W0123 18:40:00.391568 16608 module_wrapper.py:139] From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+0
+2020-01-23 18:40:06.837556: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 18:40:07.418104: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 18:40:08.297112: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Internal: Invoking ptxas not supported on Windows
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2020-01-23 18:40:08.447949: W tensorflow/core/common_runtime/bfc_allocator.cc:305] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+2020-01-23 18:40:09.073762: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.79GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 18:40:09.283053: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.21GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 18:40:10.921641: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 18:40:10.932376: W tensorflow/core/kernels/gpu_utils.cc:48] Failed to allocate memory for convolution redzone checking; skipping this check. This is benign and only means that we won't check cudnn for out-of-bounds reads and writes. This message will only be printed once.
+2020-01-23 18:40:15.120960: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+WARNING:tensorflow:From train.py:280: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+W0123 18:40:17.545425 16608 module_wrapper.py:139] From train.py:280: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 12.5445, Train acc 0.779503
+Valid loss 0.579479, Valid acc 0.792111
+Test loss 0.588518, Test acc 0.793
+Test - Confusion Matrix:
+[[4058.  942.]
+ [1128. 3872.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 6.45988, Train acc 0.84667
+Valid loss 0.625124, Valid acc 0.782222
+Test loss 0.657624, Test acc 0.7812
+Test - Confusion Matrix:
+[[4222.  778.]
+ [1410. 3590.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 4.41658, Train acc 0.874348
+Valid loss 0.638271, Valid acc 0.770778
+Test loss 0.58919, Test acc 0.7736
+Test - Confusion Matrix:
+[[3432. 1568.]
+ [ 696. 4304.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 3.38972, Train acc 0.889779
+Valid loss 0.726068, Valid acc 0.762778
+Test loss 0.668983, Test acc 0.7678
+Test - Confusion Matrix:
+[[3368. 1632.]
+ [ 690. 4310.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 2.77885, Train acc 0.899249
+Valid loss 0.744359, Valid acc 0.772444
+Test loss 0.738348, Test acc 0.7732
+Test - Confusion Matrix:
+[[3815. 1185.]
+ [1083. 3917.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 2.35989, Train acc 0.907347
+Valid loss 0.863934, Valid acc 0.751444
+Test loss 0.974568, Test acc 0.753
+Test - Confusion Matrix:
+[[4483.  517.]
+ [1953. 3047.]]
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+W0123 19:01:07.837750 16608 deprecation.py:323] From C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 2.06974, Train acc 0.912396
+Valid loss 0.662582, Valid acc 0.773667
+Test loss 0.678034, Test acc 0.7744
+Test - Confusion Matrix:
+[[3992. 1008.]
+ [1248. 3752.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 1.84065, Train acc 0.917541
+Valid loss 0.660037, Valid acc 0.771667
+Test loss 0.66368, Test acc 0.7738
+Test - Confusion Matrix:
+[[3894. 1106.]
+ [1156. 3844.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 1.66335, Train acc 0.921248
+Valid loss 0.66826, Valid acc 0.77
+Test loss 0.676342, Test acc 0.7707
+Test - Confusion Matrix:
+[[3931. 1069.]
+ [1224. 3776.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 1.54811, Train acc 0.922776
+Valid loss 13.2837, Valid acc 0.757889
+Test loss 13.3591, Test acc 0.7617
+Test - Confusion Matrix:
+[[3593. 1407.]
+ [ 976. 4024.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 3.31649, Train acc 0.917751
+Valid loss 2.14902, Valid acc 0.742444
+Test loss 2.19558, Test acc 0.7385
+Test - Confusion Matrix:
+[[3282. 1718.]
+ [ 897. 4103.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 3.06951, Train acc 0.920142
+Valid loss 0.699915, Valid acc 0.770667
+Test loss 0.715143, Test acc 0.7695
+Test - Confusion Matrix:
+[[3861. 1139.]
+ [1166. 3834.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 2.85129, Train acc 0.922639
+Valid loss 0.693804, Valid acc 0.769222
+Test loss 0.700655, Test acc 0.7699
+Test - Confusion Matrix:
+[[3799. 1201.]
+ [1100. 3900.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 2.66367, Train acc 0.92491
+Valid loss 0.693393, Valid acc 0.770778
+Test loss 0.711883, Test acc 0.7702
+Test - Confusion Matrix:
+[[3872. 1128.]
+ [1170. 3830.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 2.50065, Train acc 0.927017
+Valid loss 0.6911, Valid acc 0.770444
+Test loss 0.707, Test acc 0.7678
+Test - Confusion Matrix:
+[[3849. 1151.]
+ [1171. 3829.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 2.35774, Train acc 0.928947
+Valid loss 0.688425, Valid acc 0.770889
+Test loss 0.708146, Test acc 0.7681
+Test - Confusion Matrix:
+[[3896. 1104.]
+ [1215. 3785.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 2.23143, Train acc 0.930703
+Valid loss 0.690142, Valid acc 0.769333
+Test loss 0.68311, Test acc 0.7695
+Test - Confusion Matrix:
+[[3733. 1267.]
+ [1038. 3962.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 2.11899, Train acc 0.932316
+Valid loss 0.69802, Valid acc 0.771333
+Test loss 0.706323, Test acc 0.7702
+Test - Confusion Matrix:
+[[3786. 1214.]
+ [1084. 3916.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 2.01831, Train acc 0.933781
+Valid loss 0.684674, Valid acc 0.771444
+Test loss 0.680794, Test acc 0.7719
+Test - Confusion Matrix:
+[[3771. 1229.]
+ [1052. 3948.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 1.92754, Train acc 0.935126
+Valid loss 0.698438, Valid acc 0.767222
+Test loss 0.714673, Test acc 0.7678
+Test - Confusion Matrix:
+[[3858. 1142.]
+ [1180. 3820.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579801196\checkpoints\model-2000
+
+
+python train.py --pickle_name=english_balanced.p --early_stop=True --l2_all_layers=True --learn_rate=0.02012769838514467 --dropout_keep_prob=0.8552388064773312 --l2_reg_lambda=0.16551256100556333
+2020-01-23 19:49:19.410438: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+WARNING:tensorflow:From train.py:27: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From train.py:30: The name tf.GPUOptions is deprecated. Please use tf.compat.v1.GPUOptions instead.
+
+WARNING:tensorflow:From train.py:407: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+loading data...
+data loaded!
+Train/Dev split: 81000/9000
+WARNING:tensorflow:From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0123 19:49:24.135481 22204 module_wrapper.py:139] From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-01-23 19:49:24.138040: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-01-23 19:49:24.148167: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-01-23 19:49:24.177046: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 19:49:24.184370: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 19:49:24.194210: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 19:49:24.204128: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 19:49:24.210974: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 19:49:24.222247: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 19:49:24.230785: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 19:49:24.250909: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 19:49:24.256639: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 19:49:24.887950: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 19:49:24.893042: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 19:49:24.896378: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 19:49:24.901403: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0123 19:49:24.912488 22204 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0123 19:49:25.452503 22204 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+W0123 19:49:25.461488 22204 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0123 19:49:25.481488 22204 deprecation.py:506] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0123 19:49:25.489488 22204 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+W0123 19:49:25.490520 22204 lazy_loader.py:50]
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+W0123 19:49:25.498509 22204 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+W0123 19:49:25.500513 22204 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W0123 19:49:25.503487 22204 deprecation.py:323] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0123 19:49:25.562503 22204 module_wrapper.py:139] From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+W0123 19:49:25.722488 22204 module_wrapper.py:139] From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+W0123 19:49:25.724493 22204 module_wrapper.py:139] From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+W0123 19:49:25.749488 22204 module_wrapper.py:139] From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 19:49:25.751493 22204 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+WARNING:tensorflow:From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0123 19:49:25.755487 22204 module_wrapper.py:139] From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 19:49:25.768487 22204 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 19:49:25.771488 22204 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 19:49:25.783488 22204 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 19:49:25.784488 22204 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 19:49:25.796488 22204 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 19:49:25.797487 22204 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 19:49:25.810488 22204 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 19:49:25.811493 22204 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 19:49:25.824488 22204 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 19:49:25.825488 22204 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 19:49:25.837487 22204 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 19:49:25.838488 22204 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 19:49:25.850487 22204 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 19:49:25.851487 22204 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 19:49:25.863487 22204 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 19:49:25.865489 22204 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 19:49:25.877488 22204 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+WARNING:tensorflow:From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+W0123 19:49:25.878489 22204 module_wrapper.py:139] From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365
+
+WARNING:tensorflow:From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+W0123 19:49:25.882487 22204 module_wrapper.py:139] From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+WARNING:tensorflow:From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+W0123 19:49:29.208348 22204 module_wrapper.py:139] From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+0
+2020-01-23 19:49:34.417611: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 19:49:35.021550: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 19:49:35.820211: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Internal: Invoking ptxas not supported on Windows
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2020-01-23 19:49:35.961900: W tensorflow/core/common_runtime/bfc_allocator.cc:305] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+2020-01-23 19:49:36.561670: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.79GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 19:49:36.772423: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.21GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 19:49:38.416409: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 19:49:38.428658: W tensorflow/core/kernels/gpu_utils.cc:48] Failed to allocate memory for convolution redzone checking; skipping this check. This is benign and only means that we won't check cudnn for out-of-bounds reads and writes. This message will only be printed once.
+2020-01-23 19:49:41.654127: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+WARNING:tensorflow:From train.py:280: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+W0123 19:49:43.903924 22204 module_wrapper.py:139] From train.py:280: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 12.6263, Train acc 0.720483
+Valid loss 0.618359, Valid acc 0.745778
+Test loss 0.635028, Test acc 0.7502
+Test - Confusion Matrix:
+[[3788. 1212.]
+ [1286. 3714.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 6.53367, Train acc 0.798752
+Valid loss 0.661882, Valid acc 0.735667
+Test loss 0.685354, Test acc 0.7348
+Test - Confusion Matrix:
+[[3770. 1230.]
+ [1422. 3578.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 4.48622, Train acc 0.832915
+Valid loss 0.834138, Valid acc 0.715
+Test loss 0.767462, Test acc 0.7114
+Test - Confusion Matrix:
+[[2835. 2165.]
+ [ 721. 4279.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 3.45222, Train acc 0.852687
+Valid loss 0.708365, Valid acc 0.733222
+Test loss 0.71045, Test acc 0.7311
+Test - Confusion Matrix:
+[[3550. 1450.]
+ [1239. 3761.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 2.84161, Train acc 0.863795
+Valid loss 0.714366, Valid acc 0.731333
+Test loss 0.70478, Test acc 0.73
+Test - Confusion Matrix:
+[[3459. 1541.]
+ [1159. 3841.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 2.42018, Train acc 0.874021
+Valid loss 0.73425, Valid acc 0.726
+Test loss 0.753865, Test acc 0.7298
+Test - Confusion Matrix:
+[[3751. 1249.]
+ [1453. 3547.]]
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+W0123 20:09:49.462131 22204 deprecation.py:323] From C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 2.12077, Train acc 0.88107
+Valid loss 0.755195, Valid acc 0.727889
+Test loss 0.744929, Test acc 0.7281
+Test - Confusion Matrix:
+[[3471. 1529.]
+ [1190. 3810.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 1.89667, Train acc 0.88648
+Valid loss 0.786597, Valid acc 0.725333
+Test loss 0.802088, Test acc 0.7246
+Test - Confusion Matrix:
+[[3648. 1352.]
+ [1402. 3598.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 1.88103, Train acc 0.888718
+Valid loss 63.8116, Valid acc 0.575222
+Test loss 71.7172, Test acc 0.5727
+Test - Confusion Matrix:
+[[4726.  274.]
+ [3999. 1001.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 3.25673, Train acc 0.884548
+Valid loss 0.834918, Valid acc 0.721889
+Test loss 0.838422, Test acc 0.7169
+Test - Confusion Matrix:
+[[3270. 1730.]
+ [1101. 3899.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 2.98968, Train acc 0.887718
+Valid loss 0.758132, Valid acc 0.723222
+Test loss 0.743734, Test acc 0.7165
+Test - Confusion Matrix:
+[[3284. 1716.]
+ [1119. 3881.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 2.76471, Train acc 0.890914
+Valid loss 0.763686, Valid acc 0.721778
+Test loss 0.771427, Test acc 0.7188
+Test - Confusion Matrix:
+[[3527. 1473.]
+ [1339. 3661.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 2.57367, Train acc 0.893912
+Valid loss 0.764779, Valid acc 0.721667
+Test loss 0.759709, Test acc 0.717
+Test - Confusion Matrix:
+[[3430. 1570.]
+ [1260. 3740.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 2.40935, Train acc 0.896739
+Valid loss 0.773821, Valid acc 0.718889
+Test loss 0.769374, Test acc 0.7201
+Test - Confusion Matrix:
+[[3506. 1494.]
+ [1305. 3695.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 2.26659, Train acc 0.899333
+Valid loss 0.781672, Valid acc 0.722778
+Test loss 0.784272, Test acc 0.7208
+Test - Confusion Matrix:
+[[3507. 1493.]
+ [1299. 3701.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 2.14141, Train acc 0.901697
+Valid loss 0.774753, Valid acc 0.720556
+Test loss 0.789216, Test acc 0.7185
+Test - Confusion Matrix:
+[[3659. 1341.]
+ [1474. 3526.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 2.03074, Train acc 0.903889
+Valid loss 0.792879, Valid acc 0.719556
+Test loss 0.802053, Test acc 0.7147
+Test - Confusion Matrix:
+[[3667. 1333.]
+ [1520. 3480.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 1.93219, Train acc 0.905898
+Valid loss 0.796283, Valid acc 0.719222
+Test loss 0.795152, Test acc 0.7191
+Test - Confusion Matrix:
+[[3549. 1451.]
+ [1358. 3642.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 1.84383, Train acc 0.90775
+Valid loss 0.819634, Valid acc 0.720667
+Test loss 0.78488, Test acc 0.7159
+Test - Confusion Matrix:
+[[3214. 1786.]
+ [1055. 3945.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 1.76418, Train acc 0.909467
+Valid loss 0.826071, Valid acc 0.720222
+Test loss 0.780264, Test acc 0.7158
+Test - Confusion Matrix:
+[[3164. 1836.]
+ [1006. 3994.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579805365\checkpoints\model-2000
+
+
+python train.py --pickle_name=dutch_imbalanced.p --early_stop=True --l2_all_layers=True --learn_rate=0.02012769838514467 --dropout_keep_prob=0.8552388064773312 --l2_reg_lambda=0.16551256100556333
+2020-01-23 20:56:14.839291: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+WARNING:tensorflow:From train.py:27: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From train.py:30: The name tf.GPUOptions is deprecated. Please use tf.compat.v1.GPUOptions instead.
+
+WARNING:tensorflow:From train.py:407: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+loading data...
+data loaded!
+Train/Dev split: 81000/9000
+WARNING:tensorflow:From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0123 20:56:20.294673 24808 module_wrapper.py:139] From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-01-23 20:56:20.296570: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-01-23 20:56:20.304643: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-01-23 20:56:20.334786: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 20:56:20.341267: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 20:56:20.351866: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 20:56:20.363264: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 20:56:20.369815: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 20:56:20.380122: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 20:56:20.389528: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 20:56:20.407761: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 20:56:20.413281: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 20:56:21.041285: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 20:56:21.046882: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 20:56:21.051321: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 20:56:21.056930: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0123 20:56:21.068944 24808 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0123 20:56:21.736919 24808 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+W0123 20:56:21.745919 24808 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0123 20:56:21.765918 24808 deprecation.py:506] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0123 20:56:21.773919 24808 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+W0123 20:56:21.774920 24808 lazy_loader.py:50]
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+W0123 20:56:21.782918 24808 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+W0123 20:56:21.784929 24808 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W0123 20:56:21.787919 24808 deprecation.py:323] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0123 20:56:21.848934 24808 module_wrapper.py:139] From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+W0123 20:56:22.006934 24808 module_wrapper.py:139] From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+W0123 20:56:22.008919 24808 module_wrapper.py:139] From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+W0123 20:56:22.030920 24808 module_wrapper.py:139] From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 20:56:22.032940 24808 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+WARNING:tensorflow:From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0123 20:56:22.037919 24808 module_wrapper.py:139] From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 20:56:22.050919 24808 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 20:56:22.052920 24808 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 20:56:22.064918 24808 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 20:56:22.066920 24808 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 20:56:22.077919 24808 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 20:56:22.079918 24808 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 20:56:22.092918 24808 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 20:56:22.093919 24808 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 20:56:22.105935 24808 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 20:56:22.107937 24808 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 20:56:22.119935 24808 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 20:56:22.120940 24808 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 20:56:22.132934 24808 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 20:56:22.133921 24808 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 20:56:22.145934 24808 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 20:56:22.147920 24808 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 20:56:22.159919 24808 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+WARNING:tensorflow:From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+W0123 20:56:22.161920 24808 module_wrapper.py:139] From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382
+
+WARNING:tensorflow:From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+W0123 20:56:22.165919 24808 module_wrapper.py:139] From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+WARNING:tensorflow:From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+W0123 20:56:26.438740 24808 module_wrapper.py:139] From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+0
+2020-01-23 20:56:32.833597: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 20:56:33.452501: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 20:56:34.262474: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Internal: Invoking ptxas not supported on Windows
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2020-01-23 20:56:34.419712: W tensorflow/core/common_runtime/bfc_allocator.cc:305] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+2020-01-23 20:56:35.030072: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.79GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 20:56:35.240997: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.21GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 20:56:36.858828: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 20:56:36.870463: W tensorflow/core/kernels/gpu_utils.cc:48] Failed to allocate memory for convolution redzone checking; skipping this check. This is benign and only means that we won't check cudnn for out-of-bounds reads and writes. This message will only be printed once.
+2020-01-23 20:56:40.071005: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+WARNING:tensorflow:From train.py:280: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+W0123 20:56:42.407281 24808 module_wrapper.py:139] From train.py:280: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 12.4709, Train acc 0.806089
+Valid loss 0.476065, Valid acc 0.846111
+Test loss 0.438023, Test acc 0.8489
+Test - Confusion Matrix:
+[[1237. 1263.]
+ [ 248. 7252.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 6.3992, Train acc 0.864305
+Valid loss 0.560573, Valid acc 0.832556
+Test loss 0.498488, Test acc 0.8344
+Test - Confusion Matrix:
+[[1049. 1451.]
+ [ 205. 7295.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 4.35945, Train acc 0.889431
+Valid loss 0.508472, Valid acc 0.838889
+Test loss 0.45871, Test acc 0.8409
+Test - Confusion Matrix:
+[[1307. 1193.]
+ [ 398. 7102.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 3.33917, Train acc 0.90304
+Valid loss 0.513401, Valid acc 0.832444
+Test loss 0.473866, Test acc 0.8328
+Test - Confusion Matrix:
+[[1452. 1048.]
+ [ 624. 6876.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 2.72031, Train acc 0.912478
+Valid loss 0.563233, Valid acc 0.831667
+Test loss 0.503476, Test acc 0.832
+Test - Confusion Matrix:
+[[1287. 1213.]
+ [ 467. 7033.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 2.30602, Train acc 0.919221
+Valid loss 0.535188, Valid acc 0.829333
+Test loss 0.480695, Test acc 0.8309
+Test - Confusion Matrix:
+[[1212. 1288.]
+ [ 403. 7097.]]
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+W0123 21:17:39.260336 24808 deprecation.py:323] From C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 2.59615, Train acc 0.91505
+Valid loss 6.70397, Valid acc 0.785333
+Test loss 6.36726, Test acc 0.7905
+Test - Confusion Matrix:
+[[1522.  978.]
+ [1117. 6383.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 2.37327, Train acc 0.918744
+Valid loss 0.569647, Valid acc 0.823556
+Test loss 0.509226, Test acc 0.8296
+Test - Confusion Matrix:
+[[1353. 1147.]
+ [ 557. 6943.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 2.13312, Train acc 0.92316
+Valid loss 0.554372, Valid acc 0.823667
+Test loss 0.496972, Test acc 0.8325
+Test - Confusion Matrix:
+[[1427. 1073.]
+ [ 602. 6898.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 1.93975, Train acc 0.927024
+Valid loss 0.54558, Valid acc 0.826222
+Test loss 0.488198, Test acc 0.8322
+Test - Confusion Matrix:
+[[1446. 1054.]
+ [ 624. 6876.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 1.78108, Train acc 0.930298
+Valid loss 0.564715, Valid acc 0.824556
+Test loss 0.499753, Test acc 0.8296
+Test - Confusion Matrix:
+[[1388. 1112.]
+ [ 592. 6908.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 1.6486, Train acc 0.933108
+Valid loss 0.598775, Valid acc 0.820667
+Test loss 0.537693, Test acc 0.827
+Test - Confusion Matrix:
+[[1518.  982.]
+ [ 748. 6752.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 1.53753, Train acc 0.935322
+Valid loss 0.564637, Valid acc 0.823
+Test loss 0.506233, Test acc 0.8242
+Test - Confusion Matrix:
+[[1423. 1077.]
+ [ 681. 6819.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 1.44105, Train acc 0.937456
+Valid loss 0.701143, Valid acc 0.815444
+Test loss 0.63657, Test acc 0.8205
+Test - Confusion Matrix:
+[[1565.  935.]
+ [ 860. 6640.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 1.35732, Train acc 0.939356
+Valid loss 0.616374, Valid acc 0.827222
+Test loss 0.535184, Test acc 0.8347
+Test - Confusion Matrix:
+[[1311. 1189.]
+ [ 464. 7036.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 1.28563, Train acc 0.940855
+Valid loss 0.666654, Valid acc 0.825333
+Test loss 0.602343, Test acc 0.8285
+Test - Confusion Matrix:
+[[1251. 1249.]
+ [ 466. 7034.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 1.22322, Train acc 0.94212
+Valid loss 0.595204, Valid acc 0.818111
+Test loss 0.545505, Test acc 0.8189
+Test - Confusion Matrix:
+[[1522.  978.]
+ [ 833. 6667.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 1.16515, Train acc 0.94357
+Valid loss 0.585765, Valid acc 0.822889
+Test loss 0.523453, Test acc 0.8257
+Test - Confusion Matrix:
+[[1468. 1032.]
+ [ 711. 6789.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 1.11418, Train acc 0.944641
+Valid loss 0.728313, Valid acc 0.809778
+Test loss 0.672229, Test acc 0.8157
+Test - Confusion Matrix:
+[[1588.  912.]
+ [ 931. 6569.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 1.06746, Train acc 0.945834
+Valid loss 0.588262, Valid acc 0.821778
+Test loss 0.519901, Test acc 0.8257
+Test - Confusion Matrix:
+[[1335. 1165.]
+ [ 578. 6922.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579809382\checkpoints\model-2000
+
+
+python train.py --pickle_name=english_imbalanced.p --early_stop=True --l2_all_layers=True --learn_rate=0.02012769838514467 --dropout_keep_prob=0.8552388064773312 --l2_reg_lambda=0.16551256100556333
+2020-01-23 22:06:28.863485: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+WARNING:tensorflow:From train.py:27: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From train.py:30: The name tf.GPUOptions is deprecated. Please use tf.compat.v1.GPUOptions instead.
+
+WARNING:tensorflow:From train.py:407: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+loading data...
+data loaded!
+Train/Dev split: 81000/9000
+WARNING:tensorflow:From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W0123 22:06:33.931582  4392 module_wrapper.py:139] From train.py:156: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-01-23 22:06:33.933942: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2020-01-23 22:06:33.942074: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-01-23 22:06:33.972512: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 970 major: 5 minor: 2 memoryClockRate(GHz): 1.304
+pciBusID: 0000:01:00.0
+2020-01-23 22:06:33.979359: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-01-23 22:06:33.990303: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 22:06:34.000006: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_100.dll
+2020-01-23 22:06:34.006681: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_100.dll
+2020-01-23 22:06:34.017347: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_100.dll
+2020-01-23 22:06:34.028631: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_100.dll
+2020-01-23 22:06:34.047502: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 22:06:34.054363: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-01-23 22:06:34.690030: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-01-23 22:06:34.695477: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-01-23 22:06:34.699863: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-01-23 22:06:34.704268: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2998 MB memory) -> physical GPU (device: 0, name: GeForce GTX 970, pci bus id: 0000:01:00.0, compute capability: 5.2)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0123 22:06:34.718585  4392 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:16: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+W0123 22:06:35.250587  4392 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:35: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+W0123 22:06:35.259593  4392 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:46: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+W0123 22:06:35.276594  4392 deprecation.py:506] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:61: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W0123 22:06:35.285592  4392 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:65: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+W0123 22:06:35.285592  4392 lazy_loader.py:50]
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+W0123 22:06:35.296592  4392 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:73: The name tf.nn.xw_plus_b is deprecated. Please use tf.compat.v1.nn.xw_plus_b instead.
+
+Tensor("output/scores:0", shape=(?, 2), dtype=float32)
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+W0123 22:06:35.300582  4392 module_wrapper.py:139] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:79: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+W0123 22:06:35.303588  4392 deprecation.py:323] From C:\Users\Jokke\Repositories\pattern_recognition\src\text_cnn.py:83: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+WARNING:tensorflow:From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+W0123 22:06:35.363587  4392 module_wrapper.py:139] From train.py:174: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+W0123 22:06:35.520587  4392 module_wrapper.py:139] From train.py:184: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+W0123 22:06:35.521590  4392 module_wrapper.py:139] From train.py:184: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+W0123 22:06:35.544588  4392 module_wrapper.py:139] From train.py:191: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 22:06:35.546594  4392 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+WARNING:tensorflow:From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+W0123 22:06:35.550587  4392 module_wrapper.py:139] From train.py:192: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 22:06:35.564587  4392 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 22:06:35.566572  4392 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 22:06:35.578587  4392 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 22:06:35.579594  4392 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 22:06:35.591587  4392 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 22:06:35.592593  4392 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 22:06:35.604588  4392 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 22:06:35.607587  4392 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 22:06:35.619587  4392 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 22:06:35.620594  4392 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 22:06:35.632587  4392 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 22:06:35.635589  4392 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 22:06:35.646587  4392 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 22:06:35.647577  4392 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 22:06:35.659587  4392 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+INFO:tensorflow:Summary name /grad/hist is illegal; using grad/hist instead.
+I0123 22:06:35.660574  4392 summary_op_util.py:66] Summary name /grad/hist is illegal; using grad/hist instead.
+INFO:tensorflow:Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+I0123 22:06:35.672587  4392 summary_op_util.py:66] Summary name /grad/sparsity is illegal; using grad/sparsity instead.
+WARNING:tensorflow:From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+W0123 22:06:35.674588  4392 module_wrapper.py:139] From train.py:195: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+Writing to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595
+
+WARNING:tensorflow:From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+W0123 22:06:35.678583  4392 module_wrapper.py:139] From train.py:209: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+WARNING:tensorflow:From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+W0123 22:06:38.964462  4392 module_wrapper.py:139] From train.py:223: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+0
+2020-01-23 22:06:44.052959: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-01-23 22:06:44.650909: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-01-23 22:06:45.467780: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Internal: Invoking ptxas not supported on Windows
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2020-01-23 22:06:45.628073: W tensorflow/core/common_runtime/bfc_allocator.cc:305] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+2020-01-23 22:06:46.237046: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.79GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 22:06:46.448744: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.21GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 22:06:48.091268: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-01-23 22:06:48.103165: W tensorflow/core/kernels/gpu_utils.cc:48] Failed to allocate memory for convolution redzone checking; skipping this check. This is benign and only means that we won't check cudnn for out-of-bounds reads and writes. This message will only be printed once.
+2020-01-23 22:06:51.316315: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 484.75MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+WARNING:tensorflow:From train.py:280: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+W0123 22:06:53.568938  4392 module_wrapper.py:139] From train.py:280: The name tf.train.global_step is deprecated. Please use tf.compat.v1.train.global_step instead.
+
+1
+2
+3
+4
+
+Evaluation for step 100:
+
+Train loss 12.4485, Train acc 0.769001
+Valid loss 0.519278, Valid acc 0.811778
+Test loss 0.48139, Test acc 0.8159
+Test - Confusion Matrix:
+[[ 981. 1519.]
+ [ 322. 7178.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-100
+
+5
+6
+7
+8
+9
+
+Evaluation for step 200:
+
+Train loss 6.41258, Train acc 0.83268
+Valid loss 0.558146, Valid acc 0.811444
+Test loss 0.504022, Test acc 0.811
+Test - Confusion Matrix:
+[[1005. 1495.]
+ [ 395. 7105.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-200
+
+10
+11
+12
+13
+14
+
+Evaluation for step 300:
+
+Train loss 4.38233, Train acc 0.862374
+Valid loss 0.567843, Valid acc 0.806
+Test loss 0.51406, Test acc 0.8107
+Test - Confusion Matrix:
+[[1140. 1360.]
+ [ 533. 6967.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-300
+
+15
+16
+17
+18
+19
+
+Evaluation for step 400:
+
+Train loss 3.36332, Train acc 0.878763
+Valid loss 0.701494, Valid acc 0.793444
+Test loss 0.63819, Test acc 0.7979
+Test - Confusion Matrix:
+[[1270. 1230.]
+ [ 791. 6709.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-400
+
+20
+21
+22
+23
+24
+
+Evaluation for step 500:
+
+Train loss 2.74583, Train acc 0.890415
+Valid loss 0.571947, Valid acc 0.793111
+Test loss 0.535027, Test acc 0.7975
+Test - Confusion Matrix:
+[[1315. 1185.]
+ [ 840. 6660.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-500
+
+25
+26
+27
+28
+29
+
+Evaluation for step 600:
+
+Train loss 2.33425, Train acc 0.898481
+Valid loss 0.588706, Valid acc 0.792222
+Test loss 0.537485, Test acc 0.7978
+Test - Confusion Matrix:
+[[1213. 1287.]
+ [ 735. 6765.]]
+WARNING:tensorflow:From C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+W0123 22:26:33.788467  4392 deprecation.py:323] From C:\Users\Jokke\Repositories\pattern_recognition\venv\lib\site-packages\tensorflow_core\python\training\saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-600
+
+30
+31
+32
+33
+34
+
+Evaluation for step 700:
+
+Train loss 2.03616, Train acc 0.905148
+Valid loss 0.716914, Valid acc 0.761556
+Test loss 0.680514, Test acc 0.7703
+Test - Confusion Matrix:
+[[1584.  916.]
+ [1381. 6119.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-700
+
+35
+36
+37
+38
+39
+
+Evaluation for step 800:
+
+Train loss 1.81336, Train acc 0.91009
+Valid loss 0.692892, Valid acc 0.767222
+Test loss 0.653231, Test acc 0.7745
+Test - Confusion Matrix:
+[[1534.  966.]
+ [1289. 6211.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-800
+
+40
+41
+42
+43
+44
+
+Evaluation for step 900:
+
+Train loss 3.1983, Train acc 0.905187
+Valid loss 19.0391, Valid acc 0.780889
+Test loss 17.9606, Test acc 0.7778
+Test - Confusion Matrix:
+[[ 321. 2179.]
+ [  43. 7457.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-900
+
+45
+46
+47
+48
+49
+
+Evaluation for step 1000:
+
+Train loss 3.23874, Train acc 0.905512
+Valid loss 0.656487, Valid acc 0.793333
+Test loss 0.584286, Test acc 0.7978
+Test - Confusion Matrix:
+[[1067. 1433.]
+ [ 589. 6911.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-1000
+
+50
+51
+52
+53
+54
+
+Evaluation for step 1100:
+
+Train loss 2.96751, Train acc 0.908355
+Valid loss 0.632107, Valid acc 0.791444
+Test loss 0.566962, Test acc 0.7964
+Test - Confusion Matrix:
+[[1130. 1370.]
+ [ 666. 6834.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-1100
+
+55
+56
+57
+58
+59
+
+Evaluation for step 1200:
+
+Train loss 2.74035, Train acc 0.91108
+Valid loss 0.638606, Valid acc 0.787556
+Test loss 0.576242, Test acc 0.7958
+Test - Confusion Matrix:
+[[1218. 1282.]
+ [ 760. 6740.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-1200
+
+60
+61
+62
+63
+64
+
+Evaluation for step 1300:
+
+Train loss 2.54754, Train acc 0.913604
+Valid loss 0.63108, Valid acc 0.789778
+Test loss 0.568446, Test acc 0.7963
+Test - Confusion Matrix:
+[[1168. 1332.]
+ [ 705. 6795.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-1300
+
+65
+66
+67
+68
+69
+
+Evaluation for step 1400:
+
+Train loss 2.38194, Train acc 0.915904
+Valid loss 0.639853, Valid acc 0.785444
+Test loss 0.586607, Test acc 0.7932
+Test - Confusion Matrix:
+[[1302. 1198.]
+ [ 870. 6630.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-1400
+
+70
+71
+72
+73
+74
+
+Evaluation for step 1500:
+
+Train loss 2.23814, Train acc 0.918004
+Valid loss 0.652467, Valid acc 0.789
+Test loss 0.592359, Test acc 0.7916
+Test - Confusion Matrix:
+[[1187. 1313.]
+ [ 771. 6729.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-1500
+
+75
+76
+77
+78
+79
+
+Evaluation for step 1600:
+
+Train loss 2.11219, Train acc 0.919887
+Valid loss 0.631783, Valid acc 0.791667
+Test loss 0.574077, Test acc 0.7978
+Test - Confusion Matrix:
+[[1231. 1269.]
+ [ 753. 6747.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-1600
+
+80
+81
+82
+83
+84
+
+Evaluation for step 1700:
+
+Train loss 2.00078, Train acc 0.921631
+Valid loss 0.629353, Valid acc 0.789333
+Test loss 0.577987, Test acc 0.7963
+Test - Confusion Matrix:
+[[1274. 1226.]
+ [ 811. 6689.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-1700
+
+85
+86
+87
+88
+89
+
+Evaluation for step 1800:
+
+Train loss 1.90161, Train acc 0.923235
+Valid loss 0.619293, Valid acc 0.793778
+Test loss 0.55892, Test acc 0.7991
+Test - Confusion Matrix:
+[[1113. 1387.]
+ [ 622. 6878.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-1800
+
+90
+91
+92
+93
+94
+
+Evaluation for step 1900:
+
+Train loss 1.81284, Train acc 0.924697
+Valid loss 0.6223, Valid acc 0.794222
+Test loss 0.566686, Test acc 0.797
+Test - Confusion Matrix:
+[[1189. 1311.]
+ [ 719. 6781.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-1900
+
+95
+96
+97
+98
+99
+
+Evaluation for step 2000:
+
+Train loss 1.73286, Train acc 0.926026
+Valid loss 0.669878, Valid acc 0.797667
+Test loss 0.590444, Test acc 0.8012
+Test - Confusion Matrix:
+[[ 925. 1575.]
+ [ 413. 7087.]]
+Saved model with best dev loss checkpoint to C:\Users\Jokke\Repositories\pattern_recognition\src\runs\1579813595\checkpoints\model-2000

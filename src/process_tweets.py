@@ -163,7 +163,7 @@ def clean_str(string):
     """
     emojis = extract_emoji(string)
     #string = re.sub(r"#\w*", "", string) # remove hashtags
-    string = re.sub(r"#(sarcasme|sarcastisch|ironisch|ironie|cynisch|cynisme|not|niet)", "", string) # remove scraping hashtags
+    string = re.sub(r"#(sarcasm|sarcastic|ironic|irony|cynical|cynicism|not)", "", string) # remove scraping hashtags
     # remove hyperlinks, copied from https://stackoverflow.com/questions/11331982/how-to-remove-any-url-within-a-string-in-python/11332580
     string = re.sub(r"https?:\/\/.*[\r\n]*", "", string)
     string = re.sub(r"\@\w*", "", string) # remove mentions
